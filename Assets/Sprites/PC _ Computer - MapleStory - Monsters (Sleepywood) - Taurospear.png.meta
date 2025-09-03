@@ -1,0 +1,1820 @@
+fileFormatVersion: 2
+guid: 616215ee62d176e45b2b7a832e53c850
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3636977876054193993
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_0
+  - first:
+      213: -1667778964742578494
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_1
+  - first:
+      213: 1779621761621771330
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_2
+  - first:
+      213: -5723066803801124889
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_3
+  - first:
+      213: -6687988326219678025
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_4
+  - first:
+      213: 302995087901784806
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_5
+  - first:
+      213: -625641929456253224
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_6
+  - first:
+      213: -1782966109010890117
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_7
+  - first:
+      213: -8899503547697110686
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_8
+  - first:
+      213: 4393246085731648624
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_9
+  - first:
+      213: 3827504618304456164
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_10
+  - first:
+      213: 2872825052269947002
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_11
+  - first:
+      213: -2102216582134429646
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_12
+  - first:
+      213: -7231753799192498320
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_13
+  - first:
+      213: 5374320086212091968
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_14
+  - first:
+      213: -2025744360887280462
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_15
+  - first:
+      213: -6890443699140961964
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_16
+  - first:
+      213: -9082452973829927673
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_17
+  - first:
+      213: 8054176053148209822
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_18
+  - first:
+      213: -5293545239595620724
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_19
+  - first:
+      213: 158025384151476378
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_20
+  - first:
+      213: -7561158249420440020
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_21
+  - first:
+      213: -3823986158750506163
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_22
+  - first:
+      213: -472908056547771321
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_23
+  - first:
+      213: -3936781303808156137
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_24
+  - first:
+      213: 387964256029502836
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_25
+  - first:
+      213: -2828325732872708616
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_26
+  - first:
+      213: -8592840014820246379
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_27
+  - first:
+      213: -40099443078643377
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_28
+  - first:
+      213: -7420978982779314218
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_29
+  - first:
+      213: -1029720999921250313
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_30
+  - first:
+      213: -3085372104460284665
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_31
+  - first:
+      213: -2633948155229314788
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_32
+  - first:
+      213: -6543899154931218962
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_33
+  - first:
+      213: -7623188802261551312
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_34
+  - first:
+      213: 4867621005795537407
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_35
+  - first:
+      213: -8693376033029944721
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_36
+  - first:
+      213: -1295718870158476077
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_37
+  - first:
+      213: 1480383999560360299
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_38
+  - first:
+      213: 4544936084873803861
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_39
+  - first:
+      213: 1973694700717546435
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_40
+  - first:
+      213: 3538127480478026891
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_41
+  - first:
+      213: -6581421978918497984
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_42
+  - first:
+      213: -6709016824396767017
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_43
+  - first:
+      213: 220945363351617720
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_44
+  - first:
+      213: 4746900102362786227
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_45
+  - first:
+      213: -5150569331694576799
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_46
+  - first:
+      213: 5488343028477515484
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_47
+  - first:
+      213: -8815452843897877833
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_48
+  - first:
+      213: 2867814710505700531
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_49
+  - first:
+      213: -4441460142822713759
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_50
+  - first:
+      213: -4602746401115844115
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_51
+  - first:
+      213: -965479075933794849
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_52
+  - first:
+      213: -8217565684223641654
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_53
+  - first:
+      213: 8413861573052418896
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_54
+  - first:
+      213: -5994403342651750069
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_55
+  - first:
+      213: -2823119728941060177
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_56
+  - first:
+      213: -391861118009877578
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_57
+  - first:
+      213: 6031351576390914649
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_58
+  - first:
+      213: 7309218663474768529
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_59
+  - first:
+      213: 4783333725050152326
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_60
+  - first:
+      213: -3225230972656340848
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_61
+  - first:
+      213: 4122023946863471430
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_62
+  - first:
+      213: -4271293272783106831
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_63
+  - first:
+      213: 3881909715430226406
+    second: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_64
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 48
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 952
+        width: 188
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b8c5d924ebd68dc0800000000000000
+      internalID: -3636977876054193993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_1
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 952
+        width: 188
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ce56aa2edbdad8e0800000000000000
+      internalID: -1667778964742578494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_2
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 952
+        width: 188
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2444508309c72b810800000000000000
+      internalID: 1779621761621771330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_3
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 952
+        width: 188
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ef8a9560159390b0800000000000000
+      internalID: -5723066803801124889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_4
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 952
+        width: 188
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7be77b14d0e7f23a0800000000000000
+      internalID: -6687988326219678025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_5
+      rect:
+        serializedVersion: 2
+        x: 1061
+        y: 952
+        width: 188
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6eaf2175d64743400800000000000000
+      internalID: 302995087901784806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_6
+      rect:
+        serializedVersion: 2
+        x: 1274
+        y: 952
+        width: 188
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d68b2edaf54157f0800000000000000
+      internalID: -625641929456253224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_7
+      rect:
+        serializedVersion: 2
+        x: 1489
+        y: 952
+        width: 188
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7278d935c1a147e0800000000000000
+      internalID: -1782966109010890117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_8
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 781
+        width: 190
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2616f2accac9e7480800000000000000
+      internalID: -8899503547697110686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_9
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 781
+        width: 190
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07409eed902f7fc30800000000000000
+      internalID: 4393246085731648624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_10
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 781
+        width: 191
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e5443edb270e1530800000000000000
+      internalID: 3827504618304456164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_11
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 786
+        width: 33
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a78a4660a235ed720800000000000000
+      internalID: 2872825052269947002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_12
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 782
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23801f4182d63d2e0800000000000000
+      internalID: -2102216582134429646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_13
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 781
+        width: 190
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07fac003c36a3ab90800000000000000
+      internalID: -7231753799192498320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_14
+      rect:
+        serializedVersion: 2
+        x: 906
+        y: 781
+        width: 190
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0402befd4ab659a40800000000000000
+      internalID: 5374320086212091968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_15
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 781
+        width: 191
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bc10939c3c13e3e0800000000000000
+      internalID: -2025744360887280462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_16
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 786
+        width: 33
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 459dfd776f93060a0800000000000000
+      internalID: -6890443699140961964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_17
+      rect:
+        serializedVersion: 2
+        x: 1307
+        y: 782
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70d4da52425a4f180800000000000000
+      internalID: -9082452973829927673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_18
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 623
+        width: 188
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e925b5e827e26cf60800000000000000
+      internalID: 8054176053148209822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_19
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 429
+        width: 137
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c866177a6ac8986b0800000000000000
+      internalID: -5293545239595620724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_20
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 429
+        width: 301
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a98e7d7ef3b613200800000000000000
+      internalID: 158025384151476378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_21
+      rect:
+        serializedVersion: 2
+        x: 862
+        y: 640
+        width: 27
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2eb7c402ae511790800000000000000
+      internalID: -7561158249420440020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_22
+      rect:
+        serializedVersion: 2
+        x: 1058
+        y: 655
+        width: 26
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d436aa559d87eeac0800000000000000
+      internalID: -3823986158750506163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_23
+      rect:
+        serializedVersion: 2
+        x: 1082
+        y: 655
+        width: 30
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74cbc0ec0a4ef69f0800000000000000
+      internalID: -472908056547771321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_24
+      rect:
+        serializedVersion: 2
+        x: 1116
+        y: 658
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71e9d1c134ebd59c0800000000000000
+      internalID: -3936781303808156137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_25
+      rect:
+        serializedVersion: 2
+        x: 1125
+        y: 655
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47def227f63526500800000000000000
+      internalID: 387964256029502836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_26
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 658
+        width: 35
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fd96072bb4cfb8d0800000000000000
+      internalID: -2828325732872708616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_27
+      rect:
+        serializedVersion: 2
+        x: 1220
+        y: 646
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59c70e8888910c880800000000000000
+      internalID: -8592840014820246379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_28
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 429
+        width: 275
+        height: 217
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f414b9bd4c9817ff0800000000000000
+      internalID: -40099443078643377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_29
+      rect:
+        serializedVersion: 2
+        x: 1057
+        y: 639
+        width: 35
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6df9cc5eee2630990800000000000000
+      internalID: -7420978982779314218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_30
+      rect:
+        serializedVersion: 2
+        x: 1095
+        y: 639
+        width: 49
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ff0fedc432b5b1f0800000000000000
+      internalID: -1029720999921250313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_31
+      rect:
+        serializedVersion: 2
+        x: 1146
+        y: 639
+        width: 6
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70dceb10b6e8e25d0800000000000000
+      internalID: -3085372104460284665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_32
+      rect:
+        serializedVersion: 2
+        x: 1151
+        y: 639
+        width: 9
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c11e2caab16527bd0800000000000000
+      internalID: -2633948155229314788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_33
+      rect:
+        serializedVersion: 2
+        x: 1162
+        y: 639
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee58850c3666f25a0800000000000000
+      internalID: -6543899154931218962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_34
+      rect:
+        serializedVersion: 2
+        x: 1175
+        y: 639
+        width: 30
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 037f6797c2ef43690800000000000000
+      internalID: -7623188802261551312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_35
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 618
+        width: 40
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff13ca7d3834d8340800000000000000
+      internalID: 4867621005795537407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_36
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 429
+        width: 188
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6a0b54be8cea5780800000000000000
+      internalID: -8693376033029944721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_37
+      rect:
+        serializedVersion: 2
+        x: 1031
+        y: 429
+        width: 265
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dcfe677d8ea40ee0800000000000000
+      internalID: -1295718870158476077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_38
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 213
+        width: 191
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b61a7f877616b8410800000000000000
+      internalID: 1480383999560360299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_39
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 213
+        width: 191
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 558f1c10a4bd21f30800000000000000
+      internalID: 4544936084873803861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_40
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 213
+        width: 325
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cb175b8fd8f36b10800000000000000
+      internalID: 1973694700717546435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_41
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 213
+        width: 191
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8cc0fb9234f91130800000000000000
+      internalID: 3538127480478026891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_42
+      rect:
+        serializedVersion: 2
+        x: 1261
+        y: 213
+        width: 191
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0415d9d74971aa4a0800000000000000
+      internalID: -6581421978918497984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_43
+      rect:
+        serializedVersion: 2
+        x: 1469
+        y: 213
+        width: 316
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d026bd7eb8c4e2a0800000000000000
+      internalID: -6709016824396767017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_44
+      rect:
+        serializedVersion: 2
+        x: 1806
+        y: 238
+        width: 113
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b0c75923a4f01300800000000000000
+      internalID: 220945363351617720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_45
+      rect:
+        serializedVersion: 2
+        x: 1926
+        y: 213
+        width: 191
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b969913e7060e140800000000000000
+      internalID: 4746900102362786227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_46
+      rect:
+        serializedVersion: 2
+        x: 2139
+        y: 238
+        width: 111
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16bd2515b708588b0800000000000000
+      internalID: -5150569331694576799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_47
+      rect:
+        serializedVersion: 2
+        x: 2257
+        y: 213
+        width: 191
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd6d4e9e7e28a2c40800000000000000
+      internalID: 5488343028477515484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_48
+      rect:
+        serializedVersion: 2
+        x: 2469
+        y: 213
+        width: 330
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ba8241485839a580800000000000000
+      internalID: -8815452843897877833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_49
+      rect:
+        serializedVersion: 2
+        x: 2819
+        y: 251
+        width: 112
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bcf45de8468cc720800000000000000
+      internalID: 2867814710505700531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_50
+      rect:
+        serializedVersion: 2
+        x: 2943
+        y: 213
+        width: 191
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1661ffe2883cc52c0800000000000000
+      internalID: -4441460142822713759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_51
+      rect:
+        serializedVersion: 2
+        x: 3158
+        y: 250
+        width: 110
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de1584ad882cf10c0800000000000000
+      internalID: -4602746401115844115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_52
+      rect:
+        serializedVersion: 2
+        x: 3276
+        y: 213
+        width: 191
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fddc4e055ede992f0800000000000000
+      internalID: -965479075933794849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_53
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 221
+        width: 112
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac7f8697c8755fd80800000000000000
+      internalID: -8217565684223641654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_54
+      rect:
+        serializedVersion: 2
+        x: 1146
+        y: 222
+        width: 110
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05b491ba58a04c470800000000000000
+      internalID: 8413861573052418896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_55
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 21
+        width: 188
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4904d86be99fcca0800000000000000
+      internalID: -5994403342651750069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_56
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 21
+        width: 188
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: faf2216609342d8d0800000000000000
+      internalID: -2823119728941060177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_57
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 21
+        width: 188
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bbdbbba364df8af0800000000000000
+      internalID: -391861118009877578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_58
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 21
+        width: 191
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 952d542ad4aa3b350800000000000000
+      internalID: 6031351576390914649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_59
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 21
+        width: 191
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19aa11606af8f6560800000000000000
+      internalID: 7309218663474768529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_60
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 21
+        width: 203
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 685a2c30ea0d16240800000000000000
+      internalID: 4783333725050152326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_61
+      rect:
+        serializedVersion: 2
+        x: 1278
+        y: 21
+        width: 203
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0903b34b48dad33d0800000000000000
+      internalID: -3225230972656340848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_62
+      rect:
+        serializedVersion: 2
+        x: 1499
+        y: 21
+        width: 203
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64b6374b0fe543930800000000000000
+      internalID: 4122023946863471430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_63
+      rect:
+        serializedVersion: 2
+        x: 1718
+        y: 21
+        width: 203
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fc4f30166159b4c0800000000000000
+      internalID: -4271293272783106831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_64
+      rect:
+        serializedVersion: 2
+        x: 1944
+        y: 21
+        width: 203
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e93b56a1505fd530800000000000000
+      internalID: 3881909715430226406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_0: -3636977876054193993
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_1: -1667778964742578494
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_10: 3827504618304456164
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_11: 2872825052269947002
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_12: -2102216582134429646
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_13: -7231753799192498320
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_14: 5374320086212091968
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_15: -2025744360887280462
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_16: -6890443699140961964
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_17: -9082452973829927673
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_18: 8054176053148209822
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_19: -5293545239595620724
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_2: 1779621761621771330
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_20: 158025384151476378
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_21: -7561158249420440020
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_22: -3823986158750506163
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_23: -472908056547771321
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_24: -3936781303808156137
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_25: 387964256029502836
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_26: -2828325732872708616
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_27: -8592840014820246379
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_28: -40099443078643377
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_29: -7420978982779314218
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_3: -5723066803801124889
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_30: -1029720999921250313
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_31: -3085372104460284665
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_32: -2633948155229314788
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_33: -6543899154931218962
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_34: -7623188802261551312
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_35: 4867621005795537407
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_36: -8693376033029944721
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_37: -1295718870158476077
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_38: 1480383999560360299
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_39: 4544936084873803861
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_4: -6687988326219678025
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_40: 1973694700717546435
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_41: 3538127480478026891
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_42: -6581421978918497984
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_43: -6709016824396767017
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_44: 220945363351617720
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_45: 4746900102362786227
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_46: -5150569331694576799
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_47: 5488343028477515484
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_48: -8815452843897877833
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_49: 2867814710505700531
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_5: 302995087901784806
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_50: -4441460142822713759
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_51: -4602746401115844115
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_52: -965479075933794849
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_53: -8217565684223641654
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_54: 8413861573052418896
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_55: -5994403342651750069
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_56: -2823119728941060177
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_57: -391861118009877578
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_58: 6031351576390914649
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_59: 7309218663474768529
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_6: -625641929456253224
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_60: 4783333725050152326
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_61: -3225230972656340848
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_62: 4122023946863471430
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_63: -4271293272783106831
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_64: 3881909715430226406
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_7: -1782966109010890117
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_8: -8899503547697110686
+      PC _ Computer - MapleStory - Monsters (Sleepywood) - Taurospear_9: 4393246085731648624
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

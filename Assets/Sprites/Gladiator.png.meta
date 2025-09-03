@@ -1,0 +1,1872 @@
+fileFormatVersion: 2
+guid: a758fd425caecfb47a8ac6ee2ad7c45e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2538556775230885592
+    second: Gladiator_0
+  - first:
+      213: 5702907974867780422
+    second: Gladiator_1
+  - first:
+      213: 6664886478169221400
+    second: Gladiator_2
+  - first:
+      213: -4679545896504024773
+    second: Gladiator_3
+  - first:
+      213: -4948566072665117555
+    second: Gladiator_4
+  - first:
+      213: -5709255823144511582
+    second: Gladiator_5
+  - first:
+      213: 8989771527467890622
+    second: Gladiator_6
+  - first:
+      213: 6495375654431320713
+    second: Gladiator_7
+  - first:
+      213: -7166075803258102391
+    second: Gladiator_8
+  - first:
+      213: 1274178558974471474
+    second: Gladiator_9
+  - first:
+      213: 5922677890720198372
+    second: Gladiator_10
+  - first:
+      213: -6609566685822437911
+    second: Gladiator_11
+  - first:
+      213: 2401584083813046900
+    second: Gladiator_12
+  - first:
+      213: 133586038238227159
+    second: Gladiator_13
+  - first:
+      213: -6970345842848940293
+    second: Gladiator_14
+  - first:
+      213: -6425854211663931967
+    second: Gladiator_15
+  - first:
+      213: -1566911629453302003
+    second: Gladiator_16
+  - first:
+      213: -8230059757257146609
+    second: Gladiator_17
+  - first:
+      213: -9217434236959132577
+    second: Gladiator_18
+  - first:
+      213: 6847157276219523809
+    second: Gladiator_19
+  - first:
+      213: 3127682068949605772
+    second: Gladiator_20
+  - first:
+      213: -3461530279845721951
+    second: Gladiator_21
+  - first:
+      213: -2549668385057097739
+    second: Gladiator_22
+  - first:
+      213: -3831535560803416343
+    second: Gladiator_23
+  - first:
+      213: 7895575187960103391
+    second: Gladiator_24
+  - first:
+      213: -7483679872958462771
+    second: Gladiator_25
+  - first:
+      213: 1474186061180981735
+    second: Gladiator_26
+  - first:
+      213: 200439469612830240
+    second: Gladiator_27
+  - first:
+      213: -4414979147680073506
+    second: Gladiator_28
+  - first:
+      213: 2529368846986383837
+    second: Gladiator_29
+  - first:
+      213: 7700210462386571691
+    second: Gladiator_30
+  - first:
+      213: -7431925053218604281
+    second: Gladiator_31
+  - first:
+      213: -3493882208952880161
+    second: Gladiator_32
+  - first:
+      213: -2310412268669504805
+    second: Gladiator_33
+  - first:
+      213: -3205629839971902596
+    second: Gladiator_34
+  - first:
+      213: -2161149037131175902
+    second: Gladiator_35
+  - first:
+      213: 3105825763884247939
+    second: Gladiator_36
+  - first:
+      213: 5437859471580423007
+    second: Gladiator_37
+  - first:
+      213: -6002928942880398461
+    second: Gladiator_38
+  - first:
+      213: 3688112456797491252
+    second: Gladiator_39
+  - first:
+      213: -2916116811287027033
+    second: Gladiator_40
+  - first:
+      213: -7181061096758058982
+    second: Gladiator_41
+  - first:
+      213: 1577613886388705992
+    second: Gladiator_42
+  - first:
+      213: -4844957557072065710
+    second: Gladiator_43
+  - first:
+      213: -5144847892219450811
+    second: Gladiator_44
+  - first:
+      213: -5306155085373652313
+    second: Gladiator_45
+  - first:
+      213: 8139366078158294085
+    second: Gladiator_46
+  - first:
+      213: -6375975834906253431
+    second: Gladiator_47
+  - first:
+      213: -327157390048877054
+    second: Gladiator_48
+  - first:
+      213: -8755569797063679479
+    second: Gladiator_49
+  - first:
+      213: -9118230858399906069
+    second: Gladiator_50
+  - first:
+      213: -4239211099172194912
+    second: Gladiator_51
+  - first:
+      213: -8622892429248116441
+    second: Gladiator_52
+  - first:
+      213: -2551792219240725063
+    second: Gladiator_53
+  - first:
+      213: 1993731316223880874
+    second: Gladiator_54
+  - first:
+      213: 6744953024097695359
+    second: Gladiator_55
+  - first:
+      213: 7466958528791734829
+    second: Gladiator_56
+  - first:
+      213: 1022556492879047244
+    second: Gladiator_57
+  - first:
+      213: 5638121989342412333
+    second: Gladiator_58
+  - first:
+      213: -7835126113310475629
+    second: Gladiator_59
+  - first:
+      213: 3398790511366908952
+    second: Gladiator_60
+  - first:
+      213: 1204809380186345653
+    second: Gladiator_61
+  - first:
+      213: -4935669092806666695
+    second: Gladiator_62
+  - first:
+      213: 1503431181816053367
+    second: Gladiator_63
+  - first:
+      213: -8304512615522046709
+    second: Gladiator_64
+  - first:
+      213: -4142464003111854606
+    second: Gladiator_65
+  - first:
+      213: -114471132035287325
+    second: Gladiator_66
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Gladiator_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 630
+        width: 60
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8de4ccdefe3ca3320800000000000000
+      internalID: 2538556775230885592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_1
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 630
+        width: 60
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6438cbc769cc42f40800000000000000
+      internalID: 5702907974867780422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_2
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 630
+        width: 60
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 819a49790fe6e7c50800000000000000
+      internalID: 6664886478169221400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_3
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 630
+        width: 60
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b31adb8ecc9ee0fb0800000000000000
+      internalID: -4679545896504024773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_4
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 630
+        width: 60
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8cee332069235bb0800000000000000
+      internalID: -4948566072665117555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_5
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 630
+        width: 60
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a714a9e316a4c0b0800000000000000
+      internalID: -5709255823144511582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_6
+      rect:
+        serializedVersion: 2
+        x: 1118
+        y: 630
+        width: 60
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb7f4aa039512cc70800000000000000
+      internalID: 8989771527467890622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_7
+      rect:
+        serializedVersion: 2
+        x: 1179
+        y: 621
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98a69156eb5342a50800000000000000
+      internalID: 6495375654431320713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_8
+      rect:
+        serializedVersion: 2
+        x: 1250
+        y: 630
+        width: 60
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98d5741460cfc8c90800000000000000
+      internalID: -7166075803258102391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_9
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 574
+        width: 60
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23da71406aacea110800000000000000
+      internalID: 1274178558974471474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_10
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 516
+        width: 60
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4eeef637924913250800000000000000
+      internalID: 5922677890720198372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_11
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 452
+        width: 60
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e53c444e1a1644a0800000000000000
+      internalID: -6609566685822437911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_12
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 452
+        width: 60
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47a98e50004245120800000000000000
+      internalID: 2401584083813046900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_13
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 452
+        width: 60
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7da24244bc79ad100800000000000000
+      internalID: 133586038238227159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_14
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 353
+        width: 49
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfe3e5be26b544f90800000000000000
+      internalID: -6970345842848940293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_15
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 428
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c5d25fd3a7c2d6a0800000000000000
+      internalID: -6425854211663931967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_16
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 337
+        width: 81
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d07e104cc26314ae0800000000000000
+      internalID: -1566911629453302003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_17
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 353
+        width: 60
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0f33786144f8cd80800000000000000
+      internalID: -8230059757257146609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_18
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 353
+        width: 60
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f54f685c568151080800000000000000
+      internalID: -9217434236959132577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_19
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 339
+        width: 65
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e2cb42d34df50f50800000000000000
+      internalID: 6847157276219523809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_20
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 339
+        width: 65
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8d99124542c76b20800000000000000
+      internalID: 3127682068949605772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_21
+      rect:
+        serializedVersion: 2
+        x: 844
+        y: 339
+        width: 65
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a8898aec8c26ffc0800000000000000
+      internalID: -3461530279845721951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_22
+      rect:
+        serializedVersion: 2
+        x: 977
+        y: 339
+        width: 65
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f7b0adcc12cd9cd0800000000000000
+      internalID: -2549668385057097739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_23
+      rect:
+        serializedVersion: 2
+        x: 1108
+        y: 339
+        width: 65
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e6090235b6a3dac0800000000000000
+      internalID: -3831535560803416343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_24
+      rect:
+        serializedVersion: 2
+        x: 1211
+        y: 353
+        width: 60
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd100c70dc7b29d60800000000000000
+      internalID: 7895575187960103391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_25
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 274
+        width: 60
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc402974ec0a42890800000000000000
+      internalID: -7483679872958462771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_26
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 274
+        width: 60
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e1568d796c557410800000000000000
+      internalID: 1474186061180981735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_27
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 272
+        width: 70
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02e8d39b2aa18c200800000000000000
+      internalID: 200439469612830240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_28
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 272
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed8b5c35bd7dab2c0800000000000000
+      internalID: -4414979147680073506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_29
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 274
+        width: 88
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd1109ea09f1a1320800000000000000
+      internalID: 2529368846986383837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_30
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 291
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba94c4a3e94acda60800000000000000
+      internalID: 7700210462386571691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_31
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 274
+        width: 94
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70b34954a8f7cd890800000000000000
+      internalID: -7431925053218604281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_32
+      rect:
+        serializedVersion: 2
+        x: 1033
+        y: 274
+        width: 73
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd37e4074ac338fc0800000000000000
+      internalID: -3493882208952880161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_33
+      rect:
+        serializedVersion: 2
+        x: 1197
+        y: 274
+        width: 73
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd2ff316844cfefd0800000000000000
+      internalID: -2310412268669504805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_34
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 192
+        width: 60
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7b151b05a05383d0800000000000000
+      internalID: -3205629839971902596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_35
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 192
+        width: 60
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2286e17a66e0202e0800000000000000
+      internalID: -2161149037131175902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_36
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 192
+        width: 60
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38ba39ea31c1a1b20800000000000000
+      internalID: 3105825763884247939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_37
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 192
+        width: 60
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f536b0ed068277b40800000000000000
+      internalID: 5437859471580423007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_38
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 192
+        width: 60
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 383e3bb6eef41bca0800000000000000
+      internalID: -6002928942880398461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_39
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 192
+        width: 60
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4309b1f2dbece2330800000000000000
+      internalID: 3688112456797491252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_40
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 192
+        width: 60
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a221bbd53fd787d0800000000000000
+      internalID: -2916116811287027033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_41
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 192
+        width: 60
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a10eb59bafeb75c90800000000000000
+      internalID: -7181061096758058982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_42
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 192
+        width: 60
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ca1cea987fc4e510800000000000000
+      internalID: 1577613886388705992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_43
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 192
+        width: 60
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25b00e285c043ccb0800000000000000
+      internalID: -4844957557072065710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_44
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 98
+        width: 38
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54aa7d0c914d998b0800000000000000
+      internalID: -5144847892219450811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_45
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 7
+        width: 38
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a2cb252010cc56b0800000000000000
+      internalID: -5306155085373652313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_46
+      rect:
+        serializedVersion: 2
+        x: 1174
+        y: 14
+        width: 26
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54c4d79e256d4f070800000000000000
+      internalID: 8139366078158294085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_47
+      rect:
+        serializedVersion: 2
+        x: 1199
+        y: 17
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98720ff62cbf387a0800000000000000
+      internalID: -6375975834906253431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_48
+      rect:
+        serializedVersion: 2
+        x: 1205
+        y: 17
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2062e7c4614b57bf0800000000000000
+      internalID: -327157390048877054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_49
+      rect:
+        serializedVersion: 2
+        x: 1213
+        y: 17
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90261e798a7fd7680800000000000000
+      internalID: -8755569797063679479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_50
+      rect:
+        serializedVersion: 2
+        x: 1220
+        y: 14
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be681114859857180800000000000000
+      internalID: -9118230858399906069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_51
+      rect:
+        serializedVersion: 2
+        x: 1229
+        y: 17
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a5b2f137fb4b25c0800000000000000
+      internalID: -4239211099172194912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_52
+      rect:
+        serializedVersion: 2
+        x: 1241
+        y: 17
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 729c24a8505555880800000000000000
+      internalID: -8622892429248116441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_53
+      rect:
+        serializedVersion: 2
+        x: 1253
+        y: 17
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b50d8f1f76369cd0800000000000000
+      internalID: -2551792219240725063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_54
+      rect:
+        serializedVersion: 2
+        x: 1257
+        y: 17
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aaea811a1182bab10800000000000000
+      internalID: 1993731316223880874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_55
+      rect:
+        serializedVersion: 2
+        x: 1270
+        y: 14
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f763a040a03ea9d50800000000000000
+      internalID: 6744953024097695359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_56
+      rect:
+        serializedVersion: 2
+        x: 1282
+        y: 17
+        width: 27
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2a64356837ff9760800000000000000
+      internalID: 7466958528791734829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_57
+      rect:
+        serializedVersion: 2
+        x: 1174
+        y: 2
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4a23d866b9d03e00800000000000000
+      internalID: 1022556492879047244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_58
+      rect:
+        serializedVersion: 2
+        x: 1183
+        y: 2
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2eb217c312ae3e40800000000000000
+      internalID: 5638121989342412333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_59
+      rect:
+        serializedVersion: 2
+        x: 1192
+        y: 2
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39afdbdef4a044390800000000000000
+      internalID: -7835126113310475629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_60
+      rect:
+        serializedVersion: 2
+        x: 1198
+        y: 2
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81c2ef766fdea2f20800000000000000
+      internalID: 3398790511366908952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_61
+      rect:
+        serializedVersion: 2
+        x: 1210
+        y: 2
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b0d0187fb758b010800000000000000
+      internalID: 1204809380186345653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_62
+      rect:
+        serializedVersion: 2
+        x: 1220
+        y: 2
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93652624c1bf08bb0800000000000000
+      internalID: -4935669092806666695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_63
+      rect:
+        serializedVersion: 2
+        x: 1227
+        y: 2
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77e3460c1b24dd410800000000000000
+      internalID: 1503431181816053367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_64
+      rect:
+        serializedVersion: 2
+        x: 1240
+        y: 2
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0dee0f76c170cc80800000000000000
+      internalID: -8304512615522046709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_65
+      rect:
+        serializedVersion: 2
+        x: 1246
+        y: 2
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fddca7dfe20386c0800000000000000
+      internalID: -4142464003111854606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladiator_66
+      rect:
+        serializedVersion: 2
+        x: 1258
+        y: 2
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e6fff5ac11596ef0800000000000000
+      internalID: -114471132035287325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Gladiator_0: 2538556775230885592
+      Gladiator_1: 5702907974867780422
+      Gladiator_10: 5922677890720198372
+      Gladiator_11: -6609566685822437911
+      Gladiator_12: 2401584083813046900
+      Gladiator_13: 133586038238227159
+      Gladiator_14: -6970345842848940293
+      Gladiator_15: -6425854211663931967
+      Gladiator_16: -1566911629453302003
+      Gladiator_17: -8230059757257146609
+      Gladiator_18: -9217434236959132577
+      Gladiator_19: 6847157276219523809
+      Gladiator_2: 6664886478169221400
+      Gladiator_20: 3127682068949605772
+      Gladiator_21: -3461530279845721951
+      Gladiator_22: -2549668385057097739
+      Gladiator_23: -3831535560803416343
+      Gladiator_24: 7895575187960103391
+      Gladiator_25: -7483679872958462771
+      Gladiator_26: 1474186061180981735
+      Gladiator_27: 200439469612830240
+      Gladiator_28: -4414979147680073506
+      Gladiator_29: 2529368846986383837
+      Gladiator_3: -4679545896504024773
+      Gladiator_30: 7700210462386571691
+      Gladiator_31: -7431925053218604281
+      Gladiator_32: -3493882208952880161
+      Gladiator_33: -2310412268669504805
+      Gladiator_34: -3205629839971902596
+      Gladiator_35: -2161149037131175902
+      Gladiator_36: 3105825763884247939
+      Gladiator_37: 5437859471580423007
+      Gladiator_38: -6002928942880398461
+      Gladiator_39: 3688112456797491252
+      Gladiator_4: -4948566072665117555
+      Gladiator_40: -2916116811287027033
+      Gladiator_41: -7181061096758058982
+      Gladiator_42: 1577613886388705992
+      Gladiator_43: -4844957557072065710
+      Gladiator_44: -5144847892219450811
+      Gladiator_45: -5306155085373652313
+      Gladiator_46: 8139366078158294085
+      Gladiator_47: -6375975834906253431
+      Gladiator_48: -327157390048877054
+      Gladiator_49: -8755569797063679479
+      Gladiator_5: -5709255823144511582
+      Gladiator_50: -9118230858399906069
+      Gladiator_51: -4239211099172194912
+      Gladiator_52: -8622892429248116441
+      Gladiator_53: -2551792219240725063
+      Gladiator_54: 1993731316223880874
+      Gladiator_55: 6744953024097695359
+      Gladiator_56: 7466958528791734829
+      Gladiator_57: 1022556492879047244
+      Gladiator_58: 5638121989342412333
+      Gladiator_59: -7835126113310475629
+      Gladiator_6: 8989771527467890622
+      Gladiator_60: 3398790511366908952
+      Gladiator_61: 1204809380186345653
+      Gladiator_62: -4935669092806666695
+      Gladiator_63: 1503431181816053367
+      Gladiator_64: -8304512615522046709
+      Gladiator_65: -4142464003111854606
+      Gladiator_66: -114471132035287325
+      Gladiator_7: 6495375654431320713
+      Gladiator_8: -7166075803258102391
+      Gladiator_9: 1274178558974471474
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
