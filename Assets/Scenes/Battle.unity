@@ -148,6 +148,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55c158d4f1de44eb94e6f0c8128b8022, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultStateTime: 1
+  attackCooldown: 5
+  battleState: 0
+  attackCooldownRemaining: 0
 --- !u!4 &860687321
 Transform:
   m_ObjectHideFlags: 0
