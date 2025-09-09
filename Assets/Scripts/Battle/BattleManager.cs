@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+
+using Action;
 
 public enum BattleState
 {
@@ -13,14 +16,25 @@ namespace Battle
 {
     public class BattleManager : MonoBehaviour
     {
-        [Header("Configurations")]
-        public float defaultStateTime;
-        public float attackCooldown;
-
-        [Header("Status")]
+        [Header("Values")]
         public BattleState battleState;
+        
+        [Space(10)]
         public float attackCooldownRemaining;
 
+        [Space(10)]
+        public float actionTimer;
+        public float actionDuration;
+        public bool isActioning;
+        public int combo;
+
+        [Header("Cooldown")]
+        public float attackCooldown;
+
+        [Header("Sequences")]
+        public ActionData[] gladiatorAttackSequence;
+        public ActionData[] enemyAttackSequence;
+        
         private InputAction _attackAction;
 
         private void Awake()
@@ -50,18 +64,29 @@ namespace Battle
                     }
 
                     break;
-                
+
                 case BattleState.GladiatorAttack:
-                    // TODO: Handle gladiator attack sequence
-                    FinishAttack(); // Temp
-                    
+                    if (isActioning)
+                    {
+                        if (actionTimer < actionDuration)
+                        {
+                            // TODO: Update timer UI
+                        }
+                        else
+                        {
+                            FinishAttack();
+                        }
+
+                        actionTimer += Time.deltaTime;
+                    }
+
                     break;
-                
+
                 case BattleState.EnemyAttack:
                     // TODO
                     FinishEnemyAttack(); // Temp
                     break;
-                
+
                 default:
                     throw new ArgumentOutOfRangeException(nameof(battleState), battleState, null);
             }
@@ -77,8 +102,70 @@ namespace Battle
             Debug.Log("Start gladiator attack");
 
             battleState = BattleState.GladiatorAttack;
+            actionTimer = 0f;
+            actionDuration = gladiatorAttackSequence[0].duration;
+            isActioning = true;
+            combo = 0;
+
+            _attackAction.started -= StartAttack;
+            _attackAction.started += PerformAttack;
+
+            ToggleAttackUI(true);
+            // TODO: Attacking animation
+        }
+
+        private void PerformAttack(InputAction.CallbackContext _)
+        {
+            if (battleState != BattleState.GladiatorAttack ||
+                !isActioning) return;
             
-            // TODO: Perform attack
+            Debug.Log("Perform gladiator attack");
+            
+            var correctTimingStart = gladiatorAttackSequence[combo].correctTimingStart;
+            var correctTimingEnd = gladiatorAttackSequence[combo].correctTimingEnd;
+            if (actionTimer >= correctTimingStart && actionTimer <= correctTimingEnd)
+            {
+                Debug.Log("Hit");
+
+                isActioning = false;
+                var delay = gladiatorAttackSequence[combo].delayAfterAction;
+                combo++;
+
+                // TODO: Deal damage logic
+
+                if (combo == gladiatorAttackSequence.Length)
+                {
+                    FinishAttack();
+                }
+                else
+                {
+                    StartCoroutine(ContinueAttackAfterDelay(delay));
+                }
+            }
+            else
+            {
+                Debug.Log("Miss");
+
+                FinishAttack();
+            }
+        }
+
+        private IEnumerator ContinueAttackAfterDelay(float delay)
+        {
+            ToggleAttackUI(false);
+            
+            yield return new WaitForSeconds(delay);
+
+            actionTimer = 0f;
+            actionDuration = gladiatorAttackSequence[combo].duration;
+            isActioning = true;
+
+            ToggleAttackUI(true);
+        }
+
+        private void ToggleAttackUI(bool value)
+        {
+            // TODO: Implement this
         }
 
         private void FinishAttack()
@@ -86,10 +173,15 @@ namespace Battle
             if (battleState != BattleState.GladiatorAttack) return;
             
             Debug.Log("Finish gladiator attack");
+            
+            ToggleAttackUI(false);
 
             battleState = BattleState.Idle;
             attackCooldownRemaining = attackCooldown;
-            
+
+            _attackAction.started -= PerformAttack;
+            _attackAction.started += StartAttack;
+
             // TODO: Finish attack
         }
 
