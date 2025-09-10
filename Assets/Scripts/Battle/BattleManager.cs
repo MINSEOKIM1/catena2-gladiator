@@ -34,6 +34,9 @@ namespace Battle
         [Header("Sequences")]
         public ActionData[] gladiatorAttackSequence;
         public ActionData[] enemyAttackSequence;
+
+        [Header("References")]
+        [SerializeField] private UIManager uiManager;
         
         private InputAction _attackAction;
 
@@ -70,7 +73,8 @@ namespace Battle
                     {
                         if (actionTimer < actionDuration)
                         {
-                            // TODO: Update timer UI
+                            var actionRatio = actionTimer / actionDuration;
+                            uiManager.UpdateAttackTimingBar(actionRatio);
                         }
                         else
                         {
@@ -165,7 +169,20 @@ namespace Battle
 
         private void ToggleAttackUI(bool value)
         {
-            // TODO: Implement this
+            if (value)
+            {
+                var correctTimingStart = gladiatorAttackSequence[combo].correctTimingStart;
+                var correctTimingEnd = gladiatorAttackSequence[combo].correctTimingEnd;
+                var duration = gladiatorAttackSequence[combo].duration;
+
+                var startRatio = correctTimingStart / duration;
+                var endRatio = correctTimingEnd / duration;
+
+                uiManager.SetAttackCorrectTimingRange(startRatio, endRatio);
+                uiManager.UpdateAttackTimingBar(0f);
+            }
+
+            uiManager.ToggleAttackTimingBar(value);
         }
 
         private void FinishAttack()
