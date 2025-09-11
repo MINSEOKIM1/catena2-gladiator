@@ -60,7 +60,7 @@ namespace Bucket.Inventory
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            Debug.Log($"Name : {item.itemName} / Type : {item.type} / Armor : {item.armor} / Damage : {item.damage} / ItemInfo : {item.itemInfo}");
+            Debug.Log(item.ToString());
         }
 
         public void OnPointerExit(PointerEventData eventData)
