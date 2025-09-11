@@ -185,7 +185,7 @@ namespace Bucket
             Equipments equipments = fighters[fighterIndex].Equipments;
         
             //title.text = $"*{fighters[fighterIndex].FighterName}* (Tab to Change)";
-            title.text = $"*{fighters[fighterIndex].FighterName}*\npower : {equipments.GetPower() + fighters[fighterIndex].BasicDamage}\nrank : {fighters[fighterIndex].CurrentRank}";
+            RefreshStatUITitle();
         
             /*helmetText.text =  equipments._helmet != null ? $"{equipments._helmet.itemName}\narmor : {equipments._helmet.armor}" : "Nothing";
             chestText.text = equipments._chestplate != null ? $"{equipments._chestplate.itemName}\narmor : {equipments._chestplate.armor}" : "Nothing";
@@ -199,40 +199,55 @@ namespace Bucket
             leggingsUIImage.sprite = equipments._leggings.uiIcon;
             bootsUIImage.sprite = equipments._boots.uiIcon;
             weaponUIImage.sprite = equipments._weapon.uiIcon;*/
-
+            
             for (int i = 0; i < 5; i++)
             {
-                SpawnInventoryItem(equippedinventorySlots[i], equipments.GetEquipment(i));
+                EraseEquippedInventory((EQUIPMENT_TYPE)i);
+                //Debug.Log(equippedinventorySlots[i].GetComponentInChildren<InventoryItem>()?.item.itemName);
+                SpawnInventoryItem(equippedinventorySlots[i], equipments.GetEquipmentByIndex(i));
+                //Debug.Log(equippedinventorySlots[i].GetComponentInChildren<InventoryItem>()?.item.itemName);
 
-                GameRenderers[i].sprite = equipments.GetEquipment(i)?.gameIcon;
+                if (fighterIndex != 0)
+                {
+                    if (equippedinventorySlots[i].transform.childCount != 0)
+                    {
+                        equippedinventorySlots[i].transform.GetChild(equippedinventorySlots[i].transform.childCount - 1).GetComponent<InventoryItem>().isClickable = false;
+                    }
+                }
+                else
+                {
+                    if (equippedinventorySlots[i].transform.childCount != 0)
+                    {
+                        equippedinventorySlots[i].transform.GetChild(equippedinventorySlots[i].transform.childCount - 1).GetComponent<InventoryItem>().isClickable = true;
+                    }
+                }
+                
+                GameRenderers[i].sprite = equipments.GetEquipmentByIndex(i)?.gameIcon;
             }
         
             if (fighterIndex != 0)
             {
-                foreach (InventorySlot slot in equippedinventorySlots)
+                foreach (InventorySlot slot in unEquippedinventorySlots)
                 {
-                    if (slot.transform.childCount == 0) continue;
-                    slot.transform.GetChild(0).GetComponent<InventoryItem>().isClickable = false;
+                    slot.gameObject.SetActive(false);
                 }
             }
             else
             {
-                foreach (InventorySlot slot in equippedinventorySlots)
+                foreach (InventorySlot slot in unEquippedinventorySlots)
                 {
-                    if (slot.transform.childCount == 0) continue;
-                    slot.transform.GetChild(0).GetComponent<InventoryItem>().isClickable = true;
+                    slot.gameObject.SetActive(true);
                 }
             }
         }
 
         public void RefreshCharacter(EQUIPMENT_TYPE type)
         {
-            GameRenderers[(int)type].sprite = fighters[fighterIndex].Equipments.GetEquipment((int)type)?.gameIcon;
+            GameRenderers[(int)type].sprite = fighters[fighterIndex].Equipments.GetEquipmentByIndex((int)type)?.gameIcon;
         }
 
-        public void RefreshStatUI(EQUIPMENT_TYPE type)
+        public void RefreshStatUITitle()
         {
-            Debug.Log($"Refresh {type} stat UI");
             
             title.text = $"*{fighters[fighterIndex].FighterName}*\npower : {fighters[fighterIndex].Equipments.GetPower() + fighters[fighterIndex].BasicDamage}\nrank : {fighters[fighterIndex].CurrentRank}";
         }
@@ -270,8 +285,10 @@ namespace Bucket
         private void EraseEquippedInventory(EQUIPMENT_TYPE type)
         {
             InventorySlot slot = equippedinventorySlots[(int)type];
-            if (slot.transform.childCount == 0) return;
-            Destroy(equippedinventorySlots[(int)type].transform.GetChild(0).gameObject);
+            if (slot.transform.childCount != 0)
+            {
+                Destroy(slot.transform.GetChild(0).gameObject);
+            }
         }
 
         private void SpawnInventoryItem(InventorySlot slot, Equipment item)

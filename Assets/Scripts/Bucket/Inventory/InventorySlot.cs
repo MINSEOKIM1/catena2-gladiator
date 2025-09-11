@@ -30,7 +30,7 @@ namespace Bucket.Inventory
             {
                 item.transform.SetParent(item.parentAfterDrag);
                 ManagementPhaseManager.Instance.fighters[0].Equipments.EquipNewEquipment(equipment, type);
-                ManagementPhaseManager.Instance.RefreshStatUI((EQUIPMENT_TYPE)type);
+                ManagementPhaseManager.Instance.RefreshStatUITitle();
                 ManagementPhaseManager.Instance.RefreshCharacter((EQUIPMENT_TYPE)type);
             }
         }
@@ -161,7 +161,7 @@ namespace Bucket.Inventory
                     slot.MoveInventoryItem(item);
                     item.transform.SetParent(item.parentAfterDrag);
                     ManagementPhaseManager.Instance.fighters[0].Equipments.EquipNewEquipment(null, item.item.type);
-                    ManagementPhaseManager.Instance.RefreshStatUI(item.item.type);
+                    ManagementPhaseManager.Instance.RefreshStatUITitle();
                     ManagementPhaseManager.Instance.RefreshCharacter(item.item.type);
                 }
                 return;
@@ -179,7 +179,7 @@ namespace Bucket.Inventory
             }
             item.transform.SetParent(item.parentAfterDrag);
             ManagementPhaseManager.Instance.fighters[0].Equipments.EquipNewEquipment(target.GetComponentInChildren<InventoryItem>().item, item.item.type);
-            ManagementPhaseManager.Instance.RefreshStatUI(item.item.type);
+            ManagementPhaseManager.Instance.RefreshStatUITitle();
             ManagementPhaseManager.Instance.RefreshCharacter(item.item.type);
         }
     }

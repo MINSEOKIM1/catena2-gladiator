@@ -78,7 +78,7 @@ namespace Bucket
 
         }
         
-        public Equipment GetEquipment(int i)
+        public Equipment GetEquipmentByIndex(int i)
         {
             return i switch
             {
