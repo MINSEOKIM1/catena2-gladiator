@@ -27,10 +27,8 @@ namespace Bucket
         public Sprite uiIcon;
         public Sprite gameIcon;
 
-        public Equipment(EQUIPMENT_TYPE equipmentType, string name, int durability, int damage, int armor, Sprite uiIcon, Sprite gameIcon) : this(equipmentType, name, damage, armor, uiIcon, gameIcon)
-        {
-        }
-
+        public string itemInfo = "fill in blank";
+        
         public Equipment(EQUIPMENT_TYPE equipmentType, string name, int damage, int armor, Sprite uiIcon, Sprite gameIcon)
         {
             type = equipmentType;

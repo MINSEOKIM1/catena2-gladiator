@@ -1,8 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Bucket.Inventory;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Bucket
@@ -15,10 +18,13 @@ namespace Bucket
         [SerializeField] private int date = 0;
     
         [SerializeField] [Header("**Fighters**")]
-        private List<Fighter> fighters = new List<Fighter>();
+        public List<Fighter> fighters = new List<Fighter>();
 
         private int fighterIndex = 0;
 
+        [Space(10)] [Header("Prefab")] 
+        [SerializeField] private GameObject inventoryItemPrefab;
+        
         [Space(10)] [Header("Scriptables")]
         [SerializeField] private EquipmentScriptable helmetScriptable;
         [SerializeField] private EquipmentScriptable chestplateScriptable;
@@ -26,34 +32,23 @@ namespace Bucket
         [SerializeField] private EquipmentScriptable bootsScriptable;
         [SerializeField] private EquipmentScriptable weaponScriptable;
 
+        [FormerlySerializedAs("EquippedinventorySlots")]
         [Space(10)] [Header("UI")]
-        [Header("Stat UI")]
-        [SerializeField] private TextMeshProUGUI title;
     
-        [Space(10)]
-        [SerializeField] private Image helmetUIImage;
-        [SerializeField] private TextMeshProUGUI helmetText;
-    
-        [SerializeField] private Image chestUIImage;
+        [Space(10)] [Header("Inventory UI")]
+        [SerializeField] public InventorySlot[] equippedinventorySlots;
+        [SerializeField] public InventorySlot[] unEquippedinventorySlots;
+        /*[SerializeField] private TextMeshProUGUI helmetText;
         [SerializeField] private TextMeshProUGUI chestText;
-    
-        [SerializeField] private Image leggingsUIImage;
         [SerializeField] private TextMeshProUGUI leggingsText;
-    
-        [SerializeField] private Image bootsUIImage;
         [SerializeField] private TextMeshProUGUI bootsText;
-    
-        [SerializeField] private Image weaponUIImage;
-        [SerializeField] private TextMeshProUGUI weaponText;
+        [SerializeField] private TextMeshProUGUI weaponText;*/
     
         [Space(10)] [Header("Game Render")]
-        [SerializeField] private SpriteRenderer helmetGameRenderer;
-        [SerializeField] private SpriteRenderer chestGameRenderer;
-        [SerializeField] private SpriteRenderer leggingsGameRenderer;
-        [SerializeField] private SpriteRenderer bootsGameRenderer;
-        [SerializeField] private SpriteRenderer weaponGameRenderer;
+        [SerializeField] private SpriteRenderer[] GameRenderers;
 
-        [Header("ETC UI")] 
+        [Space(10)] [Header("ETC UI")] 
+        [SerializeField] private TextMeshProUGUI title;
         [SerializeField] private Image letterImage;
         [SerializeField] private TextMeshProUGUI dateText;
 
@@ -72,31 +67,35 @@ namespace Bucket
             
             //initialize n fighters
             //1st one is player
-            InitializeFighters(15);
-            
+            InitializeFighters(8);
+            InitializeStatUI();
+        }
+
+        void Start()
+        {
             EventManager.Instance.AddListener(EVENT_TYPE.eDatePass, this);
             EventManager.Instance.AddListener(EVENT_TYPE.eChallengeMail, this);
         }
 
         void Update()
         {
-            //메인케릭터 장비 교체는 스페이스
+            /*//메인케릭터 장비 랜덤 교체는 스페이스
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 Equipments newEquipments = MakeRandomEquips();
-                Debug.Log($"changed helmet from {fighters[0].Equipments.ChangeEquipment(newEquipments._helmet, EQUIPMENT_TYPE.HELMET).itemName} to {fighters[0].Equipments._helmet.itemName}");
-                Debug.Log($"changed chestplate from {fighters[0].Equipments.ChangeEquipment(newEquipments._chestplate, EQUIPMENT_TYPE.CHESTPLATE).itemName} to {fighters[0].Equipments._chestplate.itemName}");
-                Debug.Log($"changed leggings from {fighters[0].Equipments.ChangeEquipment(newEquipments._leggings, EQUIPMENT_TYPE.LEGGINGS).itemName} to {fighters[0].Equipments._leggings.itemName}");
-                Debug.Log($"changed boots from {fighters[0].Equipments.ChangeEquipment(newEquipments._boots, EQUIPMENT_TYPE.BOOTS).itemName} to {fighters[0].Equipments._boots.itemName}");
-                Debug.Log($"changed weapon from {fighters[0].Equipments.ChangeEquipment(newEquipments._weapon, EQUIPMENT_TYPE.WEAPON).itemName} to {fighters[0].Equipments._weapon.itemName}");
-                ShowStatUI();
-            }
+                Debug.Log($"changed helmet from {fighters[0].Equipments.EquipNewEquipment(newEquipments._helmet, EQUIPMENT_TYPE.HELMET).itemName} to {fighters[0].Equipments._helmet.itemName}");
+                Debug.Log($"changed chestplate from {fighters[0].Equipments.EquipNewEquipment(newEquipments._chestplate, EQUIPMENT_TYPE.CHESTPLATE).itemName} to {fighters[0].Equipments._chestplate.itemName}");
+                Debug.Log($"changed leggings from {fighters[0].Equipments.EquipNewEquipment(newEquipments._leggings, EQUIPMENT_TYPE.LEGGINGS).itemName} to {fighters[0].Equipments._leggings.itemName}");
+                Debug.Log($"changed boots from {fighters[0].Equipments.EquipNewEquipment(newEquipments._boots, EQUIPMENT_TYPE.BOOTS).itemName} to {fighters[0].Equipments._boots.itemName}");
+                Debug.Log($"changed weapon from {fighters[0].Equipments.EquipNewEquipment(newEquipments._weapon, EQUIPMENT_TYPE.WEAPON).itemName} to {fighters[0].Equipments._weapon.itemName}");
+                RefreshStatUI();
+            }*/
         
             //현재 보는 케릭터 변경은 탭
             if (Input.GetKeyDown(KeyCode.Tab))
             {
                 fighterIndex = (fighterIndex + 1) % fighters.Count;
-                ShowStatUI();
+                InitializeStatUI();
             }
         
             //날짜 지나가기
@@ -178,34 +177,109 @@ namespace Bucket
             {
                 fightersSortByPower[i].CurrentRank = fightersSortByPower.Count - i;
             }
-            
-            ShowStatUI();
         }
 
-        private void ShowStatUI()
+        public void InitializeStatUI()
         {
+            Debug.Log("Initialize stat UI");
             Equipments equipments = fighters[fighterIndex].Equipments;
         
             //title.text = $"*{fighters[fighterIndex].FighterName}* (Tab to Change)";
             title.text = $"*{fighters[fighterIndex].FighterName}*\npower : {equipments.GetPower() + fighters[fighterIndex].BasicDamage}\nrank : {fighters[fighterIndex].CurrentRank}";
         
-            helmetText.text =  $"{equipments._helmet.itemName}\narmor : {equipments._helmet.armor}";
-            chestText.text = $"{equipments._chestplate.itemName}\narmor : {equipments._chestplate.armor}";
-            leggingsText.text = $"{equipments._leggings.itemName}\narmor : {equipments._leggings.armor}";
-            bootsText.text = $"{equipments._boots.itemName}\narmor : {equipments._boots.armor}";
-            weaponText.text = $"{equipments._weapon.itemName}\ndamage : {equipments._weapon.damage}";
+            /*helmetText.text =  equipments._helmet != null ? $"{equipments._helmet.itemName}\narmor : {equipments._helmet.armor}" : "Nothing";
+            chestText.text = equipments._chestplate != null ? $"{equipments._chestplate.itemName}\narmor : {equipments._chestplate.armor}" : "Nothing";
+            leggingsText.text = equipments._leggings != null ? $"{equipments._leggings.itemName}\narmor : {equipments._leggings.armor}" : "Nothing";
+            bootsText.text = equipments._boots != null ? $"{equipments._boots.itemName}\narmor : {equipments._boots.armor}" : "Nothing";
+            weaponText.text = equipments._weapon != null ? $"{equipments._weapon.itemName}\ndamage : {equipments._weapon.damage}" : "Nothing";*/
         
+            /*
             helmetUIImage.sprite = equipments._helmet.uiIcon;
             chestUIImage.sprite = equipments._chestplate.uiIcon;
             leggingsUIImage.sprite = equipments._leggings.uiIcon;
             bootsUIImage.sprite = equipments._boots.uiIcon;
-            weaponUIImage.sprite = equipments._weapon.uiIcon;
+            weaponUIImage.sprite = equipments._weapon.uiIcon;*/
+
+            for (int i = 0; i < 5; i++)
+            {
+                SpawnInventoryItem(equippedinventorySlots[i], equipments.GetEquipment(i));
+
+                GameRenderers[i].sprite = equipments.GetEquipment(i)?.gameIcon;
+            }
         
-            helmetGameRenderer.sprite = equipments._helmet.gameIcon;
-            chestGameRenderer.sprite = equipments._chestplate.gameIcon;
-            leggingsGameRenderer.sprite = equipments._leggings.gameIcon;
-            bootsGameRenderer.sprite = equipments._boots.gameIcon;
-            weaponGameRenderer.sprite = equipments._weapon.gameIcon;
+            if (fighterIndex != 0)
+            {
+                foreach (InventorySlot slot in equippedinventorySlots)
+                {
+                    if (slot.transform.childCount == 0) continue;
+                    slot.transform.GetChild(0).GetComponent<InventoryItem>().isClickable = false;
+                }
+            }
+            else
+            {
+                foreach (InventorySlot slot in equippedinventorySlots)
+                {
+                    if (slot.transform.childCount == 0) continue;
+                    slot.transform.GetChild(0).GetComponent<InventoryItem>().isClickable = true;
+                }
+            }
+        }
+
+        public void RefreshCharacter(EQUIPMENT_TYPE type)
+        {
+            GameRenderers[(int)type].sprite = fighters[fighterIndex].Equipments.GetEquipment((int)type)?.gameIcon;
+        }
+
+        public void RefreshStatUI(EQUIPMENT_TYPE type)
+        {
+            Debug.Log($"Refresh {type} stat UI");
+            
+            title.text = $"*{fighters[fighterIndex].FighterName}*\npower : {fighters[fighterIndex].Equipments.GetPower() + fighters[fighterIndex].BasicDamage}\nrank : {fighters[fighterIndex].CurrentRank}";
+        }
+
+        /*public void RefreshStatUI(EQUIPMENT_TYPE type)
+        {
+            switch (type)
+            {
+                case EQUIPMENT_TYPE.HELMET:
+                    EraseEquippedInventory(EQUIPMENT_TYPE.HELMET);
+                    SpawnInventoryItem(equippedinventorySlots[0], fighters[fighterIndex].Equipments._helmet);
+                    break;
+                case EQUIPMENT_TYPE.CHESTPLATE:
+                    EraseEquippedInventory(EQUIPMENT_TYPE.CHESTPLATE);
+                    SpawnInventoryItem(equippedinventorySlots[1], fighters[fighterIndex].Equipments._chestplate);
+                    break;
+                case EQUIPMENT_TYPE.LEGGINGS:
+                    EraseEquippedInventory(EQUIPMENT_TYPE.LEGGINGS);
+                    SpawnInventoryItem(equippedinventorySlots[2], fighters[fighterIndex].Equipments._leggings);
+                    break;
+                case EQUIPMENT_TYPE.BOOTS:
+                    EraseEquippedInventory(EQUIPMENT_TYPE.BOOTS);
+                    SpawnInventoryItem(equippedinventorySlots[3], fighters[fighterIndex].Equipments._boots);
+                    break;
+                case EQUIPMENT_TYPE.WEAPON:
+                    EraseEquippedInventory(EQUIPMENT_TYPE.WEAPON);
+                    SpawnInventoryItem(equippedinventorySlots[4], fighters[fighterIndex].Equipments._weapon);
+                    break;
+                default:
+                    Debug.LogError("No Equipment Type Found");
+                    break;
+            }
+        }*/
+
+        private void EraseEquippedInventory(EQUIPMENT_TYPE type)
+        {
+            InventorySlot slot = equippedinventorySlots[(int)type];
+            if (slot.transform.childCount == 0) return;
+            Destroy(equippedinventorySlots[(int)type].transform.GetChild(0).gameObject);
+        }
+
+        private void SpawnInventoryItem(InventorySlot slot, Equipment item)
+        {
+            if (item == null) return;
+            GameObject newItem = Instantiate(inventoryItemPrefab, slot.transform);
+            InventoryItem inventoryItem = newItem.GetComponent<InventoryItem>();
+            inventoryItem.ShowUIItem(item);
         }
     
         private Equipments MakeRandomEquips()
@@ -228,7 +302,7 @@ namespace Bucket
             Boots boots = new Boots($"{modifiers1[Random.Range(0, modifiers1.Length)]} {modifiers2[Random.Range(0, modifiers2.Length)]}'s boots", Random.Range(1, 10), bootsScriptable.uiIcons[idx], bootsScriptable.gameIcons[idx]);
             idx = Random.Range(0, weaponScriptable.uiIcons.Length);
             Weapon weapon = new Weapon($"{modifiers1[Random.Range(0, modifiers1.Length)]} {modifiers2[Random.Range(0, modifiers2.Length)]}'s {weaponType[Random.Range(0, weaponType.Length)]}", Random.Range(1, 10), weaponScriptable.uiIcons[idx], weaponScriptable.gameIcons[idx]);
-
+            
             return new Equipments(helmet, chestplate, leggings, boots, weapon);
         }
 

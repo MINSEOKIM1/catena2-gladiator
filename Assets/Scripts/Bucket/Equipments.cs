@@ -40,40 +40,55 @@ namespace Bucket
         /// </summary>
         /// <param name="newEquipment">새로 끼는 장비</param>
         /// <param name="targetType">교체하고자 하는 부위 (새 장비의 부위가 아님)</param>
-        public Equipment ChangeEquipment(Equipment newEquipment, EQUIPMENT_TYPE targetType)
+        public void EquipNewEquipment(Equipment newEquipment, EQUIPMENT_TYPE? type)
         {
-            if (newEquipment.type != targetType)
-            {
-                return newEquipment;
-            }
-        
-            Equipment old = null;
-            switch (targetType)
+            switch (type)
             { 
                 case EQUIPMENT_TYPE.HELMET:
-                    old = _helmet;
-                    _helmet = (Helmet)newEquipment;
-                    return old;
+                    //_helmet = (Helmet)newEquipment;
+                    if (newEquipment == null) _helmet = null;
+                    else _helmet = new Helmet(newEquipment.itemName, newEquipment.armor, newEquipment.uiIcon, newEquipment.gameIcon);
+                    return;
                 case EQUIPMENT_TYPE.CHESTPLATE:
-                    old = _chestplate;
-                    _chestplate = (Chestplate)newEquipment;
-                    return old;
+                    //_chestplate = (Chestplate)newEquipment;
+                    if (newEquipment == null) _chestplate = null;
+                    else _chestplate = new Chestplate(newEquipment.itemName, newEquipment.armor, newEquipment.uiIcon, newEquipment.gameIcon);
+                    return;
                 case EQUIPMENT_TYPE.LEGGINGS:
-                    old = _leggings;
-                    _leggings = (Leggings)newEquipment;
-                    return old;
+                    //_leggings = (Leggings)newEquipment;
+                    if (newEquipment == null) _leggings = null;
+                    else _leggings = new Leggings(newEquipment.itemName, newEquipment.armor, newEquipment.uiIcon, newEquipment.gameIcon);
+                    return;
                 case EQUIPMENT_TYPE.BOOTS:
-                    old = _boots;
-                    _boots = (Boots)newEquipment;
-                    return old;
+                    //_boots = (Boots)newEquipment;
+                    if (newEquipment == null) _boots = null;
+                    else _boots = new Boots(newEquipment.itemName, newEquipment.armor, newEquipment.uiIcon, newEquipment.gameIcon);
+                    return;
                 case EQUIPMENT_TYPE.WEAPON:
-                    old = _weapon;
-                    _weapon = (Weapon)newEquipment;
-                    return old;
+                    //_weapon = (Weapon)newEquipment;
+                    if (newEquipment == null) _weapon = null;
+                    else _weapon = new Weapon(newEquipment.itemName, newEquipment.damage, newEquipment.uiIcon, newEquipment.gameIcon);
+                    return;
+                case null:
+                    return;
                 default:
                     Debug.LogError("장비 타입이 어느 것과도 일치하지 않음 에러");
-                    return newEquipment;
+                    return;
             }
+
+        }
+        
+        public Equipment GetEquipment(int i)
+        {
+            return i switch
+            {
+                0 => _helmet,
+                1 => _chestplate,
+                2 => _leggings,
+                3 => _boots,
+                4 => _weapon,
+                _ => null
+            };
         }
 
         /// <summary>
@@ -83,7 +98,14 @@ namespace Bucket
         /// <returns>전투력</returns>
         public int GetPower()
         {
-            return _helmet.armor * 1 + _chestplate.armor * 3 + _leggings.armor * 2 + _boots.armor * 1 + _weapon.damage * 5;
+            int power = 0;
+            power += _helmet != null ? _helmet.armor * 1 : 0;
+            power += _chestplate != null ? _chestplate.armor * 1 : 0;
+            power += _leggings != null ? _leggings.armor * 1 : 0;
+            power += _boots != null ? _boots.armor * 1 : 0;
+            power += _weapon != null ? _weapon.damage * 1 : 0;
+
+            return power;
         }
     }
 }
