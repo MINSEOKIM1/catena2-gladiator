@@ -107,7 +107,7 @@ namespace Battle
 
             battleState = BattleState.GladiatorAttack;
             actionTimer = 0f;
-            actionDuration = gladiatorAttackSequence[0].duration;
+            actionDuration = gladiatorAttackSequence[0].durationBase;
             isActioning = true;
             combo = 0;
 
@@ -125,8 +125,8 @@ namespace Battle
             
             Debug.Log("Perform gladiator attack");
             
-            var correctTimingStart = gladiatorAttackSequence[combo].correctTimingStart;
-            var correctTimingEnd = gladiatorAttackSequence[combo].correctTimingEnd;
+            var correctTimingStart = gladiatorAttackSequence[combo].correctTimingStartRatio;
+            var correctTimingEnd = gladiatorAttackSequence[combo].correctTimingEndRatio;
             if (actionTimer >= correctTimingStart && actionTimer <= correctTimingEnd)
             {
                 Debug.Log("Hit");
@@ -161,7 +161,7 @@ namespace Battle
             yield return new WaitForSeconds(delay);
 
             actionTimer = 0f;
-            actionDuration = gladiatorAttackSequence[combo].duration;
+            actionDuration = gladiatorAttackSequence[combo].durationBase;
             isActioning = true;
 
             ToggleAttackUI(true);
@@ -171,12 +171,8 @@ namespace Battle
         {
             if (value)
             {
-                var correctTimingStart = gladiatorAttackSequence[combo].correctTimingStart;
-                var correctTimingEnd = gladiatorAttackSequence[combo].correctTimingEnd;
-                var duration = gladiatorAttackSequence[combo].duration;
-
-                var startRatio = correctTimingStart / duration;
-                var endRatio = correctTimingEnd / duration;
+                var startRatio = gladiatorAttackSequence[combo].correctTimingStartRatio;
+                var endRatio = gladiatorAttackSequence[combo].correctTimingEndRatio;
 
                 uiManager.SetAttackCorrectTimingRange(startRatio, endRatio);
                 uiManager.UpdateAttackTimingBar(0f);

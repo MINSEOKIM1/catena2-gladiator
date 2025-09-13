@@ -383,23 +383,23 @@ MonoBehaviour:
   - name: TestAction
     damageMin: 0
     damageMax: 0
-    duration: 1
-    correctTimingStart: 0.3
-    correctTimingEnd: 0.7
+    durationBase: 1
+    correctTimingStartRatio: 0.4
+    correctTimingEndRatio: 0.6
     delayAfterAction: 1
   - name: TestAction2
     damageMin: 0
     damageMax: 0
-    duration: 0.8
-    correctTimingStart: 0.3
-    correctTimingEnd: 0.6
+    durationBase: 0.7
+    correctTimingStartRatio: 0.3
+    correctTimingEndRatio: 0.6
     delayAfterAction: 0.5
   - name: TestAction3
     damageMin: 0
     damageMax: 0
-    duration: 0.4
-    correctTimingStart: 0.2
-    correctTimingEnd: 0.35
+    durationBase: 0.5
+    correctTimingStartRatio: 0.5
+    correctTimingEndRatio: 0.8
     delayAfterAction: 0.3
   enemyAttackSequence: []
   uiManager: {fileID: 292167951}
