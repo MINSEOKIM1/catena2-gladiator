@@ -60,6 +60,8 @@ namespace Battle
             switch (battleState)
             {
                 case BattleState.Idle:
+                    // Hard-coded, temporary behavior
+                    // TODO: replace this later
                     var cooldownRemainingRatio = attackCooldownRemaining / attackCooldown;
                     if (cooldownRemainingRatio is > 0.4f and < 0.5f)
                     {
@@ -88,7 +90,7 @@ namespace Battle
 
                 case BattleState.EnemyAttack:
                     // TODO
-                    FinishEnemyAttack(); // Temp
+
                     break;
 
                 default:
@@ -154,6 +156,16 @@ namespace Battle
             }
         }
 
+        private void PerformCounter(InputAction.CallbackContext _)
+        {
+            // TODO
+        }
+
+        private void PerformDodge(InputAction.CallbackContext _)
+        {
+            // TODO
+        }
+
         private IEnumerator ContinueAttackAfterDelay(float delay)
         {
             ToggleAttackUI(false);
@@ -186,16 +198,14 @@ namespace Battle
             if (battleState != BattleState.GladiatorAttack) return;
             
             Debug.Log("Finish gladiator attack");
-            
-            ToggleAttackUI(false);
 
             battleState = BattleState.Idle;
             attackCooldownRemaining = attackCooldown;
 
             _attackAction.started -= PerformAttack;
             _attackAction.started += StartAttack;
-
-            // TODO: Finish attack
+            
+            ToggleAttackUI(false);
         }
 
         private void StartEnemyAttack()
@@ -205,8 +215,13 @@ namespace Battle
             Debug.Log("Start enemy attack");
 
             battleState = BattleState.EnemyAttack;
-            
-            // TODO: Perform enemy attack
+            isActioning = true;
+
+            _attackAction.started -= StartAttack;
+            _attackAction.started += PerformCounter;
+            _attackAction.started += PerformDodge;
+
+            // TODO: Show enemy attack UI
         }
 
         private void FinishEnemyAttack()
@@ -216,7 +231,11 @@ namespace Battle
             Debug.Log("Finish enemy attack");
 
             battleState = BattleState.Idle;
-            
+
+            _attackAction.started -= PerformCounter;
+            _attackAction.started -= PerformDodge;
+            _attackAction.started += StartAttack;
+
             // TODO: Finish enemy attack
         }
     }
