@@ -1,4 +1,6 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Battle
 {
@@ -8,6 +10,11 @@ namespace Battle
         [SerializeField] private GameObject attackTimingBarObject;
         [SerializeField] private RectTransform attackTimingCorrectRange;
         [SerializeField] private RectTransform attackTimingHandle;
+
+        [Header("Counter Popup")]
+        [SerializeField] private GameObject counterPopup;
+        [SerializeField] private Image counterPopupIconImage;
+        [SerializeField] private TMP_Text counterPopupText;
 
         public void ToggleAttackTimingBar(bool value)
         {
@@ -36,6 +43,21 @@ namespace Battle
             
             attackTimingHandle.anchorMin = anchorMin;
             attackTimingHandle.anchorMax = anchorMax;
+        }
+
+        public void ToggleCounterPopup(bool value)
+        {
+            counterPopup.SetActive(value);
+        }
+
+        public void SetCounterPopupMaskFill(float value)
+        {
+            counterPopupIconImage.fillAmount = value;
+        }
+
+        public void SetCounterPopupText(string value)
+        {
+            counterPopupText.text = value;
         }
     }
 }
