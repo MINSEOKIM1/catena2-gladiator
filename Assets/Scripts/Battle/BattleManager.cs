@@ -39,10 +39,12 @@ namespace Battle
         [SerializeField] private UIManager uiManager;
         
         private InputAction _attackAction;
+        private InputAction _dodgeAction;
 
         private void Awake()
         {
             _attackAction = InputSystem.actions.FindAction("Attack");
+            _dodgeAction = InputSystem.actions.FindAction("Dodge");
         }
 
         private void Start()
@@ -76,7 +78,7 @@ namespace Battle
                         if (actionTimer < actionDuration)
                         {
                             var actionRatio = actionTimer / actionDuration;
-                            uiManager.UpdateAttackTimingBar(actionRatio);
+                            uiManager.SetAttackTimingBar(actionRatio);
                         }
                         else
                         {
@@ -89,7 +91,20 @@ namespace Battle
                     break;
 
                 case BattleState.EnemyAttack:
-                    // TODO
+                    if (isActioning)
+                    {
+                        if (actionTimer < actionDuration)
+                        {
+                            var actionRatio = actionTimer / actionDuration;
+                            uiManager.SetCounterPopupIconFill(1 - actionRatio);
+                        }
+                        else
+                        {
+                            EnemyAttackTimeout();
+                        }
+
+                        actionTimer += Time.deltaTime;
+                    }
 
                     break;
 
@@ -108,10 +123,11 @@ namespace Battle
             Debug.Log("Start gladiator attack");
 
             battleState = BattleState.GladiatorAttack;
-            actionTimer = 0f;
-            actionDuration = gladiatorAttackSequence[0].durationBase;
             isActioning = true;
             combo = 0;
+
+            actionTimer = 0f;
+            actionDuration = gladiatorAttackSequence[0].durationBase;
 
             _attackAction.started -= StartAttack;
             _attackAction.started += PerformAttack;
@@ -127,13 +143,13 @@ namespace Battle
             
             Debug.Log("Perform gladiator attack");
             
+            var actionRatio = actionTimer / actionDuration;
             var correctTimingStart = gladiatorAttackSequence[combo].correctTimingStartRatio;
             var correctTimingEnd = gladiatorAttackSequence[combo].correctTimingEndRatio;
-            if (actionTimer >= correctTimingStart && actionTimer <= correctTimingEnd)
+            if (actionRatio >= correctTimingStart && actionRatio <= correctTimingEnd)
             {
                 Debug.Log("Hit");
 
-                isActioning = false;
                 var delay = gladiatorAttackSequence[combo].delayAfterAction;
                 combo++;
 
@@ -156,18 +172,9 @@ namespace Battle
             }
         }
 
-        private void PerformCounter(InputAction.CallbackContext _)
-        {
-            // TODO
-        }
-
-        private void PerformDodge(InputAction.CallbackContext _)
-        {
-            // TODO
-        }
-
         private IEnumerator ContinueAttackAfterDelay(float delay)
         {
+            isActioning = false;
             ToggleAttackUI(false);
             
             yield return new WaitForSeconds(delay);
@@ -179,6 +186,16 @@ namespace Battle
             ToggleAttackUI(true);
         }
 
+        private void PerformCounter(InputAction.CallbackContext _)
+        {
+            // TODO
+        }
+
+        private void PerformDodge(InputAction.CallbackContext _)
+        {
+            // TODO
+        }
+
         private void ToggleAttackUI(bool value)
         {
             if (value)
@@ -187,7 +204,7 @@ namespace Battle
                 var endRatio = gladiatorAttackSequence[combo].correctTimingEndRatio;
 
                 uiManager.SetAttackCorrectTimingRange(startRatio, endRatio);
-                uiManager.UpdateAttackTimingBar(0f);
+                uiManager.SetAttackTimingBar(0f);
             }
 
             uiManager.ToggleAttackTimingBar(value);
@@ -200,6 +217,7 @@ namespace Battle
             Debug.Log("Finish gladiator attack");
 
             battleState = BattleState.Idle;
+            isActioning = false;
             attackCooldownRemaining = attackCooldown;
 
             _attackAction.started -= PerformAttack;
@@ -216,12 +234,52 @@ namespace Battle
 
             battleState = BattleState.EnemyAttack;
             isActioning = true;
+            combo = 0;
 
             _attackAction.started -= StartAttack;
             _attackAction.started += PerformCounter;
-            _attackAction.started += PerformDodge;
+            _dodgeAction.started += PerformDodge;
+            
+            actionTimer = 0f;
+            actionDuration = enemyAttackSequence[combo].durationBase;
+            uiManager.ToggleCounterPopup(true);
+        }
 
-            // TODO: Show enemy attack UI
+        private IEnumerator ContinueEnemyAttackAfterDelay(float delay)
+        {
+            isActioning = false;
+            combo++;
+            uiManager.ToggleCounterPopup(false);
+            
+            yield return new WaitForSeconds(delay);
+
+            isActioning = true;
+            actionTimer = 0f;
+            actionDuration = enemyAttackSequence[combo].durationBase;
+            
+            uiManager.ToggleCounterPopup(true);
+
+            // TODO: Implement this
+        }
+
+        private void EnemyAttackTimeout()
+        {
+            if (battleState != BattleState.EnemyAttack) return;
+            
+            Debug.Log("Enemy attack timeout");
+            
+            // TODO: Take damage
+
+            if (combo == enemyAttackSequence.Length - 1)
+            {
+                FinishEnemyAttack();
+            }
+            else
+            {
+                var delay = enemyAttackSequence[combo].delayAfterAction;
+
+                StartCoroutine(ContinueEnemyAttackAfterDelay(delay));
+            }
         }
 
         private void FinishEnemyAttack()
@@ -233,10 +291,12 @@ namespace Battle
             battleState = BattleState.Idle;
 
             _attackAction.started -= PerformCounter;
-            _attackAction.started -= PerformDodge;
             _attackAction.started += StartAttack;
+            _dodgeAction.started -= PerformDodge;
 
             // TODO: Finish enemy attack
+            
+            uiManager.ToggleCounterPopup(false);
         }
     }
 }

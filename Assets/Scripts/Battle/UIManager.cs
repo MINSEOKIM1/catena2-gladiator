@@ -33,7 +33,7 @@ namespace Battle
             attackTimingCorrectRange.anchorMax = anchorMax;
         }
         
-        public void UpdateAttackTimingBar(float value)
+        public void SetAttackTimingBar(float value)
         {
             var anchorMin = attackTimingHandle.anchorMin;
             var anchorMax = attackTimingHandle.anchorMax;
@@ -50,7 +50,7 @@ namespace Battle
             counterPopup.SetActive(value);
         }
 
-        public void SetCounterPopupMaskFill(float value)
+        public void SetCounterPopupIconFill(float value)
         {
             counterPopupIconImage.fillAmount = value;
         }

@@ -412,8 +412,29 @@ MonoBehaviour:
     correctTimingStartRatio: 0.5
     correctTimingEndRatio: 0.8
     delayAfterAction: 0.3
-  enemyAttackSequence: []
-  uiManager: {fileID: 0}
+  enemyAttackSequence:
+  - name: TestEnemy1
+    damageMin: 0
+    damageMax: 0
+    durationBase: 2
+    correctTimingStartRatio: 0
+    correctTimingEndRatio: 0
+    delayAfterAction: 1
+  - name: TestEnemy2
+    damageMin: 0
+    damageMax: 0
+    durationBase: 1.5
+    correctTimingStartRatio: 0
+    correctTimingEndRatio: 0
+    delayAfterAction: 0
+  - name: 
+    damageMin: 0
+    damageMax: 0
+    durationBase: 0
+    correctTimingStartRatio: 0
+    correctTimingEndRatio: 0
+    delayAfterAction: 0
+  uiManager: {fileID: 130921450}
 --- !u!4 &860687321
 Transform:
   m_ObjectHideFlags: 0
