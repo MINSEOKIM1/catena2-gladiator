@@ -148,5 +148,10 @@ namespace Bucket
             
             return power;
         }
+
+        public int GetTotalEquipmentPower()
+        {
+            return GetAttackPower() + GetDefensePower();
+        }
     }
 }

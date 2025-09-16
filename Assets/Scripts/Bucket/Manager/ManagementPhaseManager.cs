@@ -36,6 +36,7 @@ namespace Bucket
 
         [Space(10)] [Header("Prefab")] 
         [SerializeField] private GameObject inventoryItemPrefab;
+        [SerializeField] private GameObject RankingPrefab;
         
         [Space(10)] [Header("Scriptables")]
         [SerializeField] private EquipmentScriptable helmetScriptable;
@@ -70,8 +71,12 @@ namespace Bucket
         [SerializeField] private TextMeshProUGUI dateText;
         [SerializeField] private TextMeshProUGUI statisticStatInfo;
         [SerializeField] private GameObject popUpItemInfoContentBox;
+        [SerializeField] private GameObject scrollViewContentBox;
 
         private Coroutine showItemInfoOnHoverCoroutine = null;
+        
+        [Space(10)] [Header("ETC")]
+        public List<EventData> events = new List<EventData>();
 
 #region Basic
 
@@ -86,10 +91,11 @@ namespace Bucket
             }
             //DestroyImmediate(gameObject);
             
-            //initialize n fighters
-            //1st one is player
+            LoadEvent();
+            
             InitializeFighters(8);
-            //InitializeStatUI();
+            
+            RefreshRankingUI();
         }
 
         void Start()
@@ -113,11 +119,11 @@ namespace Bucket
             }*/
         
             //현재 보는 케릭터 변경은 탭
-            if (Input.GetKeyDown(KeyCode.Tab))
+            /*if (Input.GetKeyDown(KeyCode.Tab))
             {
                 fighterIndex = (fighterIndex + 1) % fighters.Count;
                 InitializeStatUI();
-            }
+            }*/
         
             //날짜 지나가기
             //나중에 날짜 지나는게 다른 클래스에서 담당할까봐 이벤트로 만들어놓음~
@@ -137,11 +143,9 @@ namespace Bucket
             switch (EventType)
             {
                 case EVENT_TYPE.eDatePass:
-                    date++;
-                    dateText.text = $"{date} 일차";
-                    Debug.Log($"날짜가 {date}로 바뀌었습니다.");
-                    // 날짜 지나면서 다른 애들이 강해지거나, 피로도 누적 등 구현 함수 필요
-                    ExpectChallenge();
+                    RefreshTodaysDate();
+                    RefreshRankingUI();
+                    ExpectDailyEvent();
                     break;
                 case EVENT_TYPE.eChallengeMail:
                     break;
@@ -284,6 +288,28 @@ namespace Bucket
                     break;
             }
         }*/
+
+        public void RefreshRankingUI()
+        {
+            foreach (Transform child in scrollViewContentBox.transform)
+            {
+                Destroy(child.gameObject);
+            }
+
+            List<Fighter> fightersSortByPower = fighters.ToList();
+            fightersSortByPower.Sort(new FighterSortComparer());
+            fightersSortByPower.Reverse();
+
+            foreach (Fighter fighter in fightersSortByPower)
+            {
+                GameObject gb = Instantiate(RankingPrefab, scrollViewContentBox.transform);
+
+                gb.transform.GetChild(1).GetComponent<Image>().sprite = fighter.fighterSprite;
+                gb.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = fighter.FighterName == "Player" ? $"<color=\"red\">Player</color>" : fighter.FighterName;
+                gb.transform.GetChild(3).GetComponent<TextMeshProUGUI>().text = $"전투력 : {fighter.GetTotalPower()}";
+                gb.transform.GetChild(4).GetComponent<TextMeshProUGUI>().text = fighter.CurrentRank == 1 ? $"<color=\"red\">{fighter.CurrentRank} 등</color>" : $"{fighter.CurrentRank} 등";
+            }
+        }
         
         private void EraseEquippedInventory(EQUIPMENT_TYPE type)
         {
@@ -351,16 +377,67 @@ namespace Bucket
 
 #region Functionality
 
-        /// <summary>
-        /// expect whether challenge comes or not
-        /// param for designated fighter
-        /// </summary>
-        /// <param name="fighter"></param>
-        private void ExpectChallenge(Fighter fighter = null)
+        private void LoadEvent()
         {
-            if (Random.Range(0f, 1f) > 0.3f) return; //30% to receive challenge mail
-            if (fighter == null) fighter = fighters[Random.Range(1, fighters.Count)]; //random fighter except player
-            EventManager.Instance.PostNotification(EVENT_TYPE.eChallengeMail, this, fighter);
+            TextAsset eventData = Resources.Load<TextAsset>("EventData");
+        
+            string[] data = eventData.text.Split(new char[] { '\n' });
+        
+            //제목 뺴고
+            for (int i = 1; i < data.Length - 1; i++)
+            {
+                string[] row = data[i].Split(new char[] { ',' });
+
+                if (row[1] != "")
+                {
+                    EventData e = new EventData();
+
+                    e.eventName = row[0];
+                    int.TryParse(row[1], out e.startDate);
+                    int.TryParse(row[2], out e.endDate);
+                    float.TryParse(row[3], out e.eventPossibility);
+                    int.TryParse(row[4], out e.actionPowerAmount);
+                
+                    events.Add(e);
+                }
+            }
+
+            /*foreach (EventData e in events)
+            {
+                Debug.Log(e.eventName + "/" + e.startDate + "/" + e.endDate + "/" + e.eventPossibility + "/" + e.actionPowerAmount);
+            }*/
+        }
+        
+        [Serializable]
+        public class EventData
+        {
+            public string eventName;
+            public int startDate;
+            public int endDate;
+            public float eventPossibility;
+            public int actionPowerAmount;
+
+            public override string ToString()
+            {
+                return eventName + " / " +  startDate + " / " + endDate + " / " + eventPossibility + " / " + actionPowerAmount;
+            }
+        }
+        
+        private void RefreshTodaysDate()
+        {
+            date++;
+            dateText.text = $"{date} 일차";
+        }
+        
+        private void ExpectDailyEvent()
+        {
+            foreach (EventData e in events)
+            {
+                if (e.startDate <= date && date <= e.endDate && Random.Range(0f, 1f) < e.eventPossibility)
+                {
+                    Debug.Log(e.ToString());
+                }
+            }
         }
 
         private void InitializeFighters(int numOfFighters = 1)

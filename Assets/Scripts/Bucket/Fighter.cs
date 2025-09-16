@@ -51,18 +51,21 @@ namespace Bucket
             get { return equipments; }
         }
 
+        public Sprite fighterSprite;
+
         [SerializeField] private Equipments equipments;
 
-        public Fighter(string name, int basicDamage, Equipments equipments)
+        public Fighter(string name, int basicDamage, Equipments equipments, Sprite fighterSprite = null)
         {
             this.fighterName = name;
             this.basicDamage = basicDamage;
             this.equipments = equipments;
+            this.fighterSprite = fighterSprite;
         }
 
         public int GetTotalPower()
         {
-            return basicDamage + Equipments.GetAttackPower() + Equipments.GetDefensePower();
+            return basicDamage + Equipments.GetTotalEquipmentPower();
         }
     }
 
@@ -70,7 +73,7 @@ namespace Bucket
     {
         public int Compare(Fighter fighter1, Fighter fighter2)
         {
-            return fighter1.BasicDamage + fighter1.Equipments.GetAttackPower() < fighter2.BasicDamage + fighter2.Equipments.GetAttackPower() ? -1 : 1;
+            return fighter1.GetTotalPower() < fighter2.GetTotalPower() ? -1 : 1;
         }
     }
 }
