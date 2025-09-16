@@ -14,7 +14,7 @@ namespace Bucket.Inventory
 
         public Transform parentAfterDrag;
 
-        public void Awake()
+        /*public void Awake()
         {
             image = GetComponent<Image>();
             parentAfterDrag = transform.parent;
@@ -22,6 +22,13 @@ namespace Bucket.Inventory
 
         public void Start()
         {
+            if (item != null) ShowUIItem(item);
+        }*/
+
+        public void OnEnable()
+        {
+            image = GetComponent<Image>();
+            parentAfterDrag = transform.parent;
             if (item != null) ShowUIItem(item);
         }
 
@@ -60,12 +67,13 @@ namespace Bucket.Inventory
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            Debug.Log(item.ToString());
+            //Debug.Log(item.ToString());
+            ManagementPhaseManager.Instance.ShowItemInfoOnHover(this);
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            
+            ManagementPhaseManager.Instance.HideItemInfoOnHover();
         }
 
         private const float interval = 0.25f;

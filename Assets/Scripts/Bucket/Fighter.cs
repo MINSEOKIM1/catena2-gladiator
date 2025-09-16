@@ -59,13 +59,18 @@ namespace Bucket
             this.basicDamage = basicDamage;
             this.equipments = equipments;
         }
+
+        public int GetTotalPower()
+        {
+            return basicDamage + Equipments.GetAttackPower() + Equipments.GetDefensePower();
+        }
     }
 
     public class FighterSortComparer : IComparer<Fighter>
     {
         public int Compare(Fighter fighter1, Fighter fighter2)
         {
-            return fighter1.BasicDamage + fighter1.Equipments.GetPower() < fighter2.BasicDamage + fighter2.Equipments.GetPower() ? -1 : 1;
+            return fighter1.BasicDamage + fighter1.Equipments.GetAttackPower() < fighter2.BasicDamage + fighter2.Equipments.GetAttackPower() ? -1 : 1;
         }
     }
 }
