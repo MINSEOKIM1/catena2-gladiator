@@ -21,6 +21,7 @@ namespace Battle
         
         [Space(10)]
         public float attackCooldownRemaining;
+        public bool isEnemyAttackAvailable;
 
         [Space(10)]
         public float actionTimer;
@@ -55,6 +56,7 @@ namespace Battle
 
             battleState = BattleState.Idle;
             attackCooldownRemaining = 0f;
+            isEnemyAttackAvailable = false;
         }
 
         private void Update()
@@ -65,7 +67,7 @@ namespace Battle
                     // Hard-coded, temporary behavior
                     // TODO: replace this later
                     var cooldownRemainingRatio = attackCooldownRemaining / attackCooldown;
-                    if (cooldownRemainingRatio is > 0.4f and < 0.5f)
+                    if (isEnemyAttackAvailable && cooldownRemainingRatio  < 0.5f)
                     {
                         StartEnemyAttack();
                     }
@@ -188,12 +190,30 @@ namespace Battle
 
         private void PerformCounter(InputAction.CallbackContext _)
         {
-            // TODO
+            if (battleState != BattleState.EnemyAttack ||
+                !isActioning) return;
+            
+            Debug.Log("Perform gladiator counter");
+
+            if (combo == enemyAttackSequence.Length - 1)
+            {
+                FinishEnemyAttack();
+            }
+            else
+            {
+                var delay = enemyAttackSequence[combo].delayAfterAction;
+                StartCoroutine(ContinueEnemyAttackAfterDelay(delay));
+            }
         }
 
         private void PerformDodge(InputAction.CallbackContext _)
         {
-            // TODO
+            if (battleState != BattleState.EnemyAttack ||
+                !isActioning) return;
+            
+            Debug.Log("Dodge enemy attack");
+            
+            FinishEnemyAttack();
         }
 
         private void ToggleAttackUI(bool value)
@@ -219,6 +239,7 @@ namespace Battle
             battleState = BattleState.Idle;
             isActioning = false;
             attackCooldownRemaining = attackCooldown;
+            isEnemyAttackAvailable = true;
 
             _attackAction.started -= PerformAttack;
             _attackAction.started += StartAttack;
@@ -231,8 +252,9 @@ namespace Battle
             if (battleState != BattleState.Idle) return;
             
             Debug.Log("Start enemy attack");
-
+            
             battleState = BattleState.EnemyAttack;
+            isEnemyAttackAvailable = false;
             isActioning = true;
             combo = 0;
 
