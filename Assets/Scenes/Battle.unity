@@ -385,52 +385,55 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   battleState: 0
   attackCooldownRemaining: 0
+  isEnemyAttackAvailable: 0
   actionTimer: 0
   actionDuration: 0
   isActioning: 0
   combo: 0
+  gladiatorHealth: 0
+  enemyHealth: 0
   attackCooldown: 5
   gladiatorAttackSequence:
   - name: TestAction
-    damageMin: 0
-    damageMax: 0
+    damageMin: 3
+    damageMax: 5
     durationBase: 1
     correctTimingStartRatio: 0.4
     correctTimingEndRatio: 0.6
     delayAfterAction: 1
   - name: TestAction2
-    damageMin: 0
-    damageMax: 0
+    damageMin: 4
+    damageMax: 5
     durationBase: 0.7
     correctTimingStartRatio: 0.3
     correctTimingEndRatio: 0.6
     delayAfterAction: 0.5
   - name: TestAction3
-    damageMin: 0
-    damageMax: 0
+    damageMin: 5
+    damageMax: 8
     durationBase: 0.5
     correctTimingStartRatio: 0.5
     correctTimingEndRatio: 0.8
     delayAfterAction: 0.3
   enemyAttackSequence:
   - name: TestEnemy1
-    damageMin: 0
-    damageMax: 0
-    durationBase: 2
+    damageMin: 2
+    damageMax: 4
+    durationBase: 1.5
     correctTimingStartRatio: 0
     correctTimingEndRatio: 0
     delayAfterAction: 1
   - name: TestEnemy2
-    damageMin: 0
-    damageMax: 0
-    durationBase: 1.5
+    damageMin: 3
+    damageMax: 6
+    durationBase: 1.2
     correctTimingStartRatio: 0
     correctTimingEndRatio: 0
-    delayAfterAction: 0
-  - name: 
-    damageMin: 0
-    damageMax: 0
-    durationBase: 0
+    delayAfterAction: 0.2
+  - name: TestEnemy3
+    damageMin: 2
+    damageMax: 2
+    durationBase: 0.8
     correctTimingStartRatio: 0
     correctTimingEndRatio: 0
     delayAfterAction: 0

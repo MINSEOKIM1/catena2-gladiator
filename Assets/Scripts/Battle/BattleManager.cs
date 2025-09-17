@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 using Action;
+using Random = UnityEngine.Random;
 
 public enum BattleState
 {
@@ -29,6 +30,10 @@ namespace Battle
         public bool isActioning;
         public int combo;
 
+        [Space(10)]
+        public int gladiatorHealth;
+        public int enemyHealth;
+
         [Header("Cooldown")]
         public float attackCooldown;
 
@@ -50,13 +55,18 @@ namespace Battle
 
         private void Start()
         {
-            // TODO: Load sequences from other scene
-
             _attackAction.started += StartAttack;
 
             battleState = BattleState.Idle;
             attackCooldownRemaining = 0f;
             isEnemyAttackAvailable = false;
+            
+            // TODO: Load sequences from other scene
+            
+            // Hard-coded, temporary values
+            // TODO: Set health values
+            gladiatorHealth = 100;
+            enemyHealth = 100;
         }
 
         private void Update()
@@ -144,19 +154,25 @@ namespace Battle
                 !isActioning) return;
             
             Debug.Log("Perform gladiator attack");
+
+            var currentAction = gladiatorAttackSequence[combo];
             
             var actionRatio = actionTimer / actionDuration;
-            var correctTimingStart = gladiatorAttackSequence[combo].correctTimingStartRatio;
-            var correctTimingEnd = gladiatorAttackSequence[combo].correctTimingEndRatio;
+            var correctTimingStart = currentAction.correctTimingStartRatio;
+            var correctTimingEnd = currentAction.correctTimingEndRatio;
             if (actionRatio >= correctTimingStart && actionRatio <= correctTimingEnd)
             {
                 Debug.Log("Hit");
 
-                var delay = gladiatorAttackSequence[combo].delayAfterAction;
+                var damageMin = currentAction.damageMin;
+                var damageMax = currentAction.damageMax;
+                var damage = Random.Range(damageMin, damageMax + 1);    // Min/Max inclusive
+                DamageEnemy(damage);
+                
+                var delay = currentAction.delayAfterAction;
+                
                 combo++;
-
-                // TODO: Deal damage logic
-
+                
                 if (combo == gladiatorAttackSequence.Length)
                 {
                     FinishAttack();
@@ -289,8 +305,13 @@ namespace Battle
             if (battleState != BattleState.EnemyAttack) return;
             
             Debug.Log("Enemy attack timeout");
-            
-            // TODO: Take damage
+
+            var currentAction = enemyAttackSequence[combo];
+
+            var damageMin = currentAction.damageMin;
+            var damageMax = currentAction.damageMax;
+            var damage = Random.Range(damageMin, damageMax + 1);    // Min/Max inclusive
+            DamageGladiator(damage);
 
             if (combo == enemyAttackSequence.Length - 1)
             {
@@ -298,7 +319,7 @@ namespace Battle
             }
             else
             {
-                var delay = enemyAttackSequence[combo].delayAfterAction;
+                var delay = currentAction.delayAfterAction;
 
                 StartCoroutine(ContinueEnemyAttackAfterDelay(delay));
             }
@@ -319,6 +340,30 @@ namespace Battle
             // TODO: Finish enemy attack
             
             uiManager.ToggleCounterPopup(false);
+        }
+
+        private void DamageGladiator(int damage)
+        {
+            Debug.Log($"Gladiator takes {damage} damage");
+
+            gladiatorHealth -= damage;
+            if (gladiatorHealth < 0) gladiatorHealth = 0;
+            
+            // TODO: Implement UI update
+            
+            // TODO: Implement game over
+        }
+
+        private void DamageEnemy(int damage)
+        {
+            Debug.Log($"Enemy takes {damage} damage");
+
+            enemyHealth -= damage;
+            if (enemyHealth < 0) enemyHealth = 0;
+            
+            // TODO: Implement UI update
+            
+            // TODO: Implement enemy defeat
         }
     }
 }
