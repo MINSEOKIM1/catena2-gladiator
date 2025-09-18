@@ -40,7 +40,7 @@ namespace Bucket
         }
     
         //event posting
-        public void PostNotification(EVENT_TYPE eventType, Component Sender, object param = null)
+        public void PostNotification(EVENT_TYPE eventType, Component Sender, object param = null, object param2 = null)
         {
             List<IListener> ListenList = null;
 
@@ -49,7 +49,7 @@ namespace Bucket
 
 
             for(int i = 0; i < ListenList.Count; i++)
-                ListenList?[i].OnEvent(eventType, Sender, param);
+                ListenList?[i].OnEvent(eventType, Sender, param, param2);
         }
     
         //null들 지우기

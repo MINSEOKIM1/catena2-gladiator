@@ -10,7 +10,7 @@ using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
-namespace Bucket
+namespace Bucket.Manager
 {
     [Serializable]
     public enum MANAGEMENT_PHASE_STATE
@@ -26,8 +26,6 @@ namespace Bucket
     {
         public static ManagementPhaseManager Instance { get { return _instance; } }
         private static ManagementPhaseManager _instance = null;
-
-        [SerializeField] private int date = 0;
     
         [SerializeField] [Header("**Fighters**")]
         public List<Fighter> fighters = new List<Fighter>();
@@ -68,7 +66,6 @@ namespace Bucket
         [SerializeField] private TextMeshProUGUI activePointText;
         [SerializeField] private TextMeshProUGUI tirednessText;
         [SerializeField] private TextMeshProUGUI popularityText;
-        [SerializeField] private TextMeshProUGUI dateText;
         [SerializeField] private TextMeshProUGUI statisticStatInfo;
         [SerializeField] private GameObject popUpItemInfoContentBox;
         [SerializeField] private GameObject scrollViewContentBox;
@@ -76,7 +73,7 @@ namespace Bucket
         private Coroutine showItemInfoOnHoverCoroutine = null;
         
         [Space(10)] [Header("ETC")]
-        public List<EventData> events = new List<EventData>();
+        public List<EventData> dailyEvents = new List<EventData>();
 
 #region Basic
 
@@ -91,7 +88,7 @@ namespace Bucket
             }
             //DestroyImmediate(gameObject);
             
-            LoadEvent();
+            LoadDailyEvent();
             
             InitializeFighters(8);
             
@@ -124,13 +121,6 @@ namespace Bucket
                 fighterIndex = (fighterIndex + 1) % fighters.Count;
                 InitializeStatUI();
             }*/
-        
-            //날짜 지나가기
-            //나중에 날짜 지나는게 다른 클래스에서 담당할까봐 이벤트로 만들어놓음~
-            if (Input.GetKeyDown(KeyCode.LeftShift))
-            {
-                EventManager.Instance.PostNotification(EVENT_TYPE.eDatePass, this, ManagementPhaseManager._instance.date + 1);
-            }
 
             if (Input.GetKeyDown(KeyCode.Escape))
             {
@@ -143,7 +133,7 @@ namespace Bucket
             switch (EventType)
             {
                 case EVENT_TYPE.eDatePass:
-                    RefreshTodaysDate();
+                    RefreshFighterRanking();
                     RefreshRankingUI();
                     ExpectDailyEvent();
                     break;
@@ -249,7 +239,7 @@ namespace Bucket
             }
         }
 
-        public void RefreshCharacter(EQUIPMENT_TYPE type)
+        public void RefreshCharacterImageOnBackground(EQUIPMENT_TYPE type)
         {
             HomeGameRenderers[(int)type].sprite = fighters[fighterIndex].Equipments.GetEquipmentByIndex((int)type)?.gameIcon;
         }
@@ -377,7 +367,7 @@ namespace Bucket
 
 #region Functionality
 
-        private void LoadEvent()
+        private void LoadDailyEvent()
         {
             TextAsset eventData = Resources.Load<TextAsset>("EventData");
         
@@ -398,7 +388,7 @@ namespace Bucket
                     float.TryParse(row[3], out e.eventPossibility);
                     int.TryParse(row[4], out e.actionPowerAmount);
                 
-                    events.Add(e);
+                    dailyEvents.Add(e);
                 }
             }
 
@@ -423,21 +413,30 @@ namespace Bucket
             }
         }
         
-        private void RefreshTodaysDate()
-        {
-            date++;
-            dateText.text = $"{date} 일차";
-        }
-        
         private void ExpectDailyEvent()
         {
-            foreach (EventData e in events)
+            foreach (EventData e in dailyEvents)
             {
-                if (e.startDate <= date && date <= e.endDate && Random.Range(0f, 1f) < e.eventPossibility)
+                if (e.startDate <= ScheduleManager.Instance.Date && ScheduleManager.Instance.Date <= e.endDate && Random.Range(0f, 1f) < e.eventPossibility)
                 {
-                    Debug.Log(e.ToString());
+                    switch (e.eventName.TrimEnd())
+                    {
+                        case "Challenge_Mail":
+                            EventManager.Instance.PostNotification(EVENT_TYPE.eChallengeMail, this, GetRandomFighter());
+                            break;
+                        case "Sign_Show":
+                            break;
+                    }
                 }
             }
+        }
+
+        private void SendChallengeMail()
+        {
+            //TODO
+            //도전장 UI 띄우기
+            //UI에서 ok 누르면 싸우는 스케쥴 생성하도록
+            EventManager.Instance.PostNotification(EVENT_TYPE.eChallengeMail, this, GetRandomFighter(), true);
         }
 
         private void InitializeFighters(int numOfFighters = 1)
@@ -516,6 +515,25 @@ namespace Bucket
         private string[] nameModifiers1 = new[] { "Yang", "Jeon", "Gim", "Son", "Jeong" };
         private string[] nameModifiers2 = new[] { "Dong", "Min", "Se", "Ho", "Seo" };
         private string[] nameModifiers3 = new[] { "Hwan", "Seo", "Hyun", "Jae", "Yun" };
+
+        /// <summary>
+        /// without player
+        /// </summary>
+        /// <returns></returns>
+        public Fighter GetRandomFighter()
+        {
+            return fighters[Random.Range(1, fighters.Count)];
+        }
+
+        private void RefreshFighterRanking()
+        {
+            List<Fighter> fightersSortByPower = fighters.ToList();
+            fightersSortByPower.Sort(new FighterSortComparer());
+            for (int i = 0; i < fightersSortByPower.Count; i++)
+            {
+                fightersSortByPower[i].CurrentRank = fightersSortByPower.Count - i;
+            }
+        }
 
 #endregion
     }

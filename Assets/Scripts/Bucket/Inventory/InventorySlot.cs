@@ -1,4 +1,5 @@
 using System.Linq;
+using Bucket.Manager;
 using JetBrains.Annotations;
 using UnityEditor;
 using UnityEngine;
@@ -31,7 +32,7 @@ namespace Bucket.Inventory
                 item.transform.SetParent(item.parentAfterDrag);
                 ManagementPhaseManager.Instance.fighters[0].Equipments.EquipNewEquipment(equipment, type);
                 ManagementPhaseManager.Instance.RefreshStatInfo();
-                ManagementPhaseManager.Instance.RefreshCharacter((EQUIPMENT_TYPE)type);
+                ManagementPhaseManager.Instance.RefreshCharacterImageOnBackground((EQUIPMENT_TYPE)type);
             }
         }
 
@@ -162,7 +163,7 @@ namespace Bucket.Inventory
                     item.transform.SetParent(item.parentAfterDrag);
                     ManagementPhaseManager.Instance.fighters[0].Equipments.EquipNewEquipment(null, item.item.type);
                     ManagementPhaseManager.Instance.RefreshStatInfo();
-                    ManagementPhaseManager.Instance.RefreshCharacter(item.item.type);
+                    ManagementPhaseManager.Instance.RefreshCharacterImageOnBackground(item.item.type);
                 }
                 return;
             }
@@ -180,7 +181,7 @@ namespace Bucket.Inventory
             item.transform.SetParent(item.parentAfterDrag);
             ManagementPhaseManager.Instance.fighters[0].Equipments.EquipNewEquipment(target.GetComponentInChildren<InventoryItem>().item, item.item.type);
             ManagementPhaseManager.Instance.RefreshStatInfo();
-            ManagementPhaseManager.Instance.RefreshCharacter(item.item.type);
+            ManagementPhaseManager.Instance.RefreshCharacterImageOnBackground(item.item.type);
         }
     }
 }

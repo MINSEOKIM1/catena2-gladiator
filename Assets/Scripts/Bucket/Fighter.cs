@@ -31,6 +31,15 @@ namespace Bucket
         }
         [SerializeField]
         private int tiredness;
+        
+        public float MatchmakingRate
+        {
+            get { return matchmakingRate; }
+        }
+        [SerializeField]
+        private float matchmakingRate = 100;
+
+        private const float mmrConstant = 20;
 
         public int BasicDamage
         {
@@ -67,13 +76,33 @@ namespace Bucket
         {
             return basicDamage + Equipments.GetTotalEquipmentPower();
         }
+        
+        public void WinMatch(Fighter enemy)
+        {
+            float winrate = CaculateWinRate(this, enemy);
+            matchmakingRate += mmrConstant * (1 - winrate);
+        }
+        
+        public void LoseMatch(Fighter enemy)
+        {
+            float winrate = CaculateWinRate(this, enemy);
+            matchmakingRate -= mmrConstant * winrate;
+        }
+
+        public static float CaculateWinRate(Fighter fighter1, Fighter fighter2)
+        {
+            float f = fighter2.matchmakingRate + fighter2.GetTotalPower() - fighter1.matchmakingRate -
+                      fighter1.GetTotalPower();
+            return f >= 0 ? Mathf.Clamp01(0.5f * (Mathf.Exp(-0.025f * (int)(f)))) 
+                : Mathf.Clamp01(1 - 0.5f * (Mathf.Exp(-0.025f * (int)(f))));
+        }
     }
 
     public class FighterSortComparer : IComparer<Fighter>
     {
         public int Compare(Fighter fighter1, Fighter fighter2)
         {
-            return fighter1.GetTotalPower() < fighter2.GetTotalPower() ? -1 : 1;
+            return fighter1.GetTotalPower() + fighter1.MatchmakingRate < fighter2.GetTotalPower() + fighter2.MatchmakingRate ? -1 : 1;
         }
     }
 }
