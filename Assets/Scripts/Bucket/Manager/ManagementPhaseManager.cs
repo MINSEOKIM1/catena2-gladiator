@@ -69,6 +69,7 @@ namespace Bucket.Manager
         [SerializeField] private TextMeshProUGUI statisticStatInfo;
         [SerializeField] private GameObject popUpItemInfoContentBox;
         [SerializeField] private GameObject scrollViewContentBox;
+        [SerializeField] private GameObject NewsBack;
 
         private Coroutine showItemInfoOnHoverCoroutine = null;
         
@@ -145,6 +146,13 @@ namespace Bucket.Manager
 #endregion
         
 #region UI
+
+        public void OpenDailyNews(string newsDateText, string newsText)
+        {
+            NewsBack.SetActive(true);
+            NewsBack.transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = newsDateText;
+            NewsBack.transform.GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>().text = newsText;
+        }
 
         public void OpenPhaseScreen(string state)
         {

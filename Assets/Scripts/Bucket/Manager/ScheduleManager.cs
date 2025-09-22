@@ -86,6 +86,13 @@ namespace Bucket.Manager
             EventManager.Instance.PostNotification(EVENT_TYPE.eDatePass, this, date);
             
             RefreshScheduleUI();
+
+            string newsText = "";
+            if (scheduleList[date - 1].table1.winloss != null) newsText += scheduleList[date - 1].table1.GetWinner(true)?.FighterName + " wins " +
+                                                           scheduleList[date - 1].table1.GetWinner(false)?.FighterName + "\n";
+            newsText += scheduleList[date - 1].table2.GetWinner(true)?.FighterName + " wins " +
+                        scheduleList[date - 1].table2.GetWinner(false)?.FighterName + "\n";
+            ManagementPhaseManager.Instance.OpenDailyNews(date.ToString() + " 일차 소식", newsText);
         }
 
         private void RefreshCalendarUI()
@@ -277,6 +284,18 @@ namespace Bucket.Manager
         {
             if (index == 1) return fighter1;
             return fighter2;
+        }
+
+        //return winner if true
+        //loser if false
+        public Fighter GetWinner(bool isWinner)
+        {
+            if (winloss != null)
+            {
+                return isWinner ? ((bool)winloss ? fighter1 : fighter2) : ((bool)winloss ? fighter2 : fighter1);
+            }
+
+            return null;
         }
     }
 
