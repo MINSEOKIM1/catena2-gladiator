@@ -33,6 +33,8 @@ namespace Battle
         [Space(10)]
         public int gladiatorHealth;
         public int enemyHealth;
+        public int gladiatorMaxHealth;
+        public int enemyMaxHealth;
 
         [Header("Cooldown")]
         public float attackCooldown;
@@ -63,8 +65,11 @@ namespace Battle
             
             // Hard-coded, temporary values
             // TODO: Set health values
-            gladiatorHealth = 100;
-            enemyHealth = 100;
+            gladiatorHealth = gladiatorMaxHealth = 100;
+            enemyHealth = enemyMaxHealth = 100;
+            
+            uiManager.SetGladiatorHealth(1f);
+            uiManager.SetEnemyHealth(1f);
         }
 
         private void Update()
@@ -372,8 +377,9 @@ namespace Battle
 
             gladiatorHealth -= damage;
             if (gladiatorHealth < 0) gladiatorHealth = 0;
-            
-            // TODO: Implement UI update
+
+            var healthRatio = (float)gladiatorHealth / gladiatorMaxHealth;
+            uiManager.SetGladiatorHealth(healthRatio);
             
             // TODO: Implement game over
         }
@@ -385,7 +391,8 @@ namespace Battle
             enemyHealth -= damage;
             if (enemyHealth < 0) enemyHealth = 0;
             
-            // TODO: Implement UI update
+            var healthRatio = (float)enemyHealth / enemyMaxHealth;
+            uiManager.SetEnemyHealth(healthRatio);
             
             // TODO: Implement enemy defeat
         }

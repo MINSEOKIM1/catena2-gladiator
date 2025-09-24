@@ -6,6 +6,12 @@ namespace Battle
 {
     public class UIManager : MonoBehaviour
     {
+        [Header("Gladiator Status")]
+        [SerializeField] private Slider gladiatorHealthSlider;
+        
+        [Header("Enemy Status")]
+        [SerializeField] private Slider enemyHealthSlider;
+        
         [Header("Attack Timer")]
         [SerializeField] private GameObject attackTimingBarObject;
         [SerializeField] private RectTransform attackTimingCorrectRange;
@@ -58,6 +64,16 @@ namespace Battle
         public void SetCounterPopupText(string value)
         {
             counterPopupText.text = value;
+        }
+        
+        public void SetGladiatorHealth(float value)
+        {
+            gladiatorHealthSlider.value = value;
+        }
+        
+        public void SetEnemyHealth(float value)
+        {
+            enemyHealthSlider.value = value;
         }
     }
 }
