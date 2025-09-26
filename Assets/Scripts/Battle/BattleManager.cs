@@ -46,13 +46,29 @@ namespace Battle
         [Header("References")]
         [SerializeField] private UIManager uiManager;
 
+        private enum CommandType
+        {
+            Up,
+            Down,
+            Left,
+            Right
+        }
+
         private void Awake()
         {
             var attackAction = InputSystem.actions.FindAction("Attack");
             var dodgeAction = InputSystem.actions.FindAction("Dodge");
+            var commandUpAction = InputSystem.actions.FindAction("CommandUp");
+            var commandDownAction = InputSystem.actions.FindAction("CommandDown");
+            var commandLeftAction = InputSystem.actions.FindAction("CommandLeft");
+            var commandRightAction = InputSystem.actions.FindAction("CommandRight");
 
             attackAction.started += OnAttack;
             dodgeAction.started += OnDodge;
+            commandUpAction.started += _ => PerformCounter(CommandType.Up);
+            commandDownAction.started += _ => PerformCounter(CommandType.Down);
+            commandLeftAction.started += _ => PerformCounter(CommandType.Left);
+            commandRightAction.started += _ => PerformCounter(CommandType.Right);
         }
 
         private void Start()
@@ -159,12 +175,14 @@ namespace Battle
                 case BattleState.EnemyAttack:
                     if (isActioning)
                     {
-                        PerformCounter();
+                        EnemyAttackTimeout();
                     }
-                    else
-                    {
-                        WrongAction();
-                    }
+                        
+                    WrongAction();
+                    break;
+                    
+                default:
+                    WrongAction();
                     break;
             }
         }
@@ -270,9 +288,9 @@ namespace Battle
             ToggleAttackUI(false);
         }
 
-        private void PerformCounter()
+        private void PerformCounter(CommandType type)
         {
-            Debug.Log("Perform gladiator counter");
+            Debug.Log($"Perform gladiator counter, type: {type}");
 
             if (combo == enemyAttackSequence.Length - 1)
             {
