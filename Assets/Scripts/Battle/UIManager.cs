@@ -19,8 +19,11 @@ namespace Battle
 
         [Header("Counter Popup")]
         [SerializeField] private GameObject counterPopup;
-        [SerializeField] private Image counterPopupIconImage;
-        [SerializeField] private TMP_Text counterPopupText;
+        [SerializeField] private Slider counterTimingSlider;
+        [SerializeField] private Transform counterCommandsParent;
+
+        [Space(10)]
+        [SerializeField] private GameObject counterCommandPrefab;
 
         public void ToggleAttackTimingBar(bool value)
         {
@@ -56,14 +59,9 @@ namespace Battle
             counterPopup.SetActive(value);
         }
 
-        public void SetCounterPopupIconFill(float value)
+        public void SetCounterTimingBar(float value)
         {
-            counterPopupIconImage.fillAmount = value;
-        }
-
-        public void SetCounterPopupText(string value)
-        {
-            counterPopupText.text = value;
+            counterTimingSlider.value = value;
         }
         
         public void SetGladiatorHealth(float value)

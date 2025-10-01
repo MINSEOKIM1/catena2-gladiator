@@ -127,7 +127,7 @@ namespace Battle
                         if (actionTimer < actionDuration)
                         {
                             var actionRatio = actionTimer / actionDuration;
-                            uiManager.SetCounterPopupIconFill(1 - actionRatio);
+                            uiManager.SetCounterTimingBar(1 - actionRatio);
                         }
                         else
                         {
