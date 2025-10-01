@@ -6,17 +6,27 @@ using UnityEngine.InputSystem;
 using Action;
 using Random = UnityEngine.Random;
 
-public enum BattleState
-{
-    Idle = 0,
-    GladiatorAttack,
-    EnemyAttack
-}
-
 namespace Battle
 {
+    public enum BattleState
+    {
+        Idle = 0,
+        GladiatorAttack,
+        EnemyAttack
+    }
+
+    public enum CommandType
+    {
+        Up = 0,
+        Down = 1,
+        Left = 2,
+        Right = 3
+    }
+
     public class BattleManager : MonoBehaviour
     {
+        private const int CounterCommandCount = 5;
+        
         [Header("Values")]
         public BattleState battleState;
         
@@ -35,6 +45,10 @@ namespace Battle
         public int enemyHealth;
         public int gladiatorMaxHealth;
         public int enemyMaxHealth;
+        
+        [Space(10)]
+        public CommandType[] currentCommands;
+        public int currentCommandIndex;
 
         [Header("Cooldown")]
         public float attackCooldown;
@@ -46,13 +60,6 @@ namespace Battle
         [Header("References")]
         [SerializeField] private UIManager uiManager;
 
-        private enum CommandType
-        {
-            Up,
-            Down,
-            Left,
-            Right
-        }
 
         private void Awake()
         {
@@ -65,10 +72,10 @@ namespace Battle
 
             attackAction.started += OnAttack;
             dodgeAction.started += OnDodge;
-            commandUpAction.started += _ => PerformCounter(CommandType.Up);
-            commandDownAction.started += _ => PerformCounter(CommandType.Down);
-            commandLeftAction.started += _ => PerformCounter(CommandType.Left);
-            commandRightAction.started += _ => PerformCounter(CommandType.Right);
+            commandUpAction.started += _ => OnCounter(CommandType.Up);
+            commandDownAction.started += _ => OnCounter(CommandType.Down);
+            commandLeftAction.started += _ => OnCounter(CommandType.Left);
+            commandRightAction.started += _ => OnCounter(CommandType.Right);
         }
 
         private void Start()
@@ -288,9 +295,40 @@ namespace Battle
             ToggleAttackUI(false);
         }
 
-        private void PerformCounter(CommandType type)
+        private void OnCounter(CommandType type)
         {
-            Debug.Log($"Perform gladiator counter, type: {type}");
+            if (battleState != BattleState.EnemyAttack || !isActioning)
+            {
+                WrongAction();
+                return;
+            }
+            
+            PerformCommand(type);
+        }
+
+        private void PerformCommand(CommandType type)
+        {
+            Debug.Log($"Perform gladiator command, index: {currentCommandIndex}, type: {type}");
+
+            if (type == currentCommands[currentCommandIndex])
+            {
+                uiManager.SetCounterCommandActive(currentCommandIndex);
+                
+                currentCommandIndex++;
+                if (currentCommandIndex >= CounterCommandCount)
+                {
+                    PerformCounter();
+                }
+            }
+            else
+            {
+                EnemyAttackTimeout();
+            }
+        }
+
+        private void PerformCounter()
+        {
+            Debug.Log($"Perform gladiator counter");
 
             if (combo == enemyAttackSequence.Length - 1)
             {
@@ -335,7 +373,21 @@ namespace Battle
             
             actionTimer = 0f;
             actionDuration = enemyAttackSequence[combo].durationBase;
+            
+            SetCurrentCounterCommands(CounterCommandCount);
+            uiManager.SetCounterCommands(currentCommands);
             uiManager.ToggleCounterPopup(true);
+        }
+
+        private void SetCurrentCounterCommands(int count)
+        {
+            currentCommands = new CommandType[count];
+            for (var i = 0; i < count; i++)
+            {
+                var command = (CommandType)Random.Range(0, 4);
+                currentCommands[i] = command;
+            }
+            currentCommandIndex = 0;
         }
 
         private IEnumerator ContinueEnemyAttackAfterDelay(float delay)
@@ -343,6 +395,7 @@ namespace Battle
             isActioning = false;
             combo++;
             uiManager.ToggleCounterPopup(false);
+            uiManager.ClearCounterCommands();
             
             yield return new WaitForSeconds(delay);
 
@@ -350,9 +403,9 @@ namespace Battle
             actionTimer = 0f;
             actionDuration = enemyAttackSequence[combo].durationBase;
             
+            SetCurrentCounterCommands(CounterCommandCount);
+            uiManager.SetCounterCommands(currentCommands);
             uiManager.ToggleCounterPopup(true);
-
-            // TODO: Implement this
         }
 
         private void EnemyAttackTimeout()
@@ -386,6 +439,7 @@ namespace Battle
 
             // TODO: Finish enemy attack
             
+            uiManager.ClearCounterCommands();
             uiManager.ToggleCounterPopup(false);
         }
 

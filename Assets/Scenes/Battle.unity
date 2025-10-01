@@ -281,7 +281,7 @@ MonoBehaviour:
   counterPopup: {fileID: 169627241}
   counterTimingSlider: {fileID: 2011914414}
   counterCommandsParent: {fileID: 339191036}
-  counterCommandPrefab: {fileID: 0}
+  counterCommandPrefab: {fileID: 2018912643800078189, guid: 98ae192142b77c347932bae79e3b6b86, type: 3}
 --- !u!1 &169627241
 GameObject:
   m_ObjectHideFlags: 0
@@ -846,6 +846,8 @@ MonoBehaviour:
   enemyHealth: 0
   gladiatorMaxHealth: 0
   enemyMaxHealth: 0
+  currentCommands: 
+  currentCommandIndex: 0
   attackCooldown: 5
   gladiatorAttackSequence:
   - name: TestAction
@@ -873,21 +875,21 @@ MonoBehaviour:
   - name: TestEnemy1
     damageMin: 2
     damageMax: 4
-    durationBase: 1.5
+    durationBase: 2
     correctTimingStartRatio: 0
     correctTimingEndRatio: 0
     delayAfterAction: 1
   - name: TestEnemy2
     damageMin: 3
     damageMax: 6
-    durationBase: 1.2
+    durationBase: 1.8
     correctTimingStartRatio: 0
     correctTimingEndRatio: 0
     delayAfterAction: 0.2
   - name: TestEnemy3
     damageMin: 2
     damageMax: 2
-    durationBase: 0.8
+    durationBase: 1.5
     correctTimingStartRatio: 0
     correctTimingEndRatio: 0
     delayAfterAction: 0

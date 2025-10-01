@@ -25,6 +25,8 @@ namespace Battle
         [Space(10)]
         [SerializeField] private GameObject counterCommandPrefab;
 
+        private GameObject[] currentCommandObjects;
+
         public void ToggleAttackTimingBar(bool value)
         {
             attackTimingBarObject.SetActive(value);
@@ -62,6 +64,46 @@ namespace Battle
         public void SetCounterTimingBar(float value)
         {
             counterTimingSlider.value = value;
+        }
+
+        public void SetCounterCommands(CommandType[] commands)
+        {
+            currentCommandObjects = new GameObject[commands.Length];
+            
+            for (var i = 0; i < commands.Length; i++)
+            {
+                var command = commands[i];
+                var commandObject = Instantiate(counterCommandPrefab, counterCommandsParent);
+                
+                var rotationAngle = command switch
+                {
+                    CommandType.Up => 0f,
+                    CommandType.Left => 90f,
+                    CommandType.Down => 180f,
+                    CommandType.Right => 270f,
+                    _ => 0f
+                };
+                commandObject.transform.rotation = Quaternion.Euler(0f, 0f, rotationAngle);
+
+                currentCommandObjects[i] = commandObject;
+            }
+        }
+
+        public void SetCounterCommandActive(int index)
+        {
+            currentCommandObjects[index].GetComponent<Image>().color = Color.yellow;
+            // TODO: fix this later
+        }
+        
+        public void ClearCounterCommands()
+        {
+            if (currentCommandObjects == null) return;
+            
+            foreach (var commandObject in currentCommandObjects)
+            {
+                Destroy(commandObject);
+            }
+            currentCommandObjects = null;
         }
         
         public void SetGladiatorHealth(float value)
