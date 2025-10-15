@@ -16,12 +16,14 @@ namespace Map
             if (progress >= requiredProgress)
             {
                 _enabled = true;
+                GetComponent<Collider2D>().enabled = true;
                 
                 // TODO: Update visual state to enabled
             }
             else
             {
                 _enabled = false;
+                GetComponent<Collider2D>().enabled = false;
                 
                 // TODO: Update visual state to disabled
             }
