@@ -163,11 +163,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 252951926684085014, guid: e7862fc36de37a94481f57db10bd85a3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.47
+      value: 0.47
       objectReference: {fileID: 0}
     - target: {fileID: 252951926684085014, guid: e7862fc36de37a94481f57db10bd85a3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.9
+      value: -2.06
       objectReference: {fileID: 0}
     - target: {fileID: 252951926684085014, guid: e7862fc36de37a94481f57db10bd85a3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -201,13 +201,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6219198515656873528, guid: e7862fc36de37a94481f57db10bd85a3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 100f02204db9b9d44b414a015e754209, type: 3}
     - target: {fileID: 7132145620976263425, guid: e7862fc36de37a94481f57db10bd85a3, type: 3}
       propertyPath: m_Name
       value: NodeTest3
       objectReference: {fileID: 0}
     - target: {fileID: 9194759096051406224, guid: e7862fc36de37a94481f57db10bd85a3, type: 3}
       propertyPath: placeName
-      value: Test3
+      value: Gwangju
       objectReference: {fileID: 0}
     - target: {fileID: 9194759096051406224, guid: e7862fc36de37a94481f57db10bd85a3, type: 3}
       propertyPath: description
@@ -667,11 +671,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 252951926684085014, guid: e7862fc36de37a94481f57db10bd85a3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.85
+      value: 3.68
       objectReference: {fileID: 0}
     - target: {fileID: 252951926684085014, guid: e7862fc36de37a94481f57db10bd85a3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.2
+      value: -0.71
       objectReference: {fileID: 0}
     - target: {fileID: 252951926684085014, guid: e7862fc36de37a94481f57db10bd85a3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -705,13 +709,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6219198515656873528, guid: e7862fc36de37a94481f57db10bd85a3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 100f02204db9b9d44b414a015e754209, type: 3}
     - target: {fileID: 7132145620976263425, guid: e7862fc36de37a94481f57db10bd85a3, type: 3}
       propertyPath: m_Name
       value: NodeTest2
       objectReference: {fileID: 0}
     - target: {fileID: 9194759096051406224, guid: e7862fc36de37a94481f57db10bd85a3, type: 3}
       propertyPath: placeName
-      value: Test2
+      value: Busan
       objectReference: {fileID: 0}
     - target: {fileID: 9194759096051406224, guid: e7862fc36de37a94481f57db10bd85a3, type: 3}
       propertyPath: description
@@ -1152,6 +1160,7 @@ MonoBehaviour:
   placeNameText: {fileID: 689528133}
   descriptionText: {fileID: 1848238383}
   currentProgress: 0
+  selectedNodeSceneName: 
 --- !u!4 &2029497710
 Transform:
   m_ObjectHideFlags: 0
@@ -1177,11 +1186,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 252951926684085014, guid: e7862fc36de37a94481f57db10bd85a3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1.78
       objectReference: {fileID: 0}
     - target: {fileID: 252951926684085014, guid: e7862fc36de37a94481f57db10bd85a3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2.07
       objectReference: {fileID: 0}
     - target: {fileID: 252951926684085014, guid: e7862fc36de37a94481f57db10bd85a3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1215,13 +1224,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6219198515656873528, guid: e7862fc36de37a94481f57db10bd85a3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 100f02204db9b9d44b414a015e754209, type: 3}
     - target: {fileID: 7132145620976263425, guid: e7862fc36de37a94481f57db10bd85a3, type: 3}
       propertyPath: m_Name
       value: NodeTest1
       objectReference: {fileID: 0}
     - target: {fileID: 9194759096051406224, guid: e7862fc36de37a94481f57db10bd85a3, type: 3}
       propertyPath: placeName
-      value: Test1
+      value: Seoul
       objectReference: {fileID: 0}
     - target: {fileID: 9194759096051406224, guid: e7862fc36de37a94481f57db10bd85a3, type: 3}
       propertyPath: description

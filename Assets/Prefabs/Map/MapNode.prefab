@@ -101,7 +101,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9ed8e5cf8261cf4d9ab3a30e0514008, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enabledSprite: {fileID: 21300000, guid: 100f02204db9b9d44b414a015e754209, type: 3}
+  disabledSprite: {fileID: 21300000, guid: 48753b92086764f4b93b8ca66646b7a1, type: 3}
   requiredProgress: 0
+  sceneName: 
   placeName: 
   description: 
 --- !u!58 &4453576404170257715

@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -8,7 +9,7 @@ namespace Map
         public static MapManager Instance { get; private set; }
 
         private const float CameraDefaultSize = 5f;
-        private const float CameraZoomedSize = 5.5f;
+        private const float CameraZoomedSize = 4.5f;
         private readonly Vector3 cameraOriginalPosition = new(0f, 0f, -10f);
         
         [Header("References")]
@@ -19,6 +20,9 @@ namespace Map
 
         [Header("Settings")]
         public int currentProgress;
+
+        [Header("Values")]
+        public string selectedNodeSceneName;
 
         private float _cameraZoomedOffsetX;
         private Camera _mainCamera;
@@ -65,6 +69,8 @@ namespace Map
         {
             placeNameText.text = node.placeName;
             descriptionText.text = node.description;
+            
+            selectedNodeSceneName = node.sceneName;
 
             leftPanel.SetActive(true);
             // TODO: Add animation
@@ -80,6 +86,8 @@ namespace Map
 
         public void FocusOff()
         {
+            selectedNodeSceneName = null;
+            
             leftPanel.SetActive(false);
             // TODO: Add animation
             
