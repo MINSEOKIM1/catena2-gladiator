@@ -75,7 +75,7 @@ namespace Bucket.Manager
         
         [Space(10)] [Header("ETC")]
         public List<EventData> dailyEvents = new List<EventData>();
-        public int dailyActivePoint = 2; //행동력
+        public int dailyActivePoint = 3; //행동력
 
 #region Basic
 
