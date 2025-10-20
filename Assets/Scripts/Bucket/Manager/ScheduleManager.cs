@@ -22,6 +22,7 @@ namespace Bucket.Manager
         Fight,
         Excercise,
         Event,
+        REST,
     }
     
     public class ScheduleManager : MonoBehaviour, IListener
@@ -67,7 +68,7 @@ namespace Bucket.Manager
             AddScheduleToList(new Schedule(1, 0, 1, CalendarUIDataType.Event, "Special Event!"));
             AddScheduleToList(new Schedule(1, 1, 3,  CalendarUIDataType.Fight));
             AddScheduleToList(new Schedule(3, 0, 2, CalendarUIDataType.Excercise));
-            AddScheduleToList(new Schedule(8, 1, 2, CalendarUIDataType.Excercise));
+            AddScheduleToList(new Schedule(8, 1, 2, CalendarUIDataType.REST));
             AddScheduleToList(new Schedule(15, 1, 2, CalendarUIDataType.Excercise));
             AddScheduleToList(new Schedule(18, 1, 2, CalendarUIDataType.Excercise));
         }
@@ -79,7 +80,6 @@ namespace Bucket.Manager
             EventManager.Instance.AddListener(EVENT_TYPE.eChallengeMail, this);
 
             DatePass();
-
         }
 
         public void OnEvent(EVENT_TYPE EventType, Component Sender, object Param1 = null, object Param2 = null)
@@ -128,6 +128,8 @@ namespace Bucket.Manager
             RefreshCalendarUI();
             
             //데일리 뉴스 띄우기
+            
+            DataManager.Instance.SaveDatas();
         }
 
         public void RefreshCalendarUI()
@@ -363,11 +365,15 @@ namespace Bucket.Manager
                 if (s.Key == date)
                 {
                     s.Value.AddSchedule(schedule);
+                    
+                    DataManager.Instance.SaveDatas();
                     return;
                 }
             }
             ScheduleList.Add(date, new DailySchedules());
             ScheduleList[date].AddSchedule(schedule);
+            
+            DataManager.Instance.SaveDatas();
         }
         
         public void RemoveScheduleFromList(Schedule schedule)
@@ -381,6 +387,7 @@ namespace Bucket.Manager
                     if (s.Value.schedules.Count == 0)
                     {
                         ScheduleList.Remove(date);
+                        DataManager.Instance.SaveDatas();
                     }
                     return;
                 }
@@ -445,6 +452,8 @@ namespace Bucket.Manager
                     return "훈련!";
                 case CalendarUIDataType.Event:
                     return eventName;
+                case CalendarUIDataType.REST:
+                    return "휴식!";
                 default:
                     Debug.LogError("Need to name the type of schedule to be string");
                     return "???";

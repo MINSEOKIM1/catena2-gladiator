@@ -101,6 +101,8 @@ namespace Bucket.Manager
         {
             EventManager.Instance.AddListener(EVENT_TYPE.eDatePass, this);
             EventManager.Instance.AddListener(EVENT_TYPE.eChallengeMail, this);
+            
+            DataManager.Instance.SaveDatas();
         }
 
         void Update()

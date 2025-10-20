@@ -34,6 +34,8 @@ namespace Bucket.Inventory
                 ManagementPhaseManager.Instance.RefreshStatInfo();
                 ManagementPhaseManager.Instance.RefreshCharacterImageOnBackground((EQUIPMENT_TYPE)type);
             }
+            
+            DataManager.Instance.SaveDatas();
         }
 
         /// <summary>
@@ -165,6 +167,8 @@ namespace Bucket.Inventory
                     ManagementPhaseManager.Instance.RefreshStatInfo();
                     ManagementPhaseManager.Instance.RefreshCharacterImageOnBackground(item.item.type);
                 }
+                
+                DataManager.Instance.SaveDatas();
                 return;
             }
             
@@ -182,6 +186,8 @@ namespace Bucket.Inventory
             ManagementPhaseManager.Instance.fighters[0].Equipments.EquipNewEquipment(target.GetComponentInChildren<InventoryItem>().item, item.item.type);
             ManagementPhaseManager.Instance.RefreshStatInfo();
             ManagementPhaseManager.Instance.RefreshCharacterImageOnBackground(item.item.type);
+            
+            DataManager.Instance.SaveDatas();
         }
     }
 }

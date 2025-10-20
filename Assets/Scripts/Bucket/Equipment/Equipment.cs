@@ -7,6 +7,7 @@ namespace Bucket
 {
     public enum EQUIPMENT_TYPE
     {
+        NULL = -1,
         HELMET,
         CHESTPLATE,
         LEGGINGS,
@@ -83,6 +84,14 @@ namespace Bucket
         public string itemInfo = "Item Info";
         
         public List<AttributeSet> attributes = new();
+
+        public Equipment()
+        {
+            type = EQUIPMENT_TYPE.NULL;
+            itemName = "";
+            this.uiIcon = null;
+            this.gameIcon = null;
+        }
         
         public Equipment(EQUIPMENT_TYPE equipmentType, string name, Sprite uiIcon, Sprite gameIcon)
         {
@@ -144,6 +153,7 @@ namespace Bucket
 
         public override string ToString()
         {
+            if (string.IsNullOrEmpty(itemName)) return "Null Item";
             string s = $"{itemName}\n{EQUIPMENT_KOTRANSLATE.ToString(type)}\n";
 
             /*
