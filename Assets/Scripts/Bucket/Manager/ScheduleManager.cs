@@ -65,9 +65,12 @@ namespace Bucket.Manager
             }
             //DestroyImmediate(gameObject);
             
+            currentCalendarUITypeObject = calendarContentBox.transform.GetChild((int)currentCalendarUIType).gameObject;
+            
             AddScheduleToList(new Schedule(1, 0, 1, CalendarUIDataType.Event, "Special Event!"));
             AddScheduleToList(new Schedule(1, 1, 3,  CalendarUIDataType.Fight));
             AddScheduleToList(new Schedule(3, 0, 2, CalendarUIDataType.Excercise));
+            AddScheduleToList(new Schedule(7, 1, 2, CalendarUIDataType.REST));
             AddScheduleToList(new Schedule(8, 1, 2, CalendarUIDataType.REST));
             AddScheduleToList(new Schedule(15, 1, 2, CalendarUIDataType.Excercise));
             AddScheduleToList(new Schedule(18, 1, 2, CalendarUIDataType.Excercise));
@@ -75,16 +78,14 @@ namespace Bucket.Manager
 
         void Start()
         {
-            currentCalendarUITypeObject = calendarContentBox.transform.GetChild((int)currentCalendarUIType).gameObject;
-            
             EventManager.Instance.AddListener(EVENT_TYPE.eChallengeMail, this);
 
             DatePass();
         }
 
-        public void OnEvent(EVENT_TYPE EventType, Component Sender, object Param1 = null, object Param2 = null)
+        public void OnEvent(EVENT_TYPE eventType, Component sender, object param1 = null, object param2 = null)
         {
-            switch (EventType)
+            switch (eventType)
             {
                 case EVENT_TYPE.eChallengeMail:
                     //스케쥴에 결투 일정 표시
@@ -122,16 +123,60 @@ namespace Bucket.Manager
             newsText += scheduleList[date - 1].table2.GetWinner(true)?.FighterName + " wins " +
                         scheduleList[date - 1].table2.GetWinner(false)?.FighterName + "\n";
             ManagementPhaseManager.Instance.OpenDailyNews(date.ToString() + " 일차 소식", newsText);*/
-
+            
             //TODO
             //스케쥴 최신화
             RefreshCalendarUI();
             
             //데일리 뉴스 띄우기
             
+            EventManager.Instance.PostNotification(EVENT_TYPE.eDatePass, this, date);
+            
             DataManager.Instance.SaveDatas();
         }
-
+        
+        
+        public void AddScheduleToList(Schedule schedule)
+        {
+            int date = schedule.scheduleDate;
+            foreach (KeyValuePair<int, DailySchedules> s in ScheduleList)
+            {
+                if (s.Key == date)
+                {
+                    s.Value.AddSchedule(schedule);
+                    
+                    RefreshCalendarUI();
+                    DataManager.Instance.SaveDatas();
+                    return;
+                }
+            }
+            ScheduleList.Add(date, new DailySchedules());
+            ScheduleList[date].AddSchedule(schedule);
+            
+            RefreshCalendarUI();
+            DataManager.Instance.SaveDatas();
+        }
+        
+        public void RemoveScheduleFromList(Schedule schedule)
+        {
+            int date = schedule.scheduleDate;
+            foreach (KeyValuePair<int, DailySchedules> s in ScheduleList)
+            {
+                if (s.Key == date)
+                {
+                    s.Value.RemoveSchedule(schedule);
+                    if (s.Value.schedules.Count == 0)
+                    {
+                        ScheduleList.Remove(date);
+                        
+                        RefreshCalendarUI();
+                        DataManager.Instance.SaveDatas();
+                    }
+                    return;
+                }
+            }
+        }
+#region UI
         public void RefreshCalendarUI()
         {
             CancelInvoke();
@@ -290,7 +335,7 @@ namespace Bucket.Manager
             GameObject dataObj = currentCalendarUITypeObject.transform.GetChild(1).gameObject;
             
             //showing start to end
-            int startDay = CurrentDisplayDate - CurrentDisplayDate % 7 + 1;
+            int startDay = (CurrentDisplayDate - 1) / 7 * 7 + 1;
             int endDay = startDay + 6;
 
             for (int i = startDay; i <= endDay; i++)
@@ -304,7 +349,7 @@ namespace Bucket.Manager
                     int x = s.startTime;
                     int y = s.endTime;
 
-                    Transform target = dataObj.transform.GetChild(i % 7 + 7 * (y - 1) - 1);
+                    Transform target = dataObj.transform.GetChild((i - 1) % 7 + 7 * (y - 1));
                     
                     target.GetChild(0).GetComponent<RectTransform>().sizeDelta = new Vector2(100, 105 * (y - x) - 5);
                     target.GetChild(0).GetComponent<Image>().color = Color.yellow;
@@ -356,47 +401,14 @@ namespace Bucket.Manager
                 }
             }
         }
-        
-        public void AddScheduleToList(Schedule schedule)
-        {
-            int date = schedule.scheduleDate;
-            foreach (KeyValuePair<int, DailySchedules> s in ScheduleList)
-            {
-                if (s.Key == date)
-                {
-                    s.Value.AddSchedule(schedule);
-                    
-                    DataManager.Instance.SaveDatas();
-                    return;
-                }
-            }
-            ScheduleList.Add(date, new DailySchedules());
-            ScheduleList[date].AddSchedule(schedule);
-            
-            DataManager.Instance.SaveDatas();
-        }
-        
-        public void RemoveScheduleFromList(Schedule schedule)
-        {
-            int date = schedule.scheduleDate;
-            foreach (KeyValuePair<int, DailySchedules> s in ScheduleList)
-            {
-                if (s.Key == date)
-                {
-                    s.Value.RemoveSchedule(schedule);
-                    if (s.Value.schedules.Count == 0)
-                    {
-                        ScheduleList.Remove(date);
-                        DataManager.Instance.SaveDatas();
-                    }
-                    return;
-                }
-            }
-        }
+#endregion UI
     }
 
     //시간을 0 - 1 - 2 - 3으로 분할 (0-1이 아침, 1-2가 점심, 2-3이 저녁, 0-2면 아침 점심 다 하는거)
     //행동력이 4면 4까지 확장
+    /// <summary>
+    /// TODO 추가적인 스케쥴 종류가 생기면 생성자 추가 가능
+    /// </summary>
     [Serializable]
     public class Schedule
     {
@@ -447,7 +459,7 @@ namespace Bucket.Manager
             {
                 case CalendarUIDataType.Fight:
                     if (fighter1 == null || fighter2 == null) return "??? vs ???";
-                    return fighter1.ToString() + " vs " + fighter2.ToString();
+                    return fighter1.FighterName + " vs " + fighter2.FighterName;
                 case CalendarUIDataType.Excercise:
                     return "훈련!";
                 case CalendarUIDataType.Event:

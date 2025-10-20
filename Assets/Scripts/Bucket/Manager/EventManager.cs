@@ -82,6 +82,6 @@ namespace Bucket
 
     public interface IListener
     {
-        void OnEvent(EVENT_TYPE EventType, Component Sender, object Param1 = null, object Param2 = null);
+        void OnEvent(EVENT_TYPE eventType, Component sender, object param1 = null, object param2 = null);
     }
 }

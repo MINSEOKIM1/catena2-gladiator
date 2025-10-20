@@ -1,3 +1,3 @@
 Event_Type,Start_Date,End_Date,Possibility,Action_Power_Amount
-Challenge_Mail,1,9999,0.4,30
+Challenge_Mail,1,9999,1,30
 Sign_Show,1,9999,0.6,15

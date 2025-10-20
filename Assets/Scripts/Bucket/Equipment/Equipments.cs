@@ -131,7 +131,6 @@ namespace Bucket
             int power = 0;
             foreach (Equipment e in GetParts())
             {
-                Debug.Log(e);
                 if (e != null && !string.IsNullOrEmpty(e.itemName)) power += e.GetAttributeValue(EQUIPMENT_ATTRIBUTE.ATTACK_POWER);
                 //what the fuck
                 //monobehaviour 상속하면 이 함수가 작동한다는 사실

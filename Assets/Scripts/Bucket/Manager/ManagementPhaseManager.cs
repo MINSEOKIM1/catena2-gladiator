@@ -70,12 +70,16 @@ namespace Bucket.Manager
         [SerializeField] private GameObject popUpItemInfoContentBox;
         [SerializeField] private GameObject scrollViewContentBox;
         [SerializeField] private GameObject NewsBack;
+        [SerializeField] private GameObject ChallengeMail;
 
         private Coroutine showItemInfoOnHoverCoroutine = null;
         
         [Space(10)] [Header("ETC")]
         public List<EventData> dailyEvents = new List<EventData>();
         public int dailyActivePoint = 3; //행동력
+        private int challengeMailDate;
+        private int challengeMailTime;
+        private Fighter ChallengeMailFighter;
 
 #region Basic
 
@@ -132,9 +136,9 @@ namespace Bucket.Manager
             }
         }
 
-        public void OnEvent(EVENT_TYPE EventType, Component Sender, object Param1 = null, object Param2 = null)
+        public void OnEvent(EVENT_TYPE eventType, Component sender, object param1 = null, object param2 = null)
         {
-            switch (EventType)
+            switch (eventType)
             {
                 case EVENT_TYPE.eDatePass:
                     RefreshFighterRanking();
@@ -142,6 +146,7 @@ namespace Bucket.Manager
                     ExpectDailyEvent();
                     break;
                 case EVENT_TYPE.eChallengeMail:
+                    DisplayChallengeMail((int) param1, (Fighter) param2);
                     break;
             }
         }
@@ -149,12 +154,60 @@ namespace Bucket.Manager
 #endregion
         
 #region UI
-
-        public void OpenDailyNews(string newsDateText, string newsText)
+        
+        private void DisplayDailyNews(string newsDateText, string newsText)
         {
             NewsBack.SetActive(true);
             NewsBack.transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = newsDateText;
             NewsBack.transform.GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>().text = newsText;
+        }
+
+        /// <summary>
+        /// 싸움 신청 왔을 때 메일 띄우기
+        /// </summary>
+        /// <param name="date">몇 일 후인지</param>
+        /// <param name="enemy">싸움 신청을 한 적</param>
+        private void DisplayChallengeMail(int num, Fighter enemy)
+        {
+            ChallengeMail.SetActive(true);
+            
+            challengeMailDate = num / 10;
+            challengeMailTime = num % 10;
+            string s = "";
+            
+            //TODO
+            //행동력 증가하면 수정해야함
+            if (challengeMailTime == 0)
+            {
+                s = "오전";
+            }
+            else if (challengeMailTime == 1)
+            {
+                s = "오후";
+            }
+            
+            ChallengeMailFighter = enemy;
+            
+            ChallengeMail.SetActive(true);
+            ChallengeMail.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = $"{enemy.FighterName} 으로부터 결투 신청이 왔습니다\n" +
+                $"결투 예정일 : {challengeMailDate}일 후 {s}\n수락하시겠습니까?";
+        }
+
+        public void AcceptChallengeMail()
+        {
+            ScheduleManager.Instance.AddScheduleToList(new Schedule(ScheduleManager.Instance.Date + challengeMailDate, challengeMailTime, challengeMailTime + 2, CalendarUIDataType.Fight, fighters[0], ChallengeMailFighter));
+            challengeMailDate = 0;
+            challengeMailTime = 0;
+            ChallengeMailFighter = null;
+            
+            ChallengeMail.SetActive(false);
+        }
+
+        public void RejectChallengeMail()
+        {
+            challengeMailDate = Mathf.Max(1, challengeMailDate - 1);
+            
+            ChallengeMail.SetActive(false);
         }
 
         public void OpenPhaseScreen(string state)
@@ -433,7 +486,12 @@ namespace Bucket.Manager
                     switch (e.eventName.TrimEnd())
                     {
                         case "Challenge_Mail":
-                            EventManager.Instance.PostNotification(EVENT_TYPE.eChallengeMail, this, GetRandomFighter());
+                            if (challengeMailDate != 0)
+                            {
+                                EventManager.Instance.PostNotification(EVENT_TYPE.eChallengeMail, this,challengeMailDate * 10 + challengeMailTime, ChallengeMailFighter);
+                                break;
+                            }
+                            EventManager.Instance.PostNotification(EVENT_TYPE.eChallengeMail, this,Random.Range(1, 5) * 10 + Random.Range(0, 2) , GetRandomFighter());
                             break;
                         case "Sign_Show":
                             break;
