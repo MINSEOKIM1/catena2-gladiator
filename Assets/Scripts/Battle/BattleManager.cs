@@ -59,7 +59,8 @@ namespace Battle
 
         [Header("References")]
         [SerializeField] private UIManager uiManager;
-
+        [SerializeField] private Animator gladiatorAnimator;
+        [SerializeField] private Animator enemyAnimator;
 
         private void Awake()
         {
@@ -227,7 +228,8 @@ namespace Battle
             actionDuration = gladiatorAttackSequence[0].durationBase;
 
             ToggleAttackUI(true);
-            // TODO: Attacking animation
+            
+            gladiatorAnimator.SetBool("Attack", true);
         }
 
         private void PerformAttack()
@@ -293,6 +295,8 @@ namespace Battle
             isEnemyAttackAvailable = true;
             
             ToggleAttackUI(false);
+
+            gladiatorAnimator.SetBool("Attack", false);
         }
 
         private void OnCounter(CommandType type)
@@ -329,6 +333,8 @@ namespace Battle
         private void PerformCounter()
         {
             Debug.Log($"Perform gladiator counter");
+            
+            gladiatorAnimator.SetTrigger("Counter");
 
             if (combo == enemyAttackSequence.Length - 1)
             {
@@ -344,6 +350,8 @@ namespace Battle
         private void PerformDodge()
         {
             Debug.Log("Dodge enemy attack");
+            
+            gladiatorAnimator.SetTrigger("Dodge");
             
             FinishEnemyAttack();
         }
@@ -418,6 +426,8 @@ namespace Battle
             var damageMax = currentAction.damageMax;
             var damage = Random.Range(damageMin, damageMax + 1);    // Min/Max inclusive
             DamageGladiator(damage);
+            
+            gladiatorAnimator.SetTrigger("Hit");
 
             if (combo == enemyAttackSequence.Length - 1)
             {
