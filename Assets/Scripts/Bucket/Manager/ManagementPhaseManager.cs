@@ -189,8 +189,12 @@ namespace Bucket.Manager
             ChallengeMailFighter = enemy;
             
             ChallengeMail.SetActive(true);
-            ChallengeMail.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = $"{enemy.FighterName} 으로부터 결투 신청이 왔습니다\n" +
-                $"결투 예정일 : {challengeMailDate}일 후 {s}\n수락하시겠습니까?";
+            ChallengeMail.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = 
+                $"{enemy.FighterName} 으로부터 결투 신청이 왔습니다\n" +
+                $"결투 예정일 : {challengeMailDate}일 후 {s}\n" +
+                "필요 행동력 : 2\n" +
+                "수락하시겠습니까?\n" +
+                "<color=red>수락하시면 겹치는 스케쥴은 사라집니다.</color>";
         }
 
         public void AcceptChallengeMail()

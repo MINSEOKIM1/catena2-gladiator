@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
@@ -143,6 +144,15 @@ namespace Bucket.Manager
             {
                 if (s.Key == date)
                 {
+                    //겹치는 스케쥴을 추가하면 원래거 삭제하기
+                    foreach (var sc in s.Value.schedules.ToList())
+                    {
+                        if (sc.endTime > schedule.startTime || schedule.endTime > schedule.startTime)
+                        {
+                            s.Value.schedules.Remove(sc);
+                        }
+                    }
+                    
                     s.Value.AddSchedule(schedule);
                     
                     RefreshCalendarUI();
@@ -150,6 +160,7 @@ namespace Bucket.Manager
                     return;
                 }
             }
+                
             ScheduleList.Add(date, new DailySchedules());
             ScheduleList[date].AddSchedule(schedule);
             
