@@ -15,12 +15,7 @@ namespace Training
         [SerializeField] private TMP_Text statusText;
 
         [Header("Character")]
-        [SerializeField] private SpriteRenderer character;
-
-        [Space(10)]
-        [SerializeField] private Sprite characterIdleSprite;
-        [SerializeField] private Sprite characterTrainingAttackSprite;
-        [SerializeField] private Sprite characterTrainingDefenseSprite;
+        [SerializeField] private Animator characterAnimator;
 
         private void SetButtonsInteractable(bool value)
         {
@@ -38,7 +33,8 @@ namespace Training
             
             yield return new WaitForSeconds(trainingDuration);
 
-            character.sprite = characterIdleSprite;
+            characterAnimator.SetBool("Attack", false);
+            characterAnimator.SetBool("Defense", false);
             SetButtonsInteractable(true);
             statusText.gameObject.SetActive(true);
 
@@ -56,7 +52,7 @@ namespace Training
             // TODO: Apply training outcome
 
             statusText.text = $"공격력이 {atkIncrease} 증가했습니다!";
-            character.sprite = characterTrainingAttackSprite;
+            characterAnimator.SetBool("Attack", true);
             
             StartCoroutine(PerformTraining());
         }
@@ -70,7 +66,7 @@ namespace Training
             // TODO: Apply training outcome
 
             statusText.text = $"방어력이 {defIncrease} 증가했습니다!";
-            character.sprite = characterTrainingDefenseSprite;
+            characterAnimator.SetBool("Defense", true);
             
             StartCoroutine(PerformTraining());
         }

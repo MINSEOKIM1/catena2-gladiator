@@ -246,10 +246,7 @@ MonoBehaviour:
   defenseTrainingButton: {fileID: 1252291578}
   quitButton: {fileID: 1520388910}
   statusText: {fileID: 1256544519}
-  character: {fileID: 2047084140}
-  characterIdleSprite: {fileID: 21300000, guid: 46dd9d96bd3c84d439aa4967a049f3d6, type: 3}
-  characterTrainingAttackSprite: {fileID: 21300000, guid: c5fc10644a0aed54bacb7f54d0ae845b, type: 3}
-  characterTrainingDefenseSprite: {fileID: 21300000, guid: 235208b1bdfdcbb4b82f0d617c05f5b0, type: 3}
+  characterAnimator: {fileID: 2047084142}
 --- !u!1 &1005218316
 GameObject:
   m_ObjectHideFlags: 0
@@ -1396,6 +1393,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2047084141}
   - component: {fileID: 2047084140}
+  - component: {fileID: 2047084142}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -1473,6 +1471,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &2047084142
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047084139}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 56f5d01cdf70bff49a561f165e846980, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2115451113
 GameObject:
   m_ObjectHideFlags: 0
