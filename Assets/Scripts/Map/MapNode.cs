@@ -1,8 +1,9 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace Map
 {
-    public class MapNode : MonoBehaviour
+    public class MapNode : MonoBehaviour, IPointerDownHandler
     {
         [Header("Assets")]
         [SerializeField] private Sprite enabledSprite;
@@ -15,33 +16,28 @@ namespace Map
         public string placeName;
         [Multiline] public string description;
 
-        private bool _enabled;
+        [Header("Values")]
+        public bool nodeEnabled;
 
         public void SetNodeState(int progress)
         {
             if (progress >= requiredProgress)
             {
-                _enabled = true;
+                nodeEnabled = true;
                 GetComponent<Collider2D>().enabled = true;
                 GetComponent<SpriteRenderer>().sprite = enabledSprite;
-
-                // TODO: Update visual state to enabled
             }
             else
             {
-                _enabled = false;
+                nodeEnabled = false;
                 GetComponent<Collider2D>().enabled = false;
                 GetComponent<SpriteRenderer>().sprite = disabledSprite;
-                
-                // TODO: Update visual state to disabled
             }
         }
 
-        private void OnMouseDown()
+        public void OnPointerDown(PointerEventData eventData)
         {
-            if (!_enabled) return;
-            
-            Debug.Log("OnMouseDown");
+            if (!nodeEnabled) return;
             
             MapManager.Instance.FocusOnNode(this);
         }

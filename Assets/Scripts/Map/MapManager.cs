@@ -1,6 +1,6 @@
-using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Map
 {
@@ -14,7 +14,11 @@ namespace Map
         
         [Header("References")]
         [SerializeField] private GameObject nodesParent;
+
+        [Header("UI")]
+        [SerializeField] private GameObject focusOffButton;
         [SerializeField] private GameObject leftPanel;
+        [SerializeField] private GameObject moveButton;
         [SerializeField] private TMP_Text placeNameText;
         [SerializeField] private TMP_Text descriptionText;
 
@@ -72,7 +76,9 @@ namespace Map
             
             selectedNodeSceneName = node.sceneName;
 
+            focusOffButton.SetActive(true);
             leftPanel.SetActive(true);
+            moveButton.SetActive(true);
             // TODO: Add animation
 
             _mainCamera.orthographicSize = CameraZoomedSize;
@@ -88,11 +94,19 @@ namespace Map
         {
             selectedNodeSceneName = null;
             
+            focusOffButton.SetActive(false);
             leftPanel.SetActive(false);
+            moveButton.SetActive(false);
             // TODO: Add animation
             
             _mainCamera.orthographicSize = CameraDefaultSize;
             _mainCamera.transform.position = cameraOriginalPosition;
+        }
+
+        public void MoveToSelectedNode()
+        {
+            if (string.IsNullOrEmpty(selectedNodeSceneName)) return;
+            SceneManager.LoadScene(selectedNodeSceneName);
         }
     }
 }
