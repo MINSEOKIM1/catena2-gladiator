@@ -78,6 +78,7 @@ namespace Bucket
     {
         eDatePass, //param is next date
         eChallengeMail,
+        eChangeOnSchedule,
     };
 
     public interface IListener
