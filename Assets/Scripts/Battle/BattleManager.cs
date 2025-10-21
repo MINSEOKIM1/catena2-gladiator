@@ -229,12 +229,15 @@ namespace Battle
 
             ToggleAttackUI(true);
             
-            gladiatorAnimator.SetBool("Attack", true);
+            gladiatorAnimator.SetBool("PreAttack", true);
         }
 
         private void PerformAttack()
         {
             Debug.Log("Perform gladiator attack");
+            
+            gladiatorAnimator.SetTrigger("Attack");
+            enemyAnimator.SetTrigger("Hit");
 
             var currentAction = gladiatorAttackSequence[combo];
             
@@ -296,7 +299,7 @@ namespace Battle
             
             ToggleAttackUI(false);
 
-            gladiatorAnimator.SetBool("Attack", false);
+            gladiatorAnimator.SetBool("PreAttack", false);
         }
 
         private void OnCounter(CommandType type)
@@ -335,6 +338,8 @@ namespace Battle
             Debug.Log($"Perform gladiator counter");
             
             gladiatorAnimator.SetTrigger("Counter");
+            enemyAnimator.SetTrigger("Attack");
+            enemyAnimator.SetBool("PreAttack", false);
 
             if (combo == enemyAttackSequence.Length - 1)
             {
@@ -352,6 +357,8 @@ namespace Battle
             Debug.Log("Dodge enemy attack");
             
             gladiatorAnimator.SetTrigger("Dodge");
+            enemyAnimator.SetTrigger("Attack");
+            enemyAnimator.SetBool("PreAttack", false);
             
             FinishEnemyAttack();
         }
@@ -373,6 +380,8 @@ namespace Battle
         private void StartEnemyAttack()
         {
             Debug.Log("Start enemy attack");
+            
+            enemyAnimator.SetBool("PreAttack", true);
             
             battleState = BattleState.EnemyAttack;
             isEnemyAttackAvailable = false;
@@ -411,6 +420,8 @@ namespace Battle
             actionTimer = 0f;
             actionDuration = enemyAttackSequence[combo].durationBase;
             
+            enemyAnimator.SetBool("PreAttack", true);
+            
             SetCurrentCounterCommands(CounterCommandCount);
             uiManager.SetCounterCommands(currentCommands);
             uiManager.ToggleCounterPopup(true);
@@ -428,6 +439,8 @@ namespace Battle
             DamageGladiator(damage);
             
             gladiatorAnimator.SetTrigger("Hit");
+            enemyAnimator.SetTrigger("Attack");
+            enemyAnimator.SetBool("PreAttack", false);
 
             if (combo == enemyAttackSequence.Length - 1)
             {
