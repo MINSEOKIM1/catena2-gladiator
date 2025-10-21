@@ -792,6 +792,10 @@ PrefabInstance:
       value: "\uC0C1\uC810"
       objectReference: {fileID: 0}
     - target: {fileID: 9194759096051406224, guid: e7862fc36de37a94481f57db10bd85a3, type: 3}
+      propertyPath: sceneName
+      value: Scenes/Shop
+      objectReference: {fileID: 0}
+    - target: {fileID: 9194759096051406224, guid: e7862fc36de37a94481f57db10bd85a3, type: 3}
       propertyPath: description
       value: "\uD14C\uC2A4\uD2B8"
       objectReference: {fileID: 0}
