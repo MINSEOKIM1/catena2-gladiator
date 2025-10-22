@@ -84,6 +84,15 @@ namespace Bucket.Manager
         {
             EventManager.Instance.AddListener(EVENT_TYPE.eChangeOnSchedule, this);
             
+            DatePass();
+            
+            //TODO 데이터매니저에서 스케쥴 빼오기
+            /*
+            ScheduleList = LoadScheduleData()
+            EventManager.Instance.PostNotification(EVENT_TYPE.eChangeOnSchedule, this);
+             */
+            
+            //테스트용으로 스케쥴 만들기임
             AddScheduleToList(new Schedule(1, 0, 1, CalendarUIDataType.Event, "Special Event!"));
             AddScheduleToList(new Schedule(1, 1, 3,  CalendarUIDataType.Fight));
             AddScheduleToList(new Schedule(2, 1, 3,  CalendarUIDataType.Fight));
@@ -92,8 +101,6 @@ namespace Bucket.Manager
             AddScheduleToList(new Schedule(8, 1, 2, CalendarUIDataType.REST));
             AddScheduleToList(new Schedule(15, 1, 2, CalendarUIDataType.Excercise));
             AddScheduleToList(new Schedule(18, 1, 2, CalendarUIDataType.Excercise));
-
-            DatePass();
         }
 
         public void OnEvent(EVENT_TYPE eventType, Component sender, object param1 = null, object param2 = null)
@@ -322,7 +329,7 @@ namespace Bucket.Manager
 
         private void MakeDayDataDetail()
         {
-            if (!ScheduleList.TryGetValue(CurrentDisplayDate, out var value)) return;
+            if (!ScheduleList.TryGetValue(CurrentDisplayDate, out DailySchedules value)) return;
             List<Schedule> sl = value.schedules;
             
             foreach (Schedule s in sl)
@@ -352,6 +359,13 @@ namespace Bucket.Manager
             {
                 Instantiate(weekDataPrefab, dataObj.transform);
             }
+
+            for (int i = 0; i < 7; i++)
+            {
+                currentCalendarUITypeObject.transform.GetChild(0).GetChild(i).GetComponent<Image>().color = new Color(57 / 255f, 169 / 255f, 255 / 255f, 1);
+            }
+            
+            currentCalendarUITypeObject.transform.GetChild(0).GetChild((date - 1) % 7).GetComponent<Image>().color = new Color(255 / 255f, 248 / 255f, 57 / 255f, 1);
         }
 
         private void MakeWeekDataDetail()
@@ -395,6 +409,13 @@ namespace Bucket.Manager
             {
                 Instantiate(weekDataPrefab, dataObj.transform);
             }
+            
+            for (int i = 0; i < 7; i++)
+            {
+                currentCalendarUITypeObject.transform.GetChild(0).GetChild(i).GetComponent<Image>().color = new Color(57 / 255f, 169 / 255f, 255 / 255f, 1);
+            }
+            
+            currentCalendarUITypeObject.transform.GetChild(0).GetChild((date - 1) % 7).GetComponent<Image>().color = new Color(255 / 255f, 248 / 255f, 57 / 255f, 1);
         }
         
         private void MakeMonthDataDetail()
@@ -431,8 +452,6 @@ namespace Bucket.Manager
 
         private void RefreshPlayEventButton()
         {
-            if (!ScheduleList.ContainsKey(date)) return;
-            
             if (ManagementPhaseManager.Instance.dailyActivePoint <= time)
             {
                 //하루가 끝난거
@@ -440,8 +459,21 @@ namespace Bucket.Manager
                 return;
             }
             
+            if (!ScheduleList.ContainsKey(date))
+            {
+                //날에 스케쥴이 없을 때
+                EditPlayEventButton(true, "시간 때우기", () =>
+                {
+                    Debug.Log("시간 + 1");
+                    time += 1;
+                    RefreshPlayEventButton();
+                });
+                return;
+            }
+            
             List<Schedule> dailySc = ScheduleList[date].schedules.ToList();
-            int nextTime = 99;
+            int maxTime = 99;
+            int nextTime = maxTime;
 
             MyFunc mF = null;
             
@@ -499,12 +531,34 @@ namespace Bucket.Manager
                     }
                 }
             }
+
+            //오늘 스케쥴은 다 끝남
+            if (time == maxTime)
+            {
+                EditPlayEventButton(true, "시간 때우기", () =>
+                {
+                    Debug.Log("시간 + 1");
+                    time += 1;
+                    RefreshPlayEventButton();
+                });
+                return;
+            }
             
+            //오늘 스케쥴 더 있음
             //다음 스케쥴까지 시간 때우기
-            EditPlayEventButton(true, "다음 스케쥴로!", () =>
+            
+            //다음 스케쥴로 바로 시간 보내기
+            /*EditPlayEventButton(true, "다음 스케쥴로!", () =>
             {
                 Debug.Log("다음 스케쥴까지 시간 때우기");
                 time = nextTime;
+                RefreshPlayEventButton();
+            });*/
+            
+            EditPlayEventButton(true, "시간 때우기", () =>
+            {
+                Debug.Log("시간 + 1");
+                time += 1;
                 RefreshPlayEventButton();
             });
         }
