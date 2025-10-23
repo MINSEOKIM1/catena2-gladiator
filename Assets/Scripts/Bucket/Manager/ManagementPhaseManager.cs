@@ -6,6 +6,7 @@ using Bucket.Inventory;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
@@ -151,6 +152,11 @@ namespace Bucket.Manager
             }
         }
 
+        public void OnMove()
+        {
+            SceneManager.LoadScene("Scenes/Map");
+        }
+
 #endregion
         
 #region UI
@@ -189,7 +195,7 @@ namespace Bucket.Manager
             ChallengeMailFighter = enemy;
             
             ChallengeMail.SetActive(true);
-            ChallengeMail.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = 
+            ChallengeMail.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = 
                 $"{enemy.FighterName} 으로부터 결투 신청이 왔습니다\n" +
                 $"결투 예정일 : {challengeMailDate}일 후 {s}\n" +
                 "필요 행동력 : 2\n" +
@@ -585,9 +591,9 @@ namespace Bucket.Manager
                 $"{nameModifiers1[Random.Range(0, nameModifiers1.Length)]}{nameModifiers2[Random.Range(0, nameModifiers2.Length)]}{nameModifiers3[Random.Range(0, nameModifiers3.Length)]}";
         }
     
-        private string[] nameModifiers1 = new[] { "Yang", "Jeon", "Gim", "Son", "Jeong" };
-        private string[] nameModifiers2 = new[] { "Dong", "Min", "Se", "Ho", "Seo" };
-        private string[] nameModifiers3 = new[] { "Hwan", "Seo", "Hyun", "Jae", "Yun" };
+        private string[] nameModifiers1 = new[] { "양", "전", "김", "손", "정" };
+        private string[] nameModifiers2 = new[] { "동", "민", "세", "호", "서" };
+        private string[] nameModifiers3 = new[] { "환", "서", "현", "재", "윤" };
 
         /// <summary>
         /// without player

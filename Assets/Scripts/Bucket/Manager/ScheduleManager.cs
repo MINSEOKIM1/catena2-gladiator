@@ -72,35 +72,42 @@ namespace Bucket.Manager
             if (_instance == null)
             {
                 _instance = this;
-                //DontDestroyOnLoad(gameObject);
-                //return;
+                // DontDestroyOnLoad(gameObject);
+                // return;
             }
-            //DestroyImmediate(gameObject);
+            // DestroyImmediate(gameObject);
             
             currentCalendarUITypeObject = calendarContentBox.transform.GetChild((int)currentCalendarUIType).gameObject;
+            
+            if (DataManager.Instance.scheduleList != null) ScheduleList = DataManager.Instance.scheduleList;
         }
 
         void Start()
         {
             EventManager.Instance.AddListener(EVENT_TYPE.eChangeOnSchedule, this);
-            
+
             DatePass();
-            
+
             //TODO 데이터매니저에서 스케쥴 빼오기
             /*
             ScheduleList = LoadScheduleData()
             EventManager.Instance.PostNotification(EVENT_TYPE.eChangeOnSchedule, this);
              */
-            
+
             //테스트용으로 스케쥴 만들기임
-            AddScheduleToList(new Schedule(1, 0, 1, CalendarUIDataType.Event, "Special Event!"));
-            AddScheduleToList(new Schedule(1, 1, 3,  CalendarUIDataType.Fight));
-            AddScheduleToList(new Schedule(2, 1, 3,  CalendarUIDataType.Fight));
-            AddScheduleToList(new Schedule(3, 0, 2, CalendarUIDataType.Excercise));
-            AddScheduleToList(new Schedule(7, 1, 2, CalendarUIDataType.REST));
-            AddScheduleToList(new Schedule(8, 1, 2, CalendarUIDataType.REST));
-            AddScheduleToList(new Schedule(15, 1, 2, CalendarUIDataType.Excercise));
-            AddScheduleToList(new Schedule(18, 1, 2, CalendarUIDataType.Excercise));
+            // AddScheduleToList(new Schedule(1, 0, 1, CalendarUIDataType.Event, "Special Event!"));
+            // AddScheduleToList(new Schedule(1, 1, 3,  CalendarUIDataType.Fight));
+            // AddScheduleToList(new Schedule(2, 1, 3,  CalendarUIDataType.Fight));
+            // AddScheduleToList(new Schedule(3, 0, 2, CalendarUIDataType.Excercise));
+            // AddScheduleToList(new Schedule(7, 1, 2, CalendarUIDataType.REST));
+            // AddScheduleToList(new Schedule(8, 1, 2, CalendarUIDataType.REST));
+            // AddScheduleToList(new Schedule(15, 1, 2, CalendarUIDataType.Excercise));
+            // AddScheduleToList(new Schedule(18, 1, 2, CalendarUIDataType.Excercise));
+        }
+
+        private void Update()
+        {
+            RefreshCalendarUI();
         }
 
         public void OnEvent(EVENT_TYPE eventType, Component sender, object param1 = null, object param2 = null)

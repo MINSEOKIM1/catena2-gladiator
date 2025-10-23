@@ -15,6 +15,8 @@ namespace Bucket.Manager
         public InventorySlot[] unEquippedinventorySlots;
         public int date;
         public int activePoint;
+        public int popularity = 30;
+        public int money = 50;
         
         public static DataManager Instance
         {
