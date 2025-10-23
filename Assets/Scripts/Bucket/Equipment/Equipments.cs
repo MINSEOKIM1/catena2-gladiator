@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Bucket
@@ -46,7 +47,7 @@ namespace Bucket
             { 
                 case EQUIPMENT_TYPE.HELMET:
                     //_helmet = (Helmet)newEquipment;
-                    if (newEquipment == null) _helmet = null;
+                    if (newEquipment == null) _helmet = new Equipment() as Helmet;
                     else
                     {
                         _helmet = new Helmet(newEquipment.itemName, newEquipment.uiIcon, newEquipment.gameIcon);
@@ -56,7 +57,7 @@ namespace Bucket
                     break;
                 case EQUIPMENT_TYPE.CHESTPLATE:
                     //_chestplate = (Chestplate)newEquipment;
-                    if (newEquipment == null) _chestplate = null;
+                    if (newEquipment == null) _chestplate = new Equipment() as Chestplate;
                     else
                     {
                         _chestplate = new Chestplate(newEquipment.itemName, newEquipment.uiIcon, newEquipment.gameIcon);
@@ -66,7 +67,7 @@ namespace Bucket
                     break;
                 case EQUIPMENT_TYPE.LEGGINGS:
                     //_leggings = (Leggings)newEquipment;
-                    if (newEquipment == null) _leggings = null;
+                    if (newEquipment == null) _leggings = new Equipment() as Leggings;
                     else
                     {
                         _leggings = new Leggings(newEquipment.itemName, newEquipment.uiIcon, newEquipment.gameIcon);
@@ -76,7 +77,7 @@ namespace Bucket
                     break;
                 case EQUIPMENT_TYPE.BOOTS:
                     //_boots = (Boots)newEquipment;
-                    if (newEquipment == null) _boots = null;
+                    if (newEquipment == null) _boots = new Equipment() as Boots;
                     else
                     {
                         _boots = new Boots(newEquipment.itemName, newEquipment.uiIcon, newEquipment.gameIcon);
@@ -86,7 +87,7 @@ namespace Bucket
                     break;
                 case EQUIPMENT_TYPE.WEAPON:
                     //_weapon = (Weapon)newEquipment;
-                    if (newEquipment == null) _weapon = null;
+                    if (newEquipment == null) _weapon = new Equipment() as Weapon;
                     else
                     {
                         _weapon = new Weapon(newEquipment.itemName, newEquipment.uiIcon, newEquipment.gameIcon);
@@ -115,10 +116,10 @@ namespace Bucket
                 _ => null
             };
         }
-
-        public Equipment[] GetParts()
+        
+        public List<Equipment> GetParts()
         {
-            return new Equipment[]{_helmet, _chestplate, _leggings,  _boots, _weapon};
+            return new List<Equipment>{_helmet, _chestplate, _leggings,  _boots, _weapon};
         }
 
         /// <summary>
@@ -130,8 +131,10 @@ namespace Bucket
             int power = 0;
             foreach (Equipment e in GetParts())
             {
-                if (e == null) continue;
-                power += e.GetAttributeValue(EQUIPMENT_ATTRIBUTE.ATTACK_POWER);
+                if (e != null && !string.IsNullOrEmpty(e.itemName)) power += e.GetAttributeValue(EQUIPMENT_ATTRIBUTE.ATTACK_POWER);
+                //what the fuck
+                //monobehaviour 상속하면 이 함수가 작동한다는 사실
+                //if (e != null) power += e.GetAttributeValue(EQUIPMENT_ATTRIBUTE.ATTACK_POWER);
             }
             
             return power;
@@ -142,8 +145,7 @@ namespace Bucket
             int power = 0;
             foreach (Equipment e in GetParts())
             {
-                if (e == null) continue;
-                power += e.GetAttributeValue(EQUIPMENT_ATTRIBUTE.DEFENSE);
+                if (e != null && !string.IsNullOrEmpty(e.itemName)) power += e.GetAttributeValue(EQUIPMENT_ATTRIBUTE.DEFENSE);
             }
             
             return power;
