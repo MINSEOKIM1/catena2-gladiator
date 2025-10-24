@@ -98,10 +98,11 @@ namespace Battle
             
             // Hard-coded, temporary values
             // TODO: Set health values
-            gladiatorHealth = gladiatorMaxHealth = 100;
+            gladiatorHealth = DataManager.Instance.hp;
+            gladiatorMaxHealth = 100;
             enemyHealth = enemyMaxHealth = 100;
             
-            uiManager.SetGladiatorHealth(1f);
+            uiManager.SetGladiatorHealth(DataManager.Instance.hp / 100f);
             uiManager.SetEnemyHealth(1f);
         }
 
