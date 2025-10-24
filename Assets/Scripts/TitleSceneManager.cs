@@ -17,7 +17,7 @@ public class TitleSceneManager : MonoBehaviour
     {
         fadeImage.gameObject.SetActive(true);
 
-        while (fadeImage.color.a < 1f)
+        while (fadeImage.color.a < 0.95f)
         {
             fadeImage.color = Color.Lerp(fadeImage.color, Color.black, timeToFadeIn * Time.deltaTime);
             yield return null;

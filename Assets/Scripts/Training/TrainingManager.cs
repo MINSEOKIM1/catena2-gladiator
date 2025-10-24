@@ -1,5 +1,7 @@
 using System.Collections;
+using Bucket.Manager;
 using TMPro;
+using UnityEditor.Searcher;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -16,6 +18,8 @@ namespace Training
 
         [Header("Character")]
         [SerializeField] private Animator characterAnimator;
+
+        private bool attack;
 
         private void SetButtonsInteractable(bool value)
         {
@@ -37,6 +41,9 @@ namespace Training
             characterAnimator.SetBool("Defense", false);
             SetButtonsInteractable(true);
             statusText.gameObject.SetActive(true);
+            
+            if (attack) ManagementPhaseManager.Instance.fighters[0].AddBasicDamage(2);
+            else ManagementPhaseManager.Instance.fighters[0].AddBasicDefense(2);
 
             yield return new WaitForSeconds(trainingStatusDisplayDuration);
             
@@ -48,11 +55,13 @@ namespace Training
             SetButtonsInteractable(false);
             
             // TODO: Determine training outcome value
-            const int atkIncrease = 15;
+            const int atkIncrease = 2;
             // TODO: Apply training outcome
 
             statusText.text = $"공격력이 {atkIncrease} 증가했습니다!";
             characterAnimator.SetBool("Attack", true);
+
+            attack = true;
             
             StartCoroutine(PerformTraining());
         }
@@ -62,11 +71,13 @@ namespace Training
             SetButtonsInteractable(false);
             
             // TODO: Determine training outcome value
-            const int defIncrease = 15;
+            const int defIncrease = 2;
             // TODO: Apply training outcome
 
             statusText.text = $"방어력이 {defIncrease} 증가했습니다!";
             characterAnimator.SetBool("Defense", true);
+            
+            attack = false;
             
             StartCoroutine(PerformTraining());
         }

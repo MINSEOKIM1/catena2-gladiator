@@ -17,6 +17,7 @@ namespace Bucket.Manager
         public int activePoint;
         public int popularity = 30;
         public int money = 50;
+        public bool firstSetFighters = false;
         
         public static DataManager Instance
         {

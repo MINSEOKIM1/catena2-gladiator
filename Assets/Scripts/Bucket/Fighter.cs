@@ -48,6 +48,13 @@ namespace Bucket
         [SerializeField]
         private int basicDamage = 0;
 
+        public int BasicDefense
+        {
+            get { return basicDefense; }
+        }
+        [SerializeField]
+        private int basicDefense = 0;
+        
         public int Popularity
         {
             get { return popularity; }
@@ -74,7 +81,27 @@ namespace Bucket
 
         public int GetTotalPower()
         {
-            return basicDamage + Equipments.GetTotalEquipmentPower();
+            return GetTotalAttackPower() + GetTotalDefensePower();
+        }
+
+        public int GetTotalAttackPower()
+        {
+            return basicDamage + Equipments.GetAttackPower();
+        }
+
+        public int GetTotalDefensePower()
+        {
+            return basicDefense + Equipments.GetDefensePower();
+        }
+
+        public void AddBasicDamage(int damage)
+        {
+            basicDamage += damage;
+        }
+
+        public void AddBasicDefense(int defense)
+        {
+            basicDefense += defense;
         }
         
         public void WinMatch(Fighter enemy)

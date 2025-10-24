@@ -18,10 +18,10 @@ namespace Bucket
             if(_instance == null)
             {
                 _instance = this;
-                DontDestroyOnLoad(gameObject);
-                return;
+                // DontDestroyOnLoad(gameObject);
+                // return;
             }
-            DestroyImmediate(gameObject);
+            // DestroyImmediate(gameObject);
         }
     
         public void AddListener(EVENT_TYPE eventType, IListener Listener)

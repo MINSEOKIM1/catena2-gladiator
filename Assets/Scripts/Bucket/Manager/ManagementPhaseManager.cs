@@ -95,9 +95,7 @@ namespace Bucket.Manager
             }
             //DestroyImmediate(gameObject);
             
-            LoadDailyEvent();
-            
-            InitializeFighters(8);
+            // LoadDailyEvent();
             
             RefreshRankingUI();
         }
@@ -106,6 +104,16 @@ namespace Bucket.Manager
         {
             EventManager.Instance.AddListener(EVENT_TYPE.eDatePass, this);
             EventManager.Instance.AddListener(EVENT_TYPE.eChallengeMail, this);
+            
+            if (!DataManager.Instance.firstSetFighters)
+            {
+                InitializeFighters(8);
+                DataManager.Instance.firstSetFighters = true;
+            }
+            else
+            {
+                fighters = DataManager.Instance.fighters;
+            }
             
             DataManager.Instance.SaveDatas();
         }
@@ -518,7 +526,7 @@ namespace Bucket.Manager
             EventManager.Instance.PostNotification(EVENT_TYPE.eChallengeMail, this, GetRandomFighter(), true);
         }
 
-        private void InitializeFighters(int numOfFighters = 1)
+        public void InitializeFighters(int numOfFighters = 1)
         {
             numOfFighters = Mathf.Max(1, numOfFighters);
             //0번째가 플레이어
@@ -540,6 +548,8 @@ namespace Bucket.Manager
             {
                 fightersSortByPower[i].CurrentRank = fightersSortByPower.Count - i;
             }
+            
+            
         }
         
         private Equipments MakeRandomEquips()
