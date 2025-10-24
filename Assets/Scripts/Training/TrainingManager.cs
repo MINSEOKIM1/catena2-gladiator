@@ -1,7 +1,6 @@
 using System.Collections;
 using Bucket.Manager;
 using TMPro;
-using UnityEditor.Searcher;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;

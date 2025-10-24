@@ -609,8 +609,10 @@ namespace Bucket.Manager
                         case CalendarUIDataType.REST:
                             mF += () =>
                             {
+#if UNITYEDITOR
                                 Debug.Log("휴식");
                                 UnityEditor.EditorApplication.isPlaying = false;
+#endif
                             };
                             EditPlayEventButton(true, "휴식!", mF);
                             return;

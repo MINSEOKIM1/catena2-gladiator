@@ -152,7 +152,9 @@ namespace Bucket.Manager
 
             if (Input.GetKeyDown(KeyCode.Escape))
             {
+#if UNITYEDITOR
                 EditorApplication.isPaused = true;
+#endif
             }
         }
 
