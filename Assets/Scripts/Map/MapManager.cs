@@ -56,7 +56,20 @@ namespace Map
         private void Start()
         {
             // TODO: Get currentProgress
-            
+            currentProgress = 0;
+            if (DataManager.Instance.scheduleList.ContainsKey(DataManager.Instance.date))
+            {
+                var schedules = DataManager.Instance.scheduleList[DataManager.Instance.date].schedules;
+
+                foreach (var s in schedules)
+                {
+                    if (s.startTime == DataManager.Instance.time)
+                    {
+                        currentProgress = 1;
+                    }
+                }
+            }
+
             InitializeNodes();
         }
 

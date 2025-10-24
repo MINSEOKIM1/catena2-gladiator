@@ -31,7 +31,7 @@ namespace Training
         private IEnumerator PerformTraining()
         {
             const float trainingDuration = 3f;
-            const float trainingStatusDisplayDuration = 1f;
+            const float trainingStatusDisplayDuration = 3f;
             
             // TODO: Add character training animation
             
@@ -53,7 +53,12 @@ namespace Training
                 statusText.text = $"방어력이 2 증가했습니다!\n시간이 지났습니다.";
             }
 
-            DataManager.Instance.TimePassNoShow();
+            if (DataManager.Instance.TimePassNoShow())
+            {
+                statusText.text += "\n예정된 경기를 진행하지 않아 인기도가 하락하였습니다...";
+            }
+
+            DataManager.Instance.hp -= 15;
 
             yield return new WaitForSeconds(trainingStatusDisplayDuration);
             
@@ -62,7 +67,14 @@ namespace Training
 
         private IEnumerator FailTraining()
         {
-            statusText.text = $"밤에는 잠을 자야합니다. 돌아갑시다...";
+            if (DataManager.Instance.hp <= 15)
+            {
+                statusText.text = $"체력이 너무 없습니다...";                
+            }
+            else
+            {
+                statusText.text = $"밤에는 잠을 자야합니다. 돌아갑시다...";
+            }
             statusText.gameObject.SetActive(true);
             
             yield return new WaitForSeconds(1f);
@@ -73,7 +85,7 @@ namespace Training
         
         public void TrainAttack()
         {
-            if (DataManager.Instance.time == 3)
+            if (DataManager.Instance.time == 3 || DataManager.Instance.hp < 15)
             {
                 StartCoroutine(FailTraining());
                 return;
@@ -95,7 +107,7 @@ namespace Training
         
         public void TrainDefense()
         {
-            if (DataManager.Instance.time == 3)
+            if (DataManager.Instance.time == 3 || DataManager.Instance.hp < 15)
             {
                 StartCoroutine(FailTraining());
                 return;

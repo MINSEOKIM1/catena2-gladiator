@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 76a827c0b7b700d4fa9e135b970a64b1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 33cd3b491748050418115b4d3a0b6534, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -101,12 +101,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9ed8e5cf8261cf4d9ab3a30e0514008, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enabledSprite: {fileID: 21300000, guid: 76a827c0b7b700d4fa9e135b970a64b1, type: 3}
-  disabledSprite: {fileID: 21300000, guid: 76a827c0b7b700d4fa9e135b970a64b1, type: 3}
+  enabledSprite: {fileID: 21300000, guid: 33cd3b491748050418115b4d3a0b6534, type: 3}
+  disabledSprite: {fileID: 21300000, guid: f9619563aba8b7542abf0aabdc638afe, type: 3}
   requiredProgress: 0
-  sceneName: Scenes/Shop
-  placeName: "\uC0C1\uC810"
-  description: "\uD14C\uC2A4\uD2B8"
+  sceneName: Scenes/Training
+  placeName: "\uD6C8\uB828\uC7A5"
+  description: "\uD55C \uC2DC\uAC04\uB300\uB97C \uC0AC\uC6A9\uD558\uC5EC \uD6C8\uB828\uC744
+    \uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
   nodeEnabled: 0
 --- !u!58 &4453576404170257715
 CircleCollider2D:

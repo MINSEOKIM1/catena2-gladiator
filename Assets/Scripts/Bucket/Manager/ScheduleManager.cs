@@ -130,8 +130,39 @@ namespace Bucket.Manager
             }
         }
 
+        public Image fadeoutPanel;
+        IEnumerator SceneFadeOut()
+        {
+            fadeoutPanel.gameObject.SetActive(true);
+            var color = Color.black;
+
+            while (color.a > 0)
+            {
+                color.a -= UnityEngine.Time.deltaTime;
+                fadeoutPanel.color = color;
+                yield return null;
+            }
+            fadeoutPanel.gameObject.SetActive(false);
+        }
         public void DatePass()
         {
+            StartCoroutine(SceneFadeOut());
+            if (ScheduleList.ContainsKey(date))
+            {
+                var schedules = ScheduleList[date].schedules;
+
+                foreach (var s in schedules)
+                {
+                    if (s.startTime >= time)
+                    {
+                        s.noshow = true;
+                        DataManager.Instance.popularity -= 15;
+                    }
+                }
+            }
+
+            DataManager.Instance.hp += (100 - DataManager.Instance.hp) / 2; 
+            
             date++;
             CurrentDisplayDate = date;
             time = 0;
@@ -164,6 +195,8 @@ namespace Bucket.Manager
             
             RefreshCalendarUI();
             RefreshPlayEventButton();
+            
+            
             
             //TODO 데일리 뉴스 띄우기
             
@@ -238,7 +271,7 @@ namespace Bucket.Manager
                     break;
                 case CalendarUIType.Week:
                     calendarContentBox.GetComponent<VerticalLayoutGroup>().childControlHeight = true;
-                    
+                    CurrentDisplayDate = date;
                     MakeWeekDataFormat();
                     Invoke(nameof(MakeWeekDataDetail), 0);
                     
@@ -373,7 +406,9 @@ namespace Bucket.Manager
             int activePoint = ManagementPhaseManager.Instance.dailyActivePoint;
             for (int i = 0; i < activePoint * 7; i++)
             {
-                Instantiate(weekDataPrefab, dataObj.transform);
+                var go = Instantiate(weekDataPrefab, dataObj.transform);
+                if (i % 7 < CurrentDisplayDate % 7 - 1) go.GetComponentInChildren<Image>().color = Color.grey;
+                else if (i % 7 == CurrentDisplayDate % 7 - 1 && i / 7 < time) go.GetComponentInChildren<Image>().color = Color.grey;
             }
 
             for (int i = 0; i < 7; i++)

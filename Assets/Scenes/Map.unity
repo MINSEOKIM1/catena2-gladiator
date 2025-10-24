@@ -164,11 +164,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 252951926684085014, guid: e7862fc36de37a94481f57db10bd85a3, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 252951926684085014, guid: e7862fc36de37a94481f57db10bd85a3, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 252951926684085014, guid: e7862fc36de37a94481f57db10bd85a3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -210,6 +210,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6219198515656873528, guid: e7862fc36de37a94481f57db10bd85a3, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6219198515656873528, guid: e7862fc36de37a94481f57db10bd85a3, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6219198515656873528, guid: e7862fc36de37a94481f57db10bd85a3, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7132145620976263425, guid: e7862fc36de37a94481f57db10bd85a3, type: 3}
       propertyPath: m_Name
       value: BattleNode
@@ -232,7 +244,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9194759096051406224, guid: e7862fc36de37a94481f57db10bd85a3, type: 3}
       propertyPath: requiredProgress
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -481,11 +493,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 252951926684085014, guid: e7862fc36de37a94481f57db10bd85a3, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 252951926684085014, guid: e7862fc36de37a94481f57db10bd85a3, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 252951926684085014, guid: e7862fc36de37a94481f57db10bd85a3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1832,11 +1844,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 252951926684085014, guid: e7862fc36de37a94481f57db10bd85a3, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 252951926684085014, guid: e7862fc36de37a94481f57db10bd85a3, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 252951926684085014, guid: e7862fc36de37a94481f57db10bd85a3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1881,19 +1893,6 @@ PrefabInstance:
     - target: {fileID: 7132145620976263425, guid: e7862fc36de37a94481f57db10bd85a3, type: 3}
       propertyPath: m_Name
       value: TrainingNode
-      objectReference: {fileID: 0}
-    - target: {fileID: 9194759096051406224, guid: e7862fc36de37a94481f57db10bd85a3, type: 3}
-      propertyPath: placeName
-      value: "\uD6C8\uB828\uC7A5"
-      objectReference: {fileID: 0}
-    - target: {fileID: 9194759096051406224, guid: e7862fc36de37a94481f57db10bd85a3, type: 3}
-      propertyPath: sceneName
-      value: Scenes/Training
-      objectReference: {fileID: 0}
-    - target: {fileID: 9194759096051406224, guid: e7862fc36de37a94481f57db10bd85a3, type: 3}
-      propertyPath: description
-      value: "\uD55C \uC2DC\uAC04\uB300\uB97C \uC0AC\uC6A9\uD558\uC5EC \uD6C8\uB828\uC744
-        \uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

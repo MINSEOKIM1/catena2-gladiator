@@ -47,20 +47,28 @@ namespace Bucket.Manager
             DestroyImmediate(gameObject);
         }
 
-        public void TimePassNoShow()
+        public bool TimePassNoShow()
         {
-            var schedules = scheduleList[date].schedules;
-
-            foreach (var s in schedules)
+            bool noshow = false;
+            
+            if (scheduleList.ContainsKey(date))
             {
-                if (s.startTime == time)
+                var schedules = scheduleList[date].schedules;
+
+                foreach (var s in schedules)
                 {
-                    s.noshow = true;
-                    popularity -= 15;
+                    if (s.startTime == time)
+                    {
+                        noshow = true;
+                        s.noshow = true;
+                        popularity -= 15;
+                    }
                 }
             }
 
             time += 1;
+
+            return noshow;
         }
         
         public void SaveDatas()
