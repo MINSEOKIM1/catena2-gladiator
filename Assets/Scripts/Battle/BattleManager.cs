@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 using Action;
+using Bucket.Manager;
+using TMPro;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 namespace Battle
@@ -12,7 +15,8 @@ namespace Battle
     {
         Idle = 0,
         GladiatorAttack,
-        EnemyAttack
+        EnemyAttack,
+        End
     }
 
     public enum CommandType
@@ -62,6 +66,9 @@ namespace Battle
         [SerializeField] private Animator gladiatorAnimator;
         [SerializeField] private Animator enemyAnimator;
 
+        public TMP_Text casterText;
+        private Coroutine _caseterCoroutine;
+
         private void Awake()
         {
             var attackAction = InputSystem.actions.FindAction("Attack");
@@ -84,6 +91,8 @@ namespace Battle
             battleState = BattleState.Idle;
             attackCooldownRemaining = 0f;
             isEnemyAttackAvailable = false;
+
+            CasterSay("경기 시작합니다!");
             
             // TODO: Load sequences from other scene
             
@@ -146,12 +155,23 @@ namespace Battle
                     }
 
                     break;
+                case BattleState.End:
+                    break;
 
                 default:
                     throw new ArgumentOutOfRangeException(nameof(battleState), battleState, null);
             }
 
             attackCooldownRemaining -= Time.deltaTime;
+        }
+
+        private IEnumerator CasterText()
+        {
+            casterText.gameObject.SetActive(true);
+
+            yield return new WaitForSeconds(2f);
+            
+            casterText.gameObject.SetActive(false);
         }
 
         private void OnAttack(InputAction.CallbackContext _)
@@ -236,8 +256,7 @@ namespace Battle
         {
             Debug.Log("Perform gladiator attack");
             
-            gladiatorAnimator.SetTrigger("Attack");
-            enemyAnimator.SetTrigger("Hit");
+            
 
             var currentAction = gladiatorAttackSequence[combo];
             
@@ -246,6 +265,29 @@ namespace Battle
             var correctTimingEnd = currentAction.correctTimingEndRatio;
             if (actionRatio >= correctTimingStart && actionRatio <= correctTimingEnd)
             {
+                gladiatorAnimator.SetTrigger("Attack");
+                enemyAnimator.SetTrigger("Hit");
+                
+                string tmp;
+                switch (combo)
+                {
+                    case 0:
+                        tmp = "첫 번째 공격이 성공합니다! 연계를 이어나갑니다!";
+                        break;
+                    case 1:
+                        tmp = "두 번째 공격도 성공합니다! 마지막 공격을 준비합니다!";
+                        DataManager.Instance.popularity += 1;
+                        break;
+                    case 2:
+                        tmp = "마지막 일격 성공합니다! 관객들이 환호합니다!";
+                        DataManager.Instance.popularity += 3;
+                        break;
+                    default:
+                        tmp = "에러임";
+                        break;
+                }
+                CasterSay(tmp);
+                
                 Debug.Log("Hit");
 
                 var damageMin = currentAction.damageMin;
@@ -257,7 +299,7 @@ namespace Battle
                 
                 combo++;
                 
-                if (combo == gladiatorAttackSequence.Length)
+                if (combo == gladiatorAttackSequence.Length || enemyHealth <= 0)
                 {
                     FinishAttack();
                 }
@@ -270,8 +312,19 @@ namespace Battle
             {
                 Debug.Log("Miss");
 
+                string tmp = "공격에 실패합니다... 관객들이 야유를 하는 모습입니다.";
+                DataManager.Instance.popularity -= 2;
+                CasterSay(tmp);
+
                 FinishAttack();
             }
+        }
+
+        private void CasterSay(string text)
+        {
+            if (_caseterCoroutine != null) StopCoroutine(_caseterCoroutine);
+            _caseterCoroutine = StartCoroutine(CasterText()); 
+            casterText.text = text;
         }
 
         private IEnumerator ContinueAttackAfterDelay(float delay)
@@ -340,8 +393,12 @@ namespace Battle
             gladiatorAnimator.SetTrigger("Counter");
             enemyAnimator.SetTrigger("Attack");
             enemyAnimator.SetBool("PreAttack", false);
-
-            if (combo == enemyAttackSequence.Length - 1)
+            
+            string tmp = "막아냅니다!";
+            CasterSay(tmp);
+            
+            
+            if (combo == enemyAttackSequence.Length - 1 || gladiatorHealth <= 0)
             {
                 FinishEnemyAttack();
             }
@@ -359,6 +416,10 @@ namespace Battle
             gladiatorAnimator.SetTrigger("Dodge");
             enemyAnimator.SetTrigger("Attack");
             enemyAnimator.SetBool("PreAttack", false);
+            
+            string tmp = "얍삽하게 회피하는 모습입니다... 관객들이 야유를 하는 모습입니다.";
+            DataManager.Instance.popularity -= 5;
+            CasterSay(tmp);
             
             FinishEnemyAttack();
         }
@@ -441,6 +502,10 @@ namespace Battle
             gladiatorAnimator.SetTrigger("Hit");
             enemyAnimator.SetTrigger("Attack");
             enemyAnimator.SetBool("PreAttack", false);
+            
+            string tmp = "세게 들어갑니다! 아프겠당";
+            CasterSay(tmp);
+
 
             if (combo == enemyAttackSequence.Length - 1)
             {
@@ -471,12 +536,26 @@ namespace Battle
             Debug.Log($"Gladiator takes {damage} damage");
 
             gladiatorHealth -= damage;
-            if (gladiatorHealth < 0) gladiatorHealth = 0;
+            if (gladiatorHealth < 0)
+            {
+                string tmp = "패배했습니다...";
+                CasterSay(tmp);
+                DataManager.Instance.hp = 1;
+                
+                StartCoroutine(GoToScene());
+                
+                gladiatorHealth = 0;
+
+                battleState = BattleState.End;
+            }
 
             var healthRatio = (float)gladiatorHealth / gladiatorMaxHealth;
             uiManager.SetGladiatorHealth(healthRatio);
             
+            
             // TODO: Implement game over
+            
+            
         }
 
         private void DamageEnemy(int damage)
@@ -484,12 +563,36 @@ namespace Battle
             Debug.Log($"Enemy takes {damage} damage");
 
             enemyHealth -= damage;
-            if (enemyHealth < 0) enemyHealth = 0;
+            if (enemyHealth < 0)
+            {
+                string tmp = "통쾌한 승리! 끼얏호우";
+                DataManager.Instance.popularity += 3;
+                DataManager.Instance.money += 15;
+                DataManager.Instance.hp = gladiatorHealth;
+                CasterSay(tmp);
+
+                StartCoroutine(GoToScene());
+                
+                enemyHealth = 0;
+                
+                battleState = BattleState.End;
+            }
             
             var healthRatio = (float)enemyHealth / enemyMaxHealth;
             uiManager.SetEnemyHealth(healthRatio);
             
+            
             // TODO: Implement enemy defeat
+            
+            
+        }
+
+
+        private IEnumerator GoToScene()
+        {
+            yield return new WaitForSeconds(2f);
+            DataManager.Instance.time += 2;
+            SceneManager.LoadScene("Scenes/Map");
         }
     }
 }

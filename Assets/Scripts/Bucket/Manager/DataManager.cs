@@ -46,6 +46,22 @@ namespace Bucket.Manager
             
             DestroyImmediate(gameObject);
         }
+
+        public void TimePassNoShow()
+        {
+            var schedules = scheduleList[date].schedules;
+
+            foreach (var s in schedules)
+            {
+                if (s.startTime == time)
+                {
+                    s.noshow = true;
+                    popularity -= 15;
+                }
+            }
+
+            time += 1;
+        }
         
         public void SaveDatas()
         {

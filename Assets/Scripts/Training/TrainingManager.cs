@@ -53,7 +53,7 @@ namespace Training
                 statusText.text = $"방어력이 2 증가했습니다!\n시간이 지났습니다.";
             }
 
-            DataManager.Instance.time += 1;
+            DataManager.Instance.TimePassNoShow();
 
             yield return new WaitForSeconds(trainingStatusDisplayDuration);
             

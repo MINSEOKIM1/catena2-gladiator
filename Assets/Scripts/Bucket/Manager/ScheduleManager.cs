@@ -378,7 +378,7 @@ namespace Bucket.Manager
 
             for (int i = 0; i < 7; i++)
             {
-                currentCalendarUITypeObject.transform.GetChild(0).GetChild(i).GetComponent<Image>().color = new Color(57 / 255f, 169 / 255f, 255 / 255f, 1);
+                currentCalendarUITypeObject.transform.GetChild(0).GetChild(i).GetComponent<Image>().color = new Color(0 , 0, 0 , 1);
             }
             
             currentCalendarUITypeObject.transform.GetChild(0).GetChild((date - 1) % 7).GetComponent<Image>().color = new Color(255 / 255f, 248 / 255f, 57 / 255f, 1);
@@ -406,7 +406,45 @@ namespace Bucket.Manager
                     Transform target = dataObj.transform.GetChild((i - 1) % 7 + 7 * (y - 1));
                     
                     target.GetChild(0).GetComponent<RectTransform>().sizeDelta = new Vector2(100, 105 * (y - x) - 5);
-                    target.GetChild(0).GetComponent<Image>().color = Color.yellow;
+
+                    if (s.scheduleDate < date)
+                    {
+                        if (s.noshow)
+                        {
+                            target.GetChild(0).GetComponent<Image>().color = Color.red;
+                        }
+                        else
+                        {
+                            target.GetChild(0).GetComponent<Image>().color = Color.grey;
+                        }
+                    }
+                    else if (s.scheduleDate == date)
+                    {
+                        if (s.startTime > time)
+                        {
+                            target.GetChild(0).GetComponent<Image>().color = Color.yellow;
+                        }
+                        else if (s.startTime == time && date == s.scheduleDate)
+                        {
+                            target.GetChild(0).GetComponent<Image>().color = Color.green;
+                        }
+                        else
+                        {
+                            if (s.noshow)
+                            {
+                                target.GetChild(0).GetComponent<Image>().color = Color.red;
+                            }
+                            else
+                            {
+                                target.GetChild(0).GetComponent<Image>().color = Color.grey;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        target.GetChild(0).GetComponent<Image>().color = Color.yellow;
+                    }
+
                     target.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = s.ToString();
                 }
             }
@@ -603,6 +641,8 @@ namespace Bucket.Manager
         public int startTime;
         public int endTime;
         public CalendarUIDataType scheduleType;
+
+        public bool noshow;
 
         //type : fight
         public Fighter fighter1 = null;

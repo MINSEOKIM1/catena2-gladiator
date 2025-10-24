@@ -224,11 +224,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9194759096051406224, guid: e7862fc36de37a94481f57db10bd85a3, type: 3}
       propertyPath: description
-      value: "\uD14C\uC2A4\uD2B8"
+      value: "\uC804\uD22C\uB97C \uD558\uB7EC \uAC11\uC2DC\uB2E4!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 9194759096051406224, guid: e7862fc36de37a94481f57db10bd85a3, type: 3}
+      propertyPath: nodeEnabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9194759096051406224, guid: e7862fc36de37a94481f57db10bd85a3, type: 3}
       propertyPath: requiredProgress
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -537,7 +541,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9194759096051406224, guid: e7862fc36de37a94481f57db10bd85a3, type: 3}
       propertyPath: description
-      value: "\uD14C\uC2A4\uD2B8"
+      value: "\uB2F9\uC2E0\uC758 \uC219\uC18C\uC785\uB2C8\uB2E4."
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -552,6 +556,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1860376233}
     m_Modifications:
+    - target: {fileID: 4712921817067944226, guid: 9215a6fe8aa259844887d5e48e25b008, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4712921817067944226, guid: 9215a6fe8aa259844887d5e48e25b008, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4841132026049235735, guid: 9215a6fe8aa259844887d5e48e25b008, type: 3}
       propertyPath: m_Name
       value: Upperbar
@@ -1880,7 +1892,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9194759096051406224, guid: e7862fc36de37a94481f57db10bd85a3, type: 3}
       propertyPath: description
-      value: "\uD14C\uC2A4\uD2B8"
+      value: "\uD55C \uC2DC\uAC04\uB300\uB97C \uC0AC\uC6A9\uD558\uC5EC \uD6C8\uB828\uC744
+        \uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
