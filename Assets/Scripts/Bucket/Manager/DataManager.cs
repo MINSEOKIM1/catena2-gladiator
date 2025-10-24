@@ -11,13 +11,20 @@ namespace Bucket.Manager
     {
         public SerializableDictionary<int, DailySchedules> scheduleList =  new SerializableDictionary<int, DailySchedules>();
         public List<Fighter> fighters = new List<Fighter>();
+        public List<ManagementPhaseManager.EventData> events;
         public InventorySlot[] equippedinventorySlots;
         public InventorySlot[] unEquippedinventorySlots;
         public int date;
+        public int time;
         public int activePoint;
         public int popularity = 30;
         public int money = 50;
+        
         public bool firstSetFighters = false;
+        public bool loadData = false;
+        public bool firstDatePass = false;
+
+        public int hp = 100;
         
         public static DataManager Instance
         {
@@ -33,19 +40,25 @@ namespace Bucket.Manager
             {
                 _instance = this;
                 DontDestroyOnLoad(gameObject);
+                
                 return;
             }
+            
             DestroyImmediate(gameObject);
         }
-
+        
         public void SaveDatas()
         {
+            date = ScheduleManager.Instance.Date;
             scheduleList = ScheduleManager.Instance.ScheduleList;
             fighters = ManagementPhaseManager.Instance.fighters;
             equippedinventorySlots = ManagementPhaseManager.Instance.equippedinventorySlots;
             unEquippedinventorySlots = ManagementPhaseManager.Instance.unEquippedinventorySlots;
             date = ScheduleManager.Instance.Date;
             activePoint = ManagementPhaseManager.Instance.dailyActivePoint;
+            time = ScheduleManager.Instance.Time;
+            
+            events = ManagementPhaseManager.Instance.dailyEvents;
         }
     }
 }

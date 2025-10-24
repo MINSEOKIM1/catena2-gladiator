@@ -78,15 +78,24 @@ namespace Bucket.Manager
             // DestroyImmediate(gameObject);
             
             currentCalendarUITypeObject = calendarContentBox.transform.GetChild((int)currentCalendarUIType).gameObject;
-            
-            if (DataManager.Instance.scheduleList != null) ScheduleList = DataManager.Instance.scheduleList;
+
+            if (DataManager.Instance.scheduleList != null)
+            {
+                date = DataManager.Instance.date;
+                time = DataManager.Instance.time;
+                ScheduleList = DataManager.Instance.scheduleList;
+            }
         }
 
         void Start()
         {
             EventManager.Instance.AddListener(EVENT_TYPE.eChangeOnSchedule, this);
-
-            DatePass();
+            
+            if (!DataManager.Instance.firstDatePass)
+            {
+                DatePass();
+                DataManager.Instance.firstDatePass = true;
+            }
 
             //TODO 데이터매니저에서 스케쥴 빼오기
             /*
@@ -121,7 +130,7 @@ namespace Bucket.Manager
             }
         }
 
-        private void DatePass()
+        public void DatePass()
         {
             date++;
             CurrentDisplayDate = date;

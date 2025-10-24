@@ -41,24 +41,51 @@ namespace Training
             characterAnimator.SetBool("Defense", false);
             SetButtonsInteractable(true);
             statusText.gameObject.SetActive(true);
-            
-            if (attack) ManagementPhaseManager.Instance.fighters[0].AddBasicDamage(2);
-            else ManagementPhaseManager.Instance.fighters[0].AddBasicDefense(2);
+
+            if (attack)
+            {
+                ManagementPhaseManager.Instance.fighters[0].AddBasicDamage(2);
+                statusText.text = $"공격력이 2 증가했습니다!\n시간이 지났습니다.";
+            }
+            else
+            {
+                ManagementPhaseManager.Instance.fighters[0].AddBasicDefense(2);
+                statusText.text = $"방어력이 2 증가했습니다!\n시간이 지났습니다.";
+            }
+
+            DataManager.Instance.time += 1;
 
             yield return new WaitForSeconds(trainingStatusDisplayDuration);
             
             statusText.gameObject.SetActive(false);
         }
+
+        private IEnumerator FailTraining()
+        {
+            statusText.text = $"밤에는 잠을 자야합니다. 돌아갑시다...";
+            statusText.gameObject.SetActive(true);
+            
+            yield return new WaitForSeconds(1f);
+            
+            statusText.gameObject.SetActive(false);
+        }
+        
         
         public void TrainAttack()
         {
+            if (DataManager.Instance.time == 3)
+            {
+                StartCoroutine(FailTraining());
+                return;
+            }
+            
             SetButtonsInteractable(false);
             
             // TODO: Determine training outcome value
             const int atkIncrease = 2;
             // TODO: Apply training outcome
 
-            statusText.text = $"공격력이 {atkIncrease} 증가했습니다!";
+            
             characterAnimator.SetBool("Attack", true);
 
             attack = true;
@@ -68,6 +95,12 @@ namespace Training
         
         public void TrainDefense()
         {
+            if (DataManager.Instance.time == 3)
+            {
+                StartCoroutine(FailTraining());
+                return;
+            }
+            
             SetButtonsInteractable(false);
             
             // TODO: Determine training outcome value

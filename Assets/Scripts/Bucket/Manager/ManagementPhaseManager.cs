@@ -95,7 +95,7 @@ namespace Bucket.Manager
             }
             //DestroyImmediate(gameObject);
             
-            // LoadDailyEvent();
+            
             
             RefreshRankingUI();
         }
@@ -104,6 +104,16 @@ namespace Bucket.Manager
         {
             EventManager.Instance.AddListener(EVENT_TYPE.eDatePass, this);
             EventManager.Instance.AddListener(EVENT_TYPE.eChallengeMail, this);
+
+            if (!DataManager.Instance.loadData)
+            {
+                LoadDailyEvent();
+                DataManager.Instance.loadData = true;
+            }
+            else
+            {
+                dailyEvents = DataManager.Instance.events;
+            }
             
             if (!DataManager.Instance.firstSetFighters)
             {
@@ -113,6 +123,7 @@ namespace Bucket.Manager
             else
             {
                 fighters = DataManager.Instance.fighters;
+                RefreshRankingUI();
             }
             
             DataManager.Instance.SaveDatas();
@@ -548,8 +559,6 @@ namespace Bucket.Manager
             {
                 fightersSortByPower[i].CurrentRank = fightersSortByPower.Count - i;
             }
-            
-            
         }
         
         private Equipments MakeRandomEquips()
