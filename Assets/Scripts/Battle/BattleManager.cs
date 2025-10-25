@@ -93,6 +93,7 @@ namespace Battle
             isEnemyAttackAvailable = false;
 
             CasterSay("경기 시작합니다!");
+            SoundManager.Instance.playSFX("crowdCheer");
             
             // TODO: Load sequences from other scene
             
@@ -274,13 +275,17 @@ namespace Battle
                 {
                     case 0:
                         tmp = "첫 번째 공격이 성공합니다! 연계를 이어나갑니다!";
+                        SoundManager.Instance.playSFX("swordCollision");
                         break;
                     case 1:
                         tmp = "두 번째 공격도 성공합니다! 마지막 공격을 준비합니다!";
+                        SoundManager.Instance.playSFX("swordCollision");
                         DataManager.Instance.popularity += 1;
                         break;
                     case 2:
                         tmp = "마지막 일격 성공합니다! 관객들이 환호합니다!";
+                        SoundManager.Instance.playSFX("swordCollision");
+                        SoundManager.Instance.playSFX("crowdCheer");
                         DataManager.Instance.popularity += 3;
                         break;
                     default:
@@ -314,6 +319,8 @@ namespace Battle
                 Debug.Log("Miss");
 
                 string tmp = "공격에 실패합니다... 관객들이 야유를 하는 모습입니다.";
+                SoundManager.Instance.playSFX("dodge");
+                SoundManager.Instance.playSFX("crowdBoo");
                 DataManager.Instance.popularity -= 2;
                 CasterSay(tmp);
 
@@ -345,7 +352,6 @@ namespace Battle
         private void FinishAttack()
         {
             Debug.Log("Finish gladiator attack");
-
             battleState = BattleState.Idle;
             isActioning = false;
             attackCooldownRemaining = attackCooldown;
@@ -419,6 +425,8 @@ namespace Battle
             enemyAnimator.SetBool("PreAttack", false);
             
             string tmp = "얍삽하게 회피하는 모습입니다... 관객들이 야유를 하는 모습입니다.";
+            SoundManager.Instance.playSFX("crowdBoo");
+            SoundManager.Instance.playSFX("dodge");
             DataManager.Instance.popularity -= 5;
             CasterSay(tmp);
             
@@ -505,6 +513,7 @@ namespace Battle
             enemyAnimator.SetBool("PreAttack", false);
             
             string tmp = "세게 들어갑니다! 아프겠당";
+            SoundManager.Instance.playSFX("heavyHit");
             CasterSay(tmp);
 
 
@@ -523,7 +532,7 @@ namespace Battle
         private void FinishEnemyAttack()
         {
             Debug.Log("Finish enemy attack");
-
+            SoundManager.Instance.playSFX("crowdCheer");
             battleState = BattleState.Idle;
 
             // TODO: Finish enemy attack
@@ -591,6 +600,7 @@ namespace Battle
 
         private IEnumerator GoToScene()
         {
+            SoundManager.Instance.stopAllSFX();
             yield return new WaitForSeconds(2f);
             DataManager.Instance.time += 2;
             SceneManager.LoadScene("Scenes/Map");
